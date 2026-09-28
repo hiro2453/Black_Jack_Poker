@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Sg8vGPJd5gA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KBC2510\\Desktop\\BJ\\BJ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KBC2510\\.nuget\\packages\\system.data.sqlite\\2.0.4\\system.data.sqlite.2.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
