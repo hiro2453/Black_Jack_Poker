@@ -46,11 +46,11 @@ namespace BJ
 
             if (result == DialogResult.Yes)
             {
-                // 遷移先の Game フォームを生成
-                Game gameForm = new Game();
-
-                // Game フォームを表示
-                gameForm.Show();
+                using (Chip_Window chipForm = new Chip_Window())
+                {
+                    // 2. モーダル表示（サブ画面が閉じるまで、ここで実行が一時停止します）
+                    chipForm.ShowDialog(this);
+                }
 
                 // Title フォームを非表示にする（または Close() で閉じる）
                 this.Hide();

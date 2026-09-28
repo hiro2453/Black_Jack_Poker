@@ -80,13 +80,13 @@ namespace BJ
                 default: return 10;
             }
         }
-
+        /*
         public bool Max_Check(int c)
         {
             if (c < 21)
             {
                 
             }
-        }
+        }*/
     }
 }

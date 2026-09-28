@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Sg8vGPJd5gA=",
+  "dgSpecHash": "r0pUtVjcpCQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\KBC2510\\Desktop\\BJ\\BJ.csproj",
+  "projectFilePath": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\BJ.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\KBC2510\\.nuget\\packages\\system.data.sqlite\\2.0.4\\system.data.sqlite.2.0.4.nupkg.sha512"
+    "C:\\Users\\Owner\\.nuget\\packages\\system.data.sqlite\\2.0.4\\system.data.sqlite.2.0.4.nupkg.sha512"
   ],
   "logs": []
 }

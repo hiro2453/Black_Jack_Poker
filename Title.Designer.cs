@@ -40,7 +40,7 @@
             // Title_Logo
             // 
             Title_Logo.Cursor = Cursors.Hand;
-            Title_Logo.Image = assets.logo;
+            Title_Logo.Image = img.logo;
             Title_Logo.ImageLocation = "";
             Title_Logo.Location = new Point(115, 38);
             Title_Logo.Margin = new Padding(0);

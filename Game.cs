@@ -9,20 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
 
 namespace BJ
 {
     public partial class Game : Form
     {
-        public Game()
+        public Game(int test)
         {
             InitializeComponent();
-            Start();
+            Start(test);
         }
         Deck d = new Deck();
-        private void Start()
+        public void Start(int test)
         {
-            int Chip = int.Parse(Interaction.InputBox("何枚賭ける？", "入力", "1"));
+
+            int Chip_check = test;
+            Console.WriteLine(Chip_check);
+
             d.Crad_Shuffle();
 
             //ユーザーの手札2枚配布
@@ -35,7 +39,6 @@ namespace BJ
 
                 //合計値計算
                 string check = d.Mark_remove(L.Text);
-                Console.WriteLine(check);
                 int Count = 0;
                 if (check == "A" || check == "J" || check == "Q" || check == "K")
                 {
@@ -46,7 +49,6 @@ namespace BJ
                     Count = int.Parse(check);
                 }
                 int Total = int.Parse(User_Total_Count.Text);
-                Console.WriteLine(Total);
                 Total = Total + Count;
                 User_Total_Count.Text = Total.ToString();
             }
@@ -61,7 +63,6 @@ namespace BJ
 
                 //合計値計算
                 string check = d.Mark_remove(L.Text);
-                Console.WriteLine(check);
                 int Count = 0;
                 if (check == "A" || check == "J" || check == "Q" || check == "K")
                 {
@@ -72,7 +73,6 @@ namespace BJ
                     Count = int.Parse(check);
                 }
                 int Total = int.Parse(Dealer_Total_Count.Text);
-                Console.WriteLine(Total);
                 Total = Total + Count;
                 Dealer_Total_Count.Text = Total.ToString();
             }
