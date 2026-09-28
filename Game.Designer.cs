@@ -204,6 +204,7 @@
             doubleDown_Button.TabIndex = 10;
             doubleDown_Button.Text = "ダブルダウン";
             doubleDown_Button.UseVisualStyleBackColor = true;
+            doubleDown_Button.Click += doubleDown_Button_Click;
             // 
             // stand_Button
             // 
@@ -215,6 +216,7 @@
             stand_Button.TabIndex = 9;
             stand_Button.Text = "スタンド";
             stand_Button.UseVisualStyleBackColor = true;
+            stand_Button.Click += stand_Button_Click;
             // 
             // Game
             // 

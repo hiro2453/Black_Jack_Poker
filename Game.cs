@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,17 +19,17 @@ namespace BJ
             InitializeComponent();
             Start();
         }
-
+        Deck d = new Deck();
         private void Start()
         {
-            Deck d = new Deck();
+            int Chip = int.Parse(Interaction.InputBox("何枚賭ける？", "入力", "1"));
             d.Crad_Shuffle();
 
             //ユーザーの手札2枚配布
             for (int i = 0; i < 2; i++)
             {
                 Label L = new Label();
-                L.Text = d.please_Card();
+                L.Text = d.Please_Card();
                 L.AutoSize = true;
                 User_Card.Controls.Add(L);
 
@@ -54,7 +55,7 @@ namespace BJ
             for (int i = 0; i < 2; i++)
             {
                 Label L = new Label();
-                L.Text = d.please_Card();
+                L.Text = d.Please_Card();
                 L.AutoSize = true;
                 Dealer_Card.Controls.Add(L);
 
@@ -79,7 +80,43 @@ namespace BJ
 
         private void hit_Button_Click(object sender, EventArgs e)
         {
-            
+            Label L = new Label();
+            L.Text = d.Please_Card();
+            L.AutoSize = true;
+            User_Card.Controls.Add(L);
+            doubleDown_Button.Enabled = false;
+
+            //合計値計算
+            string check = d.Mark_remove(L.Text);
+            Console.WriteLine(check);
+            int Count = 0;
+            if (check == "A" || check == "J" || check == "Q" || check == "K")
+            {
+                Count = d.BlackJackValue(check);
+            }
+            else
+            {
+                Count = int.Parse(check);
+            }
+            int Total = int.Parse(User_Total_Count.Text);
+            Console.WriteLine(Total);
+            Total = Total + Count;
+            User_Total_Count.Text = Total.ToString();
+        }
+
+        private void stand_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void doubleDown_Button_Click(object sender, EventArgs e)
+        {
+            Label L = new Label();
+            L.Text = d.Please_Card();
+            L.AutoSize = true;
+            User_Card.Controls.Add(L);
+
+
         }
     }
 }

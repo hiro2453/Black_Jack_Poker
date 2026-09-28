@@ -33,7 +33,7 @@ namespace BJ
         }
 
         int n = 52;
-        public string please_Card()
+        public string Please_Card()
         {
 
             if (n > 1)
@@ -78,6 +78,14 @@ namespace BJ
             {
                 case "A": return 1;
                 default: return 10;
+            }
+        }
+
+        public bool Max_Check(int c)
+        {
+            if (c < 21)
+            {
+                
             }
         }
     }
