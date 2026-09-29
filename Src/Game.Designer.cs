@@ -42,11 +42,17 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             doubleDown_Button = new Button();
             stand_Button = new Button();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            battle_Chip_Count = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            label2 = new Label();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -115,7 +121,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(User_Total_Count, 0, 1);
             tableLayoutPanel1.Controls.Add(User_Total_Text, 0, 0);
             tableLayoutPanel1.Location = new Point(636, 391);
@@ -123,7 +130,6 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(72, 76);
             tableLayoutPanel1.TabIndex = 6;
             // 
@@ -218,12 +224,78 @@
             stand_Button.UseVisualStyleBackColor = true;
             stand_Button.Click += stand_Button_Click;
             // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(battle_Chip_Count, 1, 1);
+            tableLayoutPanel4.Controls.Add(label3, 1, 0);
+            tableLayoutPanel4.Controls.Add(label1, 0, 1);
+            tableLayoutPanel4.Controls.Add(label2, 0, 0);
+            tableLayoutPanel4.Location = new Point(12, 391);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle());
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(182, 80);
+            tableLayoutPanel4.TabIndex = 10;
+            // 
+            // battle_Chip_Count
+            // 
+            battle_Chip_Count.AutoSize = true;
+            battle_Chip_Count.Dock = DockStyle.Fill;
+            battle_Chip_Count.Font = new Font("HG明朝B", 24F);
+            battle_Chip_Count.Location = new Point(94, 24);
+            battle_Chip_Count.Name = "battle_Chip_Count";
+            battle_Chip_Count.Size = new Size(85, 56);
+            battle_Chip_Count.TabIndex = 5;
+            battle_Chip_Count.Text = "0";
+            battle_Chip_Count.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Bottom;
+            label3.Font = new Font("メイリオ", 12F);
+            label3.Location = new Point(94, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(85, 24);
+            label3.TabIndex = 4;
+            label3.Text = "賭け金";
+            label3.TextAlign = ContentAlignment.BottomCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Font = new Font("HG明朝B", 20F);
+            label1.Location = new Point(3, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 56);
+            label1.TabIndex = 3;
+            label1.Text = "0";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Bottom;
+            label2.Font = new Font("メイリオ", 12F);
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(85, 24);
+            label2.TabIndex = 2;
+            label2.Text = "手持ち";
+            label2.TextAlign = ContentAlignment.BottomCenter;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(792, 469);
+            Controls.Add(tableLayoutPanel4);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
@@ -245,6 +317,8 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,5 +339,10 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button doubleDown_Button;
         private Button stand_Button;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label battle_Chip_Count;
+        private Label label3;
+        private Label label1;
+        private Label label2;
     }
 }

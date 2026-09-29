@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BJ
+namespace BJ.Src
 {
     internal class Deck
     {
@@ -80,13 +80,5 @@ namespace BJ
                 default: return 10;
             }
         }
-        /*
-        public bool Max_Check(int c)
-        {
-            if (c < 21)
-            {
-                
-            }
-        }*/
     }
 }

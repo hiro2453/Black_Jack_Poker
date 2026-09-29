@@ -10,22 +10,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
+using BJ.Src;
 
 namespace BJ
 {
     public partial class Game : Form
     {
+        Deck d = new Deck();
+        bool Start_AA = false;
+        bool Start_A  = false;
         public Game(int test)
         {
             InitializeComponent();
             Start(test);
         }
-        Deck d = new Deck();
+        
         public void Start(int test)
         {
-
             int Chip_check = test;
-            Console.WriteLine(Chip_check);
+            battle_Chip_Count.Text = Chip_check.ToString();
 
             d.Crad_Shuffle();
 
@@ -76,6 +79,19 @@ namespace BJ
                 Total = Total + Count;
                 Dealer_Total_Count.Text = Total.ToString();
             }
+
+            string item_0 = d.Mark_remove(User_Card.Controls[0].Text);
+            string item_1 = d.Mark_remove(User_Card.Controls[1].Text);
+            if (item_0 == "A" && item_1 == "A")
+            {
+                Start_AA = true;
+                Console.WriteLine("どちらもAです");
+            }
+            if (item_0 == "A" || item_1 == "A")
+            {
+                Start_A = true;
+                Console.WriteLine("片方Aです");
+            }
         }
 
         private void hit_Button_Click(object sender, EventArgs e)
@@ -88,8 +104,22 @@ namespace BJ
 
             //合計値計算
             string check = d.Mark_remove(L.Text);
-            Console.WriteLine(check);
             int Count = 0;
+            int Total = int.Parse(User_Total_Count.Text);
+
+            if (Start_AA == true)
+            {
+                Total -= 20;
+                Dealer_Total_Count.Text = Total.ToString();
+                Start_AA = false;
+            }
+            if (Start_A == true)
+            {
+                Total -= 10;
+                Dealer_Total_Count.Text = Total.ToString();
+                Start_A = false;
+            }
+
             if (check == "A" || check == "J" || check == "Q" || check == "K")
             {
                 Count = d.BlackJackValue(check);
@@ -98,10 +128,18 @@ namespace BJ
             {
                 Count = int.Parse(check);
             }
-            int Total = int.Parse(User_Total_Count.Text);
-            Console.WriteLine(Total);
+            
             Total = Total + Count;
             User_Total_Count.Text = Total.ToString();
+            if (Total > 21)
+            {
+                MessageBox.Show("バーストした為、今回の勝負は負けです。");
+                Title title = new Title();
+
+                title.Show();
+
+                this.Hide();
+            }
         }
 
         private void stand_Button_Click(object sender, EventArgs e)
@@ -111,11 +149,6 @@ namespace BJ
 
         private void doubleDown_Button_Click(object sender, EventArgs e)
         {
-            Label L = new Label();
-            L.Text = d.Please_Card();
-            L.AutoSize = true;
-            User_Card.Controls.Add(L);
-
 
         }
     }

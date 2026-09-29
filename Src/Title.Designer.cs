@@ -40,12 +40,11 @@
             // Title_Logo
             // 
             Title_Logo.Cursor = Cursors.Hand;
-            Title_Logo.Image = img.logo;
             Title_Logo.ImageLocation = "";
-            Title_Logo.Location = new Point(115, 38);
+            Title_Logo.Location = new Point(9, 9);
             Title_Logo.Margin = new Padding(0);
             Title_Logo.Name = "Title_Logo";
-            Title_Logo.Size = new Size(563, 199);
+            Title_Logo.Size = new Size(774, 323);
             Title_Logo.SizeMode = PictureBoxSizeMode.Zoom;
             Title_Logo.TabIndex = 0;
             Title_Logo.TabStop = false;

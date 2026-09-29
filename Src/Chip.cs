@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BJ
 {
-    public partial class Chip_Window : Form
+    public partial class Chip : Form
     {
-        public Chip_Window()
+        public Chip()
         {
             InitializeComponent();
         }
@@ -32,7 +32,6 @@ namespace BJ
         private void Num0_Button_Click(object sender, EventArgs e)
         {
             int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
             if (Count >= 10)
             {
                 Chip_Count.Text = "100";
@@ -44,6 +43,7 @@ namespace BJ
             else
             {
                 Chip_Count.Text = Chip_Count.Text + "0";
+                Enter_Button.Enabled = true;
             }
         }
 
@@ -220,11 +220,6 @@ namespace BJ
 
             // Title フォームを非表示にする（または Close() で閉じる）
             this.Hide();
-        }
-
-        public int Check_Chip()
-        {
-            return int.Parse(Chip_Count.Text);
         }
     }
 }

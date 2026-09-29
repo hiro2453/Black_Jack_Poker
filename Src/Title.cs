@@ -9,10 +9,11 @@ namespace BJ
     {
         //変数のられつ
         int logo_count = 0;
-        ResourceManager rm = new ResourceManager("BJ.assets", Assembly.GetExecutingAssembly());
+        ResourceManager rm = new ResourceManager("BJ.Title", Assembly.GetExecutingAssembly());
         public Title()
         {
             InitializeComponent();
+            Title_Logo.Image = (Bitmap)rm.GetObject("Logo");
         }
 
         private void Logo_click(object sender, EventArgs e)
@@ -22,12 +23,13 @@ namespace BJ
                 Title_Logo.Image = (Bitmap)rm.GetObject("Logo_ikasama");
                 Title_Logo.Click -= Logo_click;
                 Title_Logo.Click += Ikamasa_Logo_click;
-                MessageBox.Show("イカサマモードが有効になりました。", "ようこそ");
+                MessageBox.Show("イカサマモードが有効になりました。", "ようこそ",MessageBoxButtons.OK);
             }
             else
             {
                 logo_count++;
-                MessageBox.Show("クリックする箇所を間違えているようです。", "エラー");
+                MessageBox.Show("クリックする箇所を間違えているようです。", "エラー",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                Console.WriteLine(logo_count);
             }
 
         }
@@ -46,7 +48,7 @@ namespace BJ
 
             if (result == DialogResult.Yes)
             {
-                using (Chip_Window chipForm = new Chip_Window())
+                using (Chip chipForm = new Chip())
                 {
                     // 2. モーダル表示（サブ画面が閉じるまで、ここで実行が一時停止します）
                     chipForm.ShowDialog(this);

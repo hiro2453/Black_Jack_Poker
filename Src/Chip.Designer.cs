@@ -1,6 +1,6 @@
 ﻿namespace BJ
 {
-    partial class Chip_Window
+    partial class Chip
     {
         /// <summary>
         /// Required designer variable.

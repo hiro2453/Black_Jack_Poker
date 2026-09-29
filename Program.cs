@@ -20,13 +20,16 @@ namespace BJ
             Console.WriteLine("どこからデバックしますか？");
             Console.WriteLine("1.タイトル画面から");
             Console.WriteLine("2.チップ確定画面から");
+            Console.WriteLine("3.ゲーム画面から（チップは100固定）");
             string? Num= Console.ReadLine();
             switch (Num)
             {
                 case "1": Application.Run(new Title());break;
-                case "2": Application.Run(new Chip_Window()); break;
+                case "2": Application.Run(new Chip()); break;
+                case "3": int a = 100; Application.Run(new Game(a)); break;
+
             }
-            
+
         }
     }
 }
