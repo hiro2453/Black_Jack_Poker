@@ -168,9 +168,14 @@ namespace BJ
 
         private async void Action_anime(string text)
         {
-            Label test = new Label();
+            OutlinedLabel test = new OutlinedLabel();
+            test.Font = new System.Drawing.Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
             int x = 800;
             int size = 100;
+            test.Text = text;
+            test.StrokeWidth = 5;
+            test.AutoSize = true;
+            this.Controls.Add(test);
             while (x >= 320)
             {
                 test.Location = new Point(x, 180);
@@ -178,7 +183,8 @@ namespace BJ
                 await Task.Delay(10);
             }
 
-            await Task.Delay(100);
+            await Task.Delay(1000);
+
             while (x >= -200)
             {
                 test.Location = new Point(x, 180);

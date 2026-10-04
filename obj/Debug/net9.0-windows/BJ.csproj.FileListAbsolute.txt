@@ -40,9 +40,6 @@ C:\Users\KBC2510\Desktop\BJ\obj\Debug\net9.0-windows\refint\BJ.dll
 C:\Users\KBC2510\Desktop\BJ\obj\Debug\net9.0-windows\BJ.pdb
 C:\Users\KBC2510\Desktop\BJ\obj\Debug\net9.0-windows\BJ.genruntimeconfig.cache
 C:\Users\KBC2510\Desktop\BJ\obj\Debug\net9.0-windows\ref\BJ.dll
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.csproj.AssemblyReference.cache
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Game.resources
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Title.resources
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.csproj.GenerateResource.cache
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.AssemblyInfoInputs.cache
@@ -57,9 +54,12 @@ C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\B
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\BJ.runtimeconfig.json
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\BJ.dll
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\BJ.pdb
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\System.Data.SQLite.dll
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.csproj.Up2Date
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.genruntimeconfig.cache
 C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\ref\BJ.dll
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Chip_Window.resources
-C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.img.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Chip.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Game.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Src.Rresult.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Title.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\obj\Debug\net9.0-windows\BJ.Properties.Resources.resources
+C:\Users\Owner\source\repos\hiro2453\Black_Jack_Poker\bin\Debug\net9.0-windows\BJ.dll.config

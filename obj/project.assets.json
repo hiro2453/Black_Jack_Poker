@@ -1,38 +1,11 @@
 {
   "version": 4,
   "targets": {
-    "net9.0-windows": {
-      "System.Data.SQLite/2.0.4": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.1/System.Data.SQLite.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.1/System.Data.SQLite.dll": {}
-        }
-      }
-    }
+    "net9.0-windows": {}
   },
-  "libraries": {
-    "System.Data.SQLite/2.0.4": {
-      "sha512": "iiawN8l6QBzLZTK2BQRyq/1XmvDONghjvXoDhkkQgPTG8bRIsmIxJV1+Lc75fviNgMnjAE3wxReVJAF7P1hkoQ==",
-      "type": "package",
-      "path": "system.data.sqlite/2.0.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net471/System.Data.SQLite.dll",
-        "lib/netstandard2.0/System.Data.SQLite.dll",
-        "lib/netstandard2.1/System.Data.SQLite.dll",
-        "system.data.sqlite.2.0.4.nupkg.sha512",
-        "system.data.sqlite.nuspec"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net9.0-windows": [
-      "System.Data.SQLite >= 2.0.4"
-    ]
+    "net9.0-windows": []
   },
   "packageFolders": {
     "C:\\Users\\Owner\\.nuget\\packages\\": {},
@@ -85,12 +58,6 @@
       "net9.0-windows": {
         "framework": "net9.0-windows7.0",
         "targetAlias": "net9.0-windows",
-        "dependencies": {
-          "System.Data.SQLite": {
-            "target": "Package",
-            "version": "[2.0.4, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

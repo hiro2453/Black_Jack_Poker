@@ -47,7 +47,6 @@
             Chip_Count = new Label();
             label2 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
-            Action_label = new BJ.Src.OutlinedLabel();
             button1 = new Button();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
@@ -289,17 +288,6 @@
             tableLayoutPanel5.Size = new Size(182, 129);
             tableLayoutPanel5.TabIndex = 11;
             // 
-            // Action_label
-            // 
-            Action_label.AutoSize = true;
-            Action_label.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
-            Action_label.ForeColor = Color.White;
-            Action_label.Location = new Point(323, 177);
-            Action_label.Name = "Action_label";
-            Action_label.Size = new Size(156, 61);
-            Action_label.TabIndex = 13;
-            Action_label.Text = "ヒット";
-            // 
             // button1
             // 
             button1.Location = new Point(645, 215);
@@ -317,7 +305,6 @@
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(792, 469);
             Controls.Add(button1);
-            Controls.Add(Action_label);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
@@ -366,7 +353,6 @@
         private Label Chip_Count;
         private Label label2;
         private TableLayoutPanel tableLayoutPanel5;
-        private Src.OutlinedLabel Action_label;
         private Button button1;
     }
 }
