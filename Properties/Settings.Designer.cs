@@ -22,5 +22,29 @@ namespace BJ.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool double_Down {
+            get {
+                return ((bool)(this["double_Down"]));
+            }
+            set {
+                this["double_Down"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int Chip {
+            get {
+                return ((int)(this["Chip"]));
+            }
+            set {
+                this["Chip"] = value;
+            }
+        }
     }
 }

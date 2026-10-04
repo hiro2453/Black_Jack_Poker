@@ -15,6 +15,13 @@ namespace BJ
         public Chip()
         {
             InitializeComponent();
+            Check();
+        }
+
+        private void Check()
+        {
+            Chip_before.Text = Properties.Settings.Default.Chip.ToString();
+            Chip_After.Text = Properties.Settings.Default.Chip.ToString();
         }
 
         private void Clear_Button_Click(object sender, EventArgs e)
@@ -212,6 +219,7 @@ namespace BJ
         private void Enter_Button_Click(object sender, EventArgs e)
         {
             int test = int.Parse(Chip_Count.Text);
+            Properties.Settings.Default.Save();
             // 遷移先の Game フォームを生成
             Game GameForm = new Game(test);
 
@@ -220,6 +228,12 @@ namespace BJ
 
             // Title フォームを非表示にする（または Close() で閉じる）
             this.Hide();
+        }
+
+        private void Chip_Change(object sender, EventArgs e)
+        {
+            int num = Properties.Settings.Default.Chip - int.Parse(Chip_Count.Text);
+            Chip_After.Text = num.ToString();
         }
     }
 }

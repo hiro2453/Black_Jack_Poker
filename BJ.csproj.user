@@ -7,6 +7,9 @@
     <Compile Update="Src\Game.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Src\OutlinedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Src\Rresult.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,6 +1,5 @@
 using System.Reflection;
 using System.Resources;
-using System.Data.SQLite;
 using System.Security.Cryptography.X509Certificates;
 
 namespace BJ
@@ -9,21 +8,19 @@ namespace BJ
     {
         //変数のられつ
         int logo_count = 0;
-        ResourceManager rm = new ResourceManager("BJ.Title", Assembly.GetExecutingAssembly());
         public Title()
         {
             InitializeComponent();
-            Title_Logo.Image = (Bitmap)rm.GetObject("Logo");
         }
 
         private void Logo_click(object sender, EventArgs e)
         {
             if (logo_count == 4)
             {
-                Title_Logo.Image = (Bitmap)rm.GetObject("Logo_ikasama");
+                Title_Logo.Image = Properties.Resources.Logo_ikasama;
                 Title_Logo.Click -= Logo_click;
                 Title_Logo.Click += Ikamasa_Logo_click;
-                MessageBox.Show("イカサマモードが有効になりました。", "ようこそ",MessageBoxButtons.OK);
+                MessageBox.Show("イカサマモードが有効になりました。\nでも、それで君は楽しめるの？", "ようこそ",MessageBoxButtons.OK);
             }
             else
             {
@@ -35,7 +32,7 @@ namespace BJ
         }
         private void Ikamasa_Logo_click(object sender, EventArgs e)
         {
-            MessageBox.Show("元に戻したいですか？\n再起動してください。", "Tips");
+            MessageBox.Show("元に戻したいですか？\n再起動してください。", "Tips",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void New_button_click(object sender, EventArgs e)

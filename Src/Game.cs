@@ -1,16 +1,18 @@
-﻿using Microsoft.VisualBasic;
+﻿using BJ.Src;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
-using System.Text.RegularExpressions;
-using BJ.Src;
 
 namespace BJ
 {
@@ -18,17 +20,21 @@ namespace BJ
     {
         Deck d = new Deck();
         bool Start_AA = false;
-        bool Start_A  = false;
-        public Game(int test)
+        bool Start_A = false;
+        public Game(int chip)
         {
             InitializeComponent();
-            Start(test);
+            Start(chip);
         }
-        
-        public void Start(int test)
+
+        public void Start(int vs_chip)
         {
-            int Chip_check = test;
+            bool double_Down_Check = Properties.Settings.Default.double_Down;
+
+            int Chip_check = vs_chip;
             battle_Chip_Count.Text = Chip_check.ToString();
+            int chip = Properties.Settings.Default.Chip - vs_chip;
+            Chip_Count.Text = chip.ToString();
 
             d.Crad_Shuffle();
 
@@ -101,6 +107,7 @@ namespace BJ
             L.AutoSize = true;
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
+            Action_anime(hit_Button.Text);
 
             //合計値計算
             string check = d.Mark_remove(L.Text);
@@ -113,7 +120,9 @@ namespace BJ
                 Dealer_Total_Count.Text = Total.ToString();
                 Start_AA = false;
             }
-            if (Start_A == true)
+
+            //最初にAを持っていたとしても、21を超えるまではAを11とカウントする
+            if (Start_A == true && Total < 21)
             {
                 Total -= 10;
                 Dealer_Total_Count.Text = Total.ToString();
@@ -128,7 +137,7 @@ namespace BJ
             {
                 Count = int.Parse(check);
             }
-            
+
             Total = Total + Count;
             User_Total_Count.Text = Total.ToString();
             if (Total > 21)
@@ -150,6 +159,37 @@ namespace BJ
         private void doubleDown_Button_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void battle_Chip_Count_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void Action_anime(string text)
+        {
+            Label test = new Label();
+            int x = 800;
+            int size = 100;
+            while (x >= 320)
+            {
+                test.Location = new Point(x, 180);
+                x -= 40;
+                await Task.Delay(10);
+            }
+
+            await Task.Delay(100);
+            while (x >= -200)
+            {
+                test.Location = new Point(x, 180);
+                x -= 40;
+                await Task.Delay(10);
+            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            Action_anime(button1.Text);
         }
     }
 }

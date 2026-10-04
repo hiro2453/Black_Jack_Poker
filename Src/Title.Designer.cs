@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Title));
             Title_Logo = new PictureBox();
             Setting_button = new Button();
             New_button = new Button();
@@ -40,6 +41,7 @@
             // Title_Logo
             // 
             Title_Logo.Cursor = Cursors.Hand;
+            Title_Logo.Image = (Image)resources.GetObject("Title_Logo.Image");
             Title_Logo.ImageLocation = "";
             Title_Logo.Location = new Point(9, 9);
             Title_Logo.Margin = new Padding(0);
@@ -115,7 +117,7 @@
             Name = "Title";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ブラックジャックポーカー Ver.0.0";
+            Text = "ブラックジャックポーカー {0}";
             ((System.ComponentModel.ISupportInitialize)Title_Logo).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
