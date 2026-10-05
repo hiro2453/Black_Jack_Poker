@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\",
+  "WorkspaceRootPath": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\owner\\source\\repos\\hiro2453\\black_jack_poker\\src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\kbc2510\\desktop\\github\\black_jack_poker\\src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:src\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\owner\\source\\repos\\hiro2453\\black_jack_poker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\kbc2510\\desktop\\github\\black_jack_poker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\owner\\source\\repos\\hiro2453\\black_jack_poker\\src\\outlinedlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\kbc2510\\desktop\\github\\black_jack_poker\\src\\outlinedlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:src\\outlinedlabel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\owner\\source\\repos\\hiro2453\\black_jack_poker\\src\\title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|c:\\users\\kbc2510\\desktop\\github\\black_jack_poker\\src\\title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E57A8237-A1BB-D7AD-BF22-B84625CD9F2C}|BJ.csproj|solutionrelative:src\\title.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -33,16 +37,24 @@
           "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "Properties\\Settings.settings",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Properties\\Settings.settings",
+              "RelativeToolTip": "Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2026-10-05T01:13:54.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Title.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Title.cs",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Title.cs",
               "RelativeDocumentMoniker": "Src\\Title.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Title.cs",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Title.cs",
               "RelativeToolTip": "Src\\Title.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -50,26 +62,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "OutlinedLabel.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\OutlinedLabel.cs",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\OutlinedLabel.cs",
               "RelativeDocumentMoniker": "Src\\OutlinedLabel.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\OutlinedLabel.cs",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\OutlinedLabel.cs",
               "RelativeToolTip": "Src\\OutlinedLabel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-03T10:48:34.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-03T10:48:34.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Program.cs",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAwwCMAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBQAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T10:09:09.52Z",
               "EditorCaption": ""
@@ -78,25 +89,25 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Game.cs",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Game.cs",
               "RelativeDocumentMoniker": "Src\\Game.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Game.cs",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Game.cs",
               "RelativeToolTip": "Src\\Game.cs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAAowLgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAowLgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-30T03:57:20.139Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Game.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Game.cs",
+              "DocumentMoniker": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Game.cs",
               "RelativeDocumentMoniker": "Src\\Game.cs",
-              "ToolTip": "C:\\Users\\Owner\\source\\repos\\hiro2453\\Black_Jack_Poker\\Src\\Game.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "ToolTip": "C:\\Users\\KBC2510\\Desktop\\github\\Black_Jack_Poker\\Src\\Game.cs [\u30C7\u30B6\u30A4\u30F3]",
               "RelativeToolTip": "Src\\Game.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-03T11:34:12.041Z",
+              "WhenOpened": "2026-10-05T00:47:50.116Z",
               "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
             }
           ]

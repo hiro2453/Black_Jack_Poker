@@ -89,7 +89,9 @@
             // 
             // Dealer_Card
             // 
-            Dealer_Card.Anchor = AnchorStyles.Top;
+            Dealer_Card.AutoSize = true;
+            Dealer_Card.Dock = DockStyle.Fill;
+            Dealer_Card.Font = new Font("メイリオ", 16F);
             Dealer_Card.Location = new Point(3, 21);
             Dealer_Card.Name = "Dealer_Card";
             Dealer_Card.Size = new Size(394, 76);
@@ -179,10 +181,10 @@
             hit_Button.Margin = new Padding(10, 3, 10, 3);
             hit_Button.Name = "hit_Button";
             hit_Button.Size = new Size(75, 40);
-            hit_Button.TabIndex = 8;
+            hit_Button.TabIndex = 1;
             hit_Button.Text = "ヒット";
             hit_Button.UseVisualStyleBackColor = true;
-            hit_Button.Click += hit_Button_Click;
+            hit_Button.Click += Hit_Button_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -294,16 +296,17 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 14;
+            button1.TabStop = false;
             button1.Text = "テスト";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += test_Click;
             // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel3);
@@ -322,6 +325,7 @@
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();
             Dealer_Card_Grid.ResumeLayout(false);
+            Dealer_Card_Grid.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

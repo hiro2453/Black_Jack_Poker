@@ -1,18 +1,4 @@
 ﻿using BJ.Src;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace BJ
 {
@@ -100,14 +86,16 @@ namespace BJ
             }
         }
 
-        private void hit_Button_Click(object sender, EventArgs e)
+        private async void Hit_Button_Click(object sender, EventArgs e)
         {
+            Action_anime(hit_Button.Text);
+            await Task.Delay(1500);
             Label L = new Label();
             L.Text = d.Please_Card();
             L.AutoSize = true;
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
-            Action_anime(hit_Button.Text);
+
 
             //合計値計算
             string check = d.Mark_remove(L.Text);
@@ -143,6 +131,11 @@ namespace BJ
             if (Total > 21)
             {
                 MessageBox.Show("バーストした為、今回の勝負は負けです。");
+
+                /*
+                this.Close();
+                */
+
                 Title title = new Title();
 
                 title.Show();
@@ -166,12 +159,22 @@ namespace BJ
 
         }
 
+        private void battale()
+        {
+            OutlinedLabel outline = new OutlinedLabel();
+            outline.Text = "勝負！";
+            outline.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
+            outline.StrokeWidth = 5;
+            outline.AutoSize = true;
+            this.Controls.Add(outline);
+
+        }
+
         private async void Action_anime(string text)
         {
             OutlinedLabel test = new OutlinedLabel();
-            test.Font = new System.Drawing.Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
+            test.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
             int x = 800;
-            int size = 100;
             test.Text = text;
             test.StrokeWidth = 5;
             test.AutoSize = true;
@@ -193,7 +196,7 @@ namespace BJ
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void test_Click(object sender, EventArgs e)
         {
             Action_anime(button1.Text);
         }
