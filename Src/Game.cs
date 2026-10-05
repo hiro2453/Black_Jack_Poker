@@ -1,4 +1,5 @@
 ﻿using BJ.Src;
+using System.Resources;
 
 namespace BJ
 {
@@ -154,12 +155,12 @@ namespace BJ
 
         }
 
-        private void battle_Chip_Count_Click(object sender, EventArgs e)
+        private void Battle_Chip_Count_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void battale()
+        private void Battale()
         {
             OutlinedLabel outline = new OutlinedLabel();
             outline.Text = "勝負！";
@@ -172,6 +173,13 @@ namespace BJ
 
         private async void Action_anime(string text)
         {
+            PictureBox pic = new PictureBox();
+            pic.Image = Properties.Resources.Hit_text;
+            pic.Location = new Point(203, 188);
+            pic.Size = new Size(395, 50);
+            pic.SizeMode = PictureBoxSizeMode.Zoom;
+            this.Controls.Add(pic);
+
             OutlinedLabel test = new OutlinedLabel();
             test.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
             int x = 800;

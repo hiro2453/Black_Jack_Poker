@@ -63,6 +63,36 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap DoubleDown_text {
+            get {
+                object obj = ResourceManager.GetObject("DoubleDown_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Drop_text {
+            get {
+                object obj = ResourceManager.GetObject("Drop_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hit_text {
+            get {
+                object obj = ResourceManager.GetObject("Hit_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
@@ -76,6 +106,16 @@ namespace BJ.Properties {
         internal static System.Drawing.Bitmap Logo_ikasama {
             get {
                 object obj = ResourceManager.GetObject("Logo_ikasama", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Stand_text {
+            get {
+                object obj = ResourceManager.GetObject("Stand_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

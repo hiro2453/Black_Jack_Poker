@@ -229,6 +229,7 @@
             // 
             // battle_Chip_Count
             // 
+            battle_Chip_Count.Cursor = Cursors.Hand;
             battle_Chip_Count.Dock = DockStyle.Fill;
             battle_Chip_Count.Font = new Font("HG明朝B", 28F);
             battle_Chip_Count.Location = new Point(3, 85);
@@ -237,7 +238,7 @@
             battle_Chip_Count.TabIndex = 5;
             battle_Chip_Count.Text = "999999";
             battle_Chip_Count.TextAlign = ContentAlignment.MiddleCenter;
-            battle_Chip_Count.Click += battle_Chip_Count_Click;
+            battle_Chip_Count.Click += Battle_Chip_Count_Click;
             // 
             // label3
             // 
@@ -306,7 +307,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel3);
