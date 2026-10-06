@@ -319,7 +319,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(784, 461);
             Controls.Add(pictureBox1);
             Controls.Add(button1);

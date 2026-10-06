@@ -150,7 +150,6 @@ namespace BJ
         private async void stand_Button_Click(object sender, EventArgs e)
         {
             await Action_anime('s');
-            Console.WriteLine("hello");
         }
 
         private async void doubleDown_Button_Click(object sender, EventArgs e)
@@ -243,6 +242,7 @@ namespace BJ
             hit_Button.Visible = false;
             stand_Button.Visible = false;
             doubleDown_Button.Visible = false;
+            this.BackgroundImage = Properties.Resources.BackGround_LOSE;
             PictureBox pic = new PictureBox();
             pic.Size = new Size(180, 50);
             pic.Location = new Point(190, -60);
@@ -270,12 +270,12 @@ namespace BJ
             }
 
             pic.Hide();
+            this.BackgroundImage = null;
         }
 
         private async void test_Click(object sender, EventArgs e)
         {
             await Burst_anime();
-            Console.WriteLine("実行！");
         }
     }
 }
