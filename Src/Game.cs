@@ -89,7 +89,7 @@ namespace BJ
 
         private async void Hit_Button_Click(object sender, EventArgs e)
         {
-            Action_anime(hit_Button.Text);
+            Action_anime('h');
             await Task.Delay(1500);
             Label L = new Label();
             L.Text = d.Please_Card();
@@ -97,6 +97,7 @@ namespace BJ
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
 
+            /*
 
             //合計値計算
             string check = d.Mark_remove(L.Text);
@@ -133,26 +134,25 @@ namespace BJ
             {
                 MessageBox.Show("バーストした為、今回の勝負は負けです。");
 
-                /*
-                this.Close();
-                */
-
                 Title title = new Title();
 
                 title.Show();
 
                 this.Hide();
             }
+            */
         }
 
-        private void stand_Button_Click(object sender, EventArgs e)
+        private async void stand_Button_Click(object sender, EventArgs e)
         {
-
+            Action_anime('s');
+            await Task.Delay(1500);
         }
 
-        private void doubleDown_Button_Click(object sender, EventArgs e)
+        private async void doubleDown_Button_Click(object sender, EventArgs e)
         {
-
+            Action_anime('d');
+            await Task.Delay(1500);
         }
 
         private void Battle_Chip_Count_Click(object sender, EventArgs e)
@@ -171,42 +171,59 @@ namespace BJ
 
         }
 
-        private async void Action_anime(string text)
+        private async void Action_anime(char id)
         {
+            bool DD_Check = doubleDown_Button.Enabled;
+            hit_Button.Enabled= false;
+            stand_Button.Enabled = false;
+            doubleDown_Button.Enabled = false;
             PictureBox pic = new PictureBox();
-            pic.Image = Properties.Resources.Hit_text;
-            pic.Location = new Point(203, 188);
             pic.Size = new Size(395, 50);
             pic.SizeMode = PictureBoxSizeMode.Zoom;
+
+            switch (id)
+            {
+                case 'h':
+                    pic.Image = Properties.Resources.Hit_text;
+                    break;
+
+                case 's':
+                    pic.Image= Properties.Resources.Stand_text;
+                    break;
+
+                case 'd':
+                    pic.Image = Properties.Resources.DoubleDown_text;
+                    break;
+            }
             this.Controls.Add(pic);
 
-            OutlinedLabel test = new OutlinedLabel();
-            test.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
             int x = 800;
-            test.Text = text;
-            test.StrokeWidth = 5;
-            test.AutoSize = true;
-            this.Controls.Add(test);
-            while (x >= 320)
+            while (x > 160)
             {
-                test.Location = new Point(x, 180);
+                pic.Location = new Point(x, 190);
                 x -= 40;
                 await Task.Delay(10);
             }
 
             await Task.Delay(1000);
 
-            while (x >= -200)
+            while (x > -400)
             {
-                test.Location = new Point(x, 180);
+                pic.Location = new Point(x, 190);
                 x -= 40;
                 await Task.Delay(10);
             }
+
+            pic.Hide();
+
+            hit_Button.Enabled = true;
+            stand_Button.Enabled = true;
+            doubleDown_Button.Enabled = DD_Check;
         }
 
         private void test_Click(object sender, EventArgs e)
         {
-            Action_anime(button1.Text);
+            Action_anime('h');
         }
     }
 }

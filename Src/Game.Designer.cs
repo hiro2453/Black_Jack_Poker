@@ -48,12 +48,14 @@
             label2 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -302,12 +304,24 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += test_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.DoubleDown_text;
+            pictureBox1.Location = new Point(-400, 190);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(395, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(792, 469);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(784, 461);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel5);
             Controls.Add(tableLayoutPanel3);
@@ -333,6 +347,7 @@
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -359,5 +374,6 @@
         private Label label2;
         private TableLayoutPanel tableLayoutPanel5;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

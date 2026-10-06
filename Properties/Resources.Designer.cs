@@ -63,6 +63,16 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Burst {
+            get {
+                object obj = ResourceManager.GetObject("Burst", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap DoubleDown_text {
             get {
                 object obj = ResourceManager.GetObject("DoubleDown_text", resourceCulture);
