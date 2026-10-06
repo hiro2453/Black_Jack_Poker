@@ -1,5 +1,7 @@
 ﻿using BJ.Src;
+using System.Numerics;
 using System.Resources;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace BJ
 {
@@ -87,23 +89,20 @@ namespace BJ
             }
         }
 
-        private async void Hit_Button_Click(object sender, EventArgs e)
+        private async void Card_pull()
         {
-            Action_anime('h');
-            await Task.Delay(1500);
             Label L = new Label();
             L.Text = d.Please_Card();
             L.AutoSize = true;
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
 
-            /*
-
             //合計値計算
             string check = d.Mark_remove(L.Text);
             int Count = 0;
             int Total = int.Parse(User_Total_Count.Text);
 
+            //最初にAA持ってるのに
             if (Start_AA == true)
             {
                 Total -= 20;
@@ -132,27 +131,44 @@ namespace BJ
             User_Total_Count.Text = Total.ToString();
             if (Total > 21)
             {
-                MessageBox.Show("バーストした為、今回の勝負は負けです。");
-
+                await Burst_anime();
+                /*
                 Title title = new Title();
 
                 title.Show();
 
                 this.Hide();
+                */
             }
-            */
+        }
+        private async void Hit_Button_Click(object sender, EventArgs e)
+        {
+            await Action_anime('h');
+            Card_pull();
         }
 
         private async void stand_Button_Click(object sender, EventArgs e)
         {
-            Action_anime('s');
-            await Task.Delay(1500);
+            await Action_anime('s');
+            Console.WriteLine("hello");
         }
 
         private async void doubleDown_Button_Click(object sender, EventArgs e)
         {
-            Action_anime('d');
-            await Task.Delay(1500);
+            await Action_anime('d');
+
+            int My_Chip = int.Parse(battle_Chip_Count.Text);
+            int check = My_Chip * 2;
+
+            while (My_Chip != check)
+            {
+                My_Chip++;
+                battle_Chip_Count.Text = My_Chip.ToString();
+                await Task.Delay(1);
+            }
+
+            Card_pull();
+            
         }
 
         private void Battle_Chip_Count_Click(object sender, EventArgs e)
@@ -171,7 +187,7 @@ namespace BJ
 
         }
 
-        private async void Action_anime(char id)
+        private async Task Action_anime(char id)
         {
             bool DD_Check = doubleDown_Button.Enabled;
             hit_Button.Enabled= false;
@@ -196,6 +212,7 @@ namespace BJ
                     break;
             }
             this.Controls.Add(pic);
+            pic.BringToFront();
 
             int x = 800;
             while (x > 160)
@@ -221,9 +238,44 @@ namespace BJ
             doubleDown_Button.Enabled = DD_Check;
         }
 
-        private void test_Click(object sender, EventArgs e)
+        private async Task Burst_anime()
         {
-            Action_anime('h');
+            hit_Button.Visible = false;
+            stand_Button.Visible = false;
+            doubleDown_Button.Visible = false;
+            PictureBox pic = new PictureBox();
+            pic.Size = new Size(180, 50);
+            pic.Location = new Point(190, -60);
+            pic.SizeMode = PictureBoxSizeMode.Zoom;
+            pic.Image = Properties.Resources.Burst_text;
+            this.Controls.Add(pic);
+            pic.BringToFront();
+
+            int x = 305;
+            int y = -60;
+            while (y < 200)
+            {
+                pic.Location = new Point(x, y);
+                y += 20;
+                await Task.Delay(10);
+            }
+
+            await Task.Delay(1000);
+
+            while (y < 450)
+            {
+                pic.Location = new Point(x, y);
+                y += 20;
+                await Task.Delay(10);
+            }
+
+            pic.Hide();
+        }
+
+        private async void test_Click(object sender, EventArgs e)
+        {
+            await Burst_anime();
+            Console.WriteLine("実行！");
         }
     }
 }
