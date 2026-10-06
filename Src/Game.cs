@@ -183,7 +183,6 @@ namespace BJ
             outline.StrokeWidth = 5;
             outline.AutoSize = true;
             this.Controls.Add(outline);
-
         }
 
         private async Task Action_anime(char id)
@@ -242,8 +241,12 @@ namespace BJ
             hit_Button.Visible = false;
             stand_Button.Visible = false;
             doubleDown_Button.Visible = false;
-            this.BackgroundImage = Properties.Resources.BackGround_LOSE;
             PictureBox pic = new PictureBox();
+            PictureBox back = new PictureBox();
+            back.Image = Properties.Resources.BackGround_LOSE;
+            back.Dock = DockStyle.Fill;
+            this.Controls.Add(back);
+            back.BringToFront();
             pic.Size = new Size(180, 50);
             pic.Location = new Point(190, -60);
             pic.SizeMode = PictureBoxSizeMode.Zoom;
@@ -270,7 +273,7 @@ namespace BJ
             }
 
             pic.Hide();
-            this.BackgroundImage = null;
+            back.Hide();
         }
 
         private async void test_Click(object sender, EventArgs e)
