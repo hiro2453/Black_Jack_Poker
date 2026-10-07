@@ -62,6 +62,7 @@
             Setting_button.TabIndex = 2;
             Setting_button.Text = "設定";
             Setting_button.UseVisualStyleBackColor = true;
+            Setting_button.Click += Setting_button_Click;
             // 
             // New_button
             // 
@@ -107,7 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Title_Logo);
             ImeMode = ImeMode.Off;

@@ -20,19 +20,19 @@ namespace BJ
                 Title_Logo.Image = Properties.Resources.Logo_ikasama;
                 Title_Logo.Click -= Logo_click;
                 Title_Logo.Click += Ikamasa_Logo_click;
-                MessageBox.Show("イカサマモードが有効になりました。\nでも、それで君は楽しめるの？", "ようこそ",MessageBoxButtons.OK);
+                MessageBox.Show("イカサマモードが有効になりました。\nでも、それで君は楽しめるの？", "ようこそ", MessageBoxButtons.OK);
             }
             else
             {
                 logo_count++;
-                MessageBox.Show("クリックする箇所を間違えているようです。", "エラー",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("クリックする箇所を間違えているようです。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Console.WriteLine(logo_count);
             }
 
         }
         private void Ikamasa_Logo_click(object sender, EventArgs e)
         {
-            MessageBox.Show("元に戻したいですか？\n再起動してください。", "Tips",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("元に戻したいですか？\n再起動してください。", "Tips", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void New_button_click(object sender, EventArgs e)
@@ -54,6 +54,11 @@ namespace BJ
                 // Title フォームを非表示にする（または Close() で閉じる）
                 this.Hide();
             }
+        }
+
+        private void Setting_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
