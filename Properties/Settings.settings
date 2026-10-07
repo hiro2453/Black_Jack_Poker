@@ -6,7 +6,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Chip" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="Rule" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ロックファイブ</Value>
     </Setting>
   </Settings>
 </SettingsFile>
