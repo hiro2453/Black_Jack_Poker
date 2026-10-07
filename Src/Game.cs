@@ -54,7 +54,16 @@ namespace BJ
             //Dealerの手札2枚配布
             for (int i = 0; i < 2; i++)
             {
-                Label L = new Label();
+                if (i == 1)
+                {
+                    Label Secret = new Label();
+                    Secret.Text = "??";
+                    Secret.AutoSize = true;
+                    Dealer_Card.Controls.Add(Secret);
+                }
+                else
+                {
+                    Label L = new Label();
                 L.Text = d.Please_Card();
                 L.AutoSize = true;
                 Dealer_Card.Controls.Add(L);
@@ -73,6 +82,8 @@ namespace BJ
                 int Total = int.Parse(Dealer_Total_Count.Text);
                 Total = Total + Count;
                 Dealer_Total_Count.Text = Total.ToString();
+                }
+                
             }
 
             string item_0 = d.Mark_remove(User_Card.Controls[0].Text);
@@ -111,7 +122,7 @@ namespace BJ
             }
 
             //最初にAを持っていたとしても、21を超えるまではAを11とカウントする
-            if (Start_A == true && Total < 21)
+            if (Start_A == true && Total > 21)
             {
                 Total -= 10;
                 Dealer_Total_Count.Text = Total.ToString();
@@ -159,6 +170,7 @@ namespace BJ
             int My_Chip = int.Parse(battle_Chip_Count.Text);
             int check = My_Chip * 2;
 
+            // 掛け金上昇のアニメーション
             while (My_Chip != check)
             {
                 My_Chip++;
