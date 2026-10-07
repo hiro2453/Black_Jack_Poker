@@ -1,3 +1,5 @@
+using BJ.Src;
+
 namespace BJ
 {
     internal static class Program
@@ -22,19 +24,20 @@ namespace BJ
             Console.WriteLine("1.タイトル画面から");
             Console.WriteLine("2.チップ確定画面から");
             Console.WriteLine("3.ゲーム画面から（チップは100固定）");
+            Console.WriteLine("4.設定画面から");
+            
             string? Num= Console.ReadLine();
             switch (Num)
             {
                 case "1": Application.Run(new Title());break;
                 case "2": Application.Run(new Chip()); break;
                 case "3": int a = 100; Application.Run(new Game(a)); break;
+                case "4": Application.Run(new Setting());break;
                 default:
                     Console.WriteLine("提示した選択肢内に含まれていない為、タイトルから開始します。");
                     Application.Run(new Title()); break;
             }*/
-            int a = 100;
-            Application.Run(new Game(a));
-
+            Application.Run(new Chip());
         }
     }
 }
