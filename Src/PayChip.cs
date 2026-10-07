@@ -15,6 +15,17 @@ namespace BJ.Src
         public PayChip()
         {
             InitializeComponent();
+            keisan();
         }
+
+        private void keisan()
+        {
+
+        }
+
+        /*
+         関数を作成してそこにintを渡したら画像を変換してくれるようにする
+        初めてだからもう力業で良いじゃない、ゆとり教育させてよ～
+         */
     }
 }
