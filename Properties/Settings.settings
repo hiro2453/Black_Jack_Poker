@@ -11,5 +11,8 @@
     <Setting Name="Rule" Type="System.String" Scope="User">
       <Value Profile="(Default)">ロックファイブ</Value>
     </Setting>
+    <Setting Name="Debt" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

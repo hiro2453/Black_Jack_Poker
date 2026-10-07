@@ -58,5 +58,17 @@ namespace BJ.Properties {
                 this["Rule"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Debt {
+            get {
+                return ((bool)(this["Debt"]));
+            }
+            set {
+                this["Debt"] = value;
+            }
+        }
     }
 }
