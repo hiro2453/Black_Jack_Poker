@@ -22,6 +22,8 @@ namespace BJ
         {
             Chip_before.Text = Properties.Settings.Default.Chip.ToString();
             Chip_After.Text = Properties.Settings.Default.Chip.ToString();
+            Debt_label.Text = Properties.Settings.Default.Debt ? "※借金可能" : "※借金できません";
+
         }
 
         private void Clear_Button_Click(object sender, EventArgs e)
@@ -32,188 +34,45 @@ namespace BJ
 
         private void Max_Button_Click(object sender, EventArgs e)
         {
-            Chip_Count.Text = "100";
-            Enter_Button.Enabled = true;
-        }
-
-        private void Num0_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            if (Count >= 10)
+            if (Properties.Settings.Default.Chip > 1000000)
             {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "0";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "0";
+                Chip_Count.Text = "999999";
                 Enter_Button.Enabled = true;
             }
         }
-
-        private void Num1_Button_Click(object sender, EventArgs e)
+        
+        private void Num_Button_Click(object sender, EventArgs e)
         {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
+            if (Chip_Count.Text.Length <= 6)
             {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "1";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "1";
-            }
-        }
+                Button btn = sender as Button;
+                if (Chip_Count.Text == "0")
+                {
+                    Chip_Count.Text = btn.Text;
+                }
+                else
+                {
+                    Chip_Count.Text = Chip_Count.Text + btn.Text;
+                }
 
-        private void Num2_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
+                if (Chip_Count.Text.Length < Chip_Count.Text.Length)
+                {
+                    
+                }
             }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "2";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "2";
-            }
-        }
 
-        private void Num3_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
+            if (Chip_Count.Text.Length > 6)
             {
-                Chip_Count.Text = "100";
+                if (Properties.Settings.Default.Debt == true)
+                {
+                    Chip_Count.Text = "999999";
+                }
+                else
+                {
+                    Chip_Count.Text = Properties.Settings.Default.Chip.ToString();
+                }
             }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "3";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "3";
-            }
-        }
 
-        private void Num4_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "4";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "5";
-            }
-        }
-
-        private void Num5_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "5";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "5";
-            }
-        }
-
-        private void Num6_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "6";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "6";
-            }
-        }
-
-        private void Num7_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "7";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "7";
-            }
-        }
-
-        private void Num8_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "8";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "8";
-            }
-        }
-
-        private void Num9_Button_Click(object sender, EventArgs e)
-        {
-            int Count = int.Parse(Chip_Count.Text);
-            Enter_Button.Enabled = true;
-            if (Count >= 10)
-            {
-                Chip_Count.Text = "100";
-            }
-            else if (Chip_Count.Text == "0")
-            {
-                Chip_Count.Text = "9";
-            }
-            else
-            {
-                Chip_Count.Text = Chip_Count.Text + "9";
-            }
         }
 
         private void Enter_Button_Click(object sender, EventArgs e)

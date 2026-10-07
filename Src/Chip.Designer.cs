@@ -51,10 +51,12 @@
             tableLayoutPanel8 = new TableLayoutPanel();
             Chip_before = new Label();
             label4 = new Label();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            label2 = new Label();
             Chip_After = new Label();
             label5 = new Label();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            label2 = new Label();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            Debt_label = new Label();
             label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -63,16 +65,17 @@
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             tableLayoutPanel7.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
             SuspendLayout();
             // 
             // Enter_Button
             // 
-            Enter_Button.Anchor = AnchorStyles.Bottom;
             Enter_Button.Cursor = Cursors.Hand;
+            Enter_Button.Dock = DockStyle.Right;
             Enter_Button.Enabled = false;
-            Enter_Button.Location = new Point(74, 225);
+            Enter_Button.Location = new Point(169, 3);
             Enter_Button.Name = "Enter_Button";
-            Enter_Button.Size = new Size(94, 30);
+            Enter_Button.Size = new Size(64, 27);
             Enter_Button.TabIndex = 0;
             Enter_Button.Text = "確定";
             Enter_Button.UseVisualStyleBackColor = true;
@@ -168,7 +171,7 @@
             Num0_Button.TabStop = false;
             Num0_Button.Text = "0";
             Num0_Button.UseVisualStyleBackColor = true;
-            Num0_Button.Click += Num0_Button_Click;
+            Num0_Button.Click += Num_Button_Click;
             // 
             // Clear_Button
             // 
@@ -198,7 +201,7 @@
             Num9_Button.TabStop = false;
             Num9_Button.Text = "9";
             Num9_Button.UseVisualStyleBackColor = true;
-            Num9_Button.Click += Num9_Button_Click;
+            Num9_Button.Click += Num_Button_Click;
             // 
             // Num8_Button
             // 
@@ -213,7 +216,7 @@
             Num8_Button.TabStop = false;
             Num8_Button.Text = "8";
             Num8_Button.UseVisualStyleBackColor = true;
-            Num8_Button.Click += Num8_Button_Click;
+            Num8_Button.Click += Num_Button_Click;
             // 
             // Num7_Button
             // 
@@ -228,7 +231,7 @@
             Num7_Button.TabStop = false;
             Num7_Button.Text = "7";
             Num7_Button.UseVisualStyleBackColor = true;
-            Num7_Button.Click += Num7_Button_Click;
+            Num7_Button.Click += Num_Button_Click;
             // 
             // Num6_Button
             // 
@@ -243,7 +246,7 @@
             Num6_Button.TabStop = false;
             Num6_Button.Text = "6";
             Num6_Button.UseVisualStyleBackColor = true;
-            Num6_Button.Click += Num6_Button_Click;
+            Num6_Button.Click += Num_Button_Click;
             // 
             // Num5_Button
             // 
@@ -258,7 +261,7 @@
             Num5_Button.TabStop = false;
             Num5_Button.Text = "5";
             Num5_Button.UseVisualStyleBackColor = true;
-            Num5_Button.Click += Num5_Button_Click;
+            Num5_Button.Click += Num_Button_Click;
             // 
             // Num4_Button
             // 
@@ -273,7 +276,7 @@
             Num4_Button.TabStop = false;
             Num4_Button.Text = "4";
             Num4_Button.UseVisualStyleBackColor = true;
-            Num4_Button.Click += Num4_Button_Click;
+            Num4_Button.Click += Num_Button_Click;
             // 
             // Num3_Button
             // 
@@ -288,7 +291,7 @@
             Num3_Button.TabStop = false;
             Num3_Button.Text = "3";
             Num3_Button.UseVisualStyleBackColor = true;
-            Num3_Button.Click += Num3_Button_Click;
+            Num3_Button.Click += Num_Button_Click;
             // 
             // Num2_Button
             // 
@@ -303,7 +306,7 @@
             Num2_Button.TabStop = false;
             Num2_Button.Text = "2";
             Num2_Button.UseVisualStyleBackColor = true;
-            Num2_Button.Click += Num2_Button_Click;
+            Num2_Button.Click += Num_Button_Click;
             // 
             // Num1_Button
             // 
@@ -318,7 +321,7 @@
             Num1_Button.TabStop = false;
             Num1_Button.Text = "1";
             Num1_Button.UseVisualStyleBackColor = true;
-            Num1_Button.Click += Num1_Button_Click;
+            Num1_Button.Click += Num_Button_Click;
             // 
             // tableLayoutPanel3
             // 
@@ -326,8 +329,8 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel3.Controls.Add(Chip_Count, 0, 1);
             tableLayoutPanel3.Controls.Add(Chip_Text, 0, 2);
-            tableLayoutPanel3.Controls.Add(Enter_Button, 0, 3);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 0);
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel5, 0, 3);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(188, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -336,6 +339,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 39.6039619F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 21.7821789F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 38.61386F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel3.Size = new Size(242, 258);
             tableLayoutPanel3.TabIndex = 2;
             // 
@@ -349,7 +353,7 @@
             Chip_Count.Size = new Size(236, 40);
             Chip_Count.TabIndex = 1;
             Chip_Count.Text = "0";
-            Chip_Count.TextAlign = ContentAlignment.BottomCenter;
+            Chip_Count.TextAlign = ContentAlignment.MiddleRight;
             Chip_Count.TextChanged += Chip_Change;
             // 
             // Chip_Text
@@ -361,7 +365,7 @@
             Chip_Text.Size = new Size(236, 18);
             Chip_Text.TabIndex = 2;
             Chip_Text.Text = "チップ";
-            Chip_Text.TextAlign = ContentAlignment.BottomCenter;
+            Chip_Text.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel6
             // 
@@ -421,32 +425,6 @@
             label4.Text = "チップ";
             label4.TextAlign = ContentAlignment.BottomLeft;
             // 
-            // tableLayoutPanel7
-            // 
-            tableLayoutPanel7.ColumnCount = 1;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel7.Controls.Add(label2, 0, 0);
-            tableLayoutPanel7.Location = new Point(3, 63);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 1;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.Size = new Size(194, 25);
-            tableLayoutPanel7.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("メイリオ", 16F);
-            label2.Location = new Point(0, 0);
-            label2.Margin = new Padding(0);
-            label2.Name = "label2";
-            label2.Size = new Size(194, 30);
-            label2.TabIndex = 5;
-            label2.Text = "↓";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Chip_After
             // 
             Chip_After.AutoSize = true;
@@ -470,6 +448,59 @@
             label5.TabIndex = 5;
             label5.Text = "チップ";
             label5.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.ColumnCount = 1;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel7.Controls.Add(label2, 0, 0);
+            tableLayoutPanel7.Location = new Point(3, 63);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 1;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+            tableLayoutPanel7.Size = new Size(194, 25);
+            tableLayoutPanel7.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("メイリオ", 16F);
+            label2.Location = new Point(0, 0);
+            label2.Margin = new Padding(0);
+            label2.Name = "label2";
+            label2.Size = new Size(194, 30);
+            label2.TabIndex = 5;
+            label2.Text = "↓";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.33898F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.6610165F));
+            tableLayoutPanel5.Controls.Add(Enter_Button, 1, 0);
+            tableLayoutPanel5.Controls.Add(Debt_label, 0, 0);
+            tableLayoutPanel5.Dock = DockStyle.Fill;
+            tableLayoutPanel5.Location = new Point(3, 222);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Size = new Size(236, 33);
+            tableLayoutPanel5.TabIndex = 3;
+            // 
+            // Debt_label
+            // 
+            Debt_label.AutoSize = true;
+            Debt_label.Dock = DockStyle.Left;
+            Debt_label.Location = new Point(3, 0);
+            Debt_label.Name = "Debt_label";
+            Debt_label.Size = new Size(68, 33);
+            Debt_label.TabIndex = 1;
+            Debt_label.Text = "※借金可能";
+            Debt_label.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -509,6 +540,9 @@
             tableLayoutPanel8.ResumeLayout(false);
             tableLayoutPanel8.PerformLayout();
             tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -542,5 +576,7 @@
         private TableLayoutPanel tableLayoutPanel7;
         private Label label2;
         private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Label Debt_label;
     }
 }
