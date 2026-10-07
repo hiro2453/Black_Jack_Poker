@@ -70,7 +70,7 @@
             Enter_Button.Anchor = AnchorStyles.Bottom;
             Enter_Button.Cursor = Cursors.Hand;
             Enter_Button.Enabled = false;
-            Enter_Button.Location = new Point(58, 197);
+            Enter_Button.Location = new Point(74, 225);
             Enter_Button.Name = "Enter_Button";
             Enter_Button.Size = new Size(94, 30);
             Enter_Button.TabIndex = 0;
@@ -90,14 +90,14 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(439, 271);
+            tableLayoutPanel1.Size = new Size(439, 299);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 42.725174F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 57.274826F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 0, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 1, 0);
@@ -106,7 +106,7 @@
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(433, 236);
+            tableLayoutPanel2.Size = new Size(433, 264);
             tableLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -128,15 +128,16 @@
             tableLayoutPanel4.Controls.Add(Num2_Button, 1, 0);
             tableLayoutPanel4.Controls.Add(Num1_Button, 0, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(25, 3);
-            tableLayoutPanel4.Margin = new Padding(25, 3, 25, 3);
+            tableLayoutPanel4.Location = new Point(10, 0);
+            tableLayoutPanel4.Margin = new Padding(10, 0, 10, 0);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.Padding = new Padding(0, 15, 0, 15);
             tableLayoutPanel4.RowCount = 4;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel4.Size = new Size(166, 230);
+            tableLayoutPanel4.Size = new Size(165, 264);
             tableLayoutPanel4.TabIndex = 2;
             // 
             // Max_Button
@@ -144,10 +145,10 @@
             Max_Button.Cursor = Cursors.Hand;
             Max_Button.Dock = DockStyle.Fill;
             Max_Button.Font = new Font("メイリオ", 9F);
-            Max_Button.Location = new Point(110, 181);
+            Max_Button.Location = new Point(110, 199);
             Max_Button.Margin = new Padding(0, 10, 0, 10);
             Max_Button.Name = "Max_Button";
-            Max_Button.Size = new Size(56, 39);
+            Max_Button.Size = new Size(55, 40);
             Max_Button.TabIndex = 11;
             Max_Button.TabStop = false;
             Max_Button.Text = "MAX";
@@ -159,10 +160,10 @@
             Num0_Button.Cursor = Cursors.Hand;
             Num0_Button.Dock = DockStyle.Fill;
             Num0_Button.Font = new Font("メイリオ", 10F);
-            Num0_Button.Location = new Point(63, 179);
+            Num0_Button.Location = new Point(63, 197);
             Num0_Button.Margin = new Padding(8);
             Num0_Button.Name = "Num0_Button";
-            Num0_Button.Size = new Size(39, 43);
+            Num0_Button.Size = new Size(39, 44);
             Num0_Button.TabIndex = 10;
             Num0_Button.TabStop = false;
             Num0_Button.Text = "0";
@@ -174,10 +175,10 @@
             Clear_Button.Cursor = Cursors.Hand;
             Clear_Button.Dock = DockStyle.Fill;
             Clear_Button.Font = new Font("メイリオ", 9F);
-            Clear_Button.Location = new Point(0, 181);
+            Clear_Button.Location = new Point(0, 199);
             Clear_Button.Margin = new Padding(0, 10, 0, 10);
             Clear_Button.Name = "Clear_Button";
-            Clear_Button.Size = new Size(55, 39);
+            Clear_Button.Size = new Size(55, 40);
             Clear_Button.TabIndex = 9;
             Clear_Button.TabStop = false;
             Clear_Button.Text = "クリア";
@@ -189,10 +190,10 @@
             Num9_Button.Cursor = Cursors.Hand;
             Num9_Button.Dock = DockStyle.Fill;
             Num9_Button.Font = new Font("メイリオ", 10F);
-            Num9_Button.Location = new Point(118, 122);
+            Num9_Button.Location = new Point(118, 139);
             Num9_Button.Margin = new Padding(8);
             Num9_Button.Name = "Num9_Button";
-            Num9_Button.Size = new Size(40, 41);
+            Num9_Button.Size = new Size(39, 42);
             Num9_Button.TabIndex = 8;
             Num9_Button.TabStop = false;
             Num9_Button.Text = "9";
@@ -204,10 +205,10 @@
             Num8_Button.Cursor = Cursors.Hand;
             Num8_Button.Dock = DockStyle.Fill;
             Num8_Button.Font = new Font("メイリオ", 10F);
-            Num8_Button.Location = new Point(63, 122);
+            Num8_Button.Location = new Point(63, 139);
             Num8_Button.Margin = new Padding(8);
             Num8_Button.Name = "Num8_Button";
-            Num8_Button.Size = new Size(39, 41);
+            Num8_Button.Size = new Size(39, 42);
             Num8_Button.TabIndex = 7;
             Num8_Button.TabStop = false;
             Num8_Button.Text = "8";
@@ -219,10 +220,10 @@
             Num7_Button.Cursor = Cursors.Hand;
             Num7_Button.Dock = DockStyle.Fill;
             Num7_Button.Font = new Font("メイリオ", 10F);
-            Num7_Button.Location = new Point(8, 122);
+            Num7_Button.Location = new Point(8, 139);
             Num7_Button.Margin = new Padding(8);
             Num7_Button.Name = "Num7_Button";
-            Num7_Button.Size = new Size(39, 41);
+            Num7_Button.Size = new Size(39, 42);
             Num7_Button.TabIndex = 6;
             Num7_Button.TabStop = false;
             Num7_Button.Text = "7";
@@ -234,10 +235,10 @@
             Num6_Button.Cursor = Cursors.Hand;
             Num6_Button.Dock = DockStyle.Fill;
             Num6_Button.Font = new Font("メイリオ", 10F);
-            Num6_Button.Location = new Point(118, 65);
+            Num6_Button.Location = new Point(118, 81);
             Num6_Button.Margin = new Padding(8);
             Num6_Button.Name = "Num6_Button";
-            Num6_Button.Size = new Size(40, 41);
+            Num6_Button.Size = new Size(39, 42);
             Num6_Button.TabIndex = 5;
             Num6_Button.TabStop = false;
             Num6_Button.Text = "6";
@@ -249,10 +250,10 @@
             Num5_Button.Cursor = Cursors.Hand;
             Num5_Button.Dock = DockStyle.Fill;
             Num5_Button.Font = new Font("メイリオ", 10F);
-            Num5_Button.Location = new Point(63, 65);
+            Num5_Button.Location = new Point(63, 81);
             Num5_Button.Margin = new Padding(8);
             Num5_Button.Name = "Num5_Button";
-            Num5_Button.Size = new Size(39, 41);
+            Num5_Button.Size = new Size(39, 42);
             Num5_Button.TabIndex = 4;
             Num5_Button.TabStop = false;
             Num5_Button.Text = "5";
@@ -264,10 +265,10 @@
             Num4_Button.Cursor = Cursors.Hand;
             Num4_Button.Dock = DockStyle.Fill;
             Num4_Button.Font = new Font("メイリオ", 10F);
-            Num4_Button.Location = new Point(8, 65);
+            Num4_Button.Location = new Point(8, 81);
             Num4_Button.Margin = new Padding(8);
             Num4_Button.Name = "Num4_Button";
-            Num4_Button.Size = new Size(39, 41);
+            Num4_Button.Size = new Size(39, 42);
             Num4_Button.TabIndex = 3;
             Num4_Button.TabStop = false;
             Num4_Button.Text = "4";
@@ -279,10 +280,10 @@
             Num3_Button.Cursor = Cursors.Hand;
             Num3_Button.Dock = DockStyle.Fill;
             Num3_Button.Font = new Font("メイリオ", 10F);
-            Num3_Button.Location = new Point(118, 8);
+            Num3_Button.Location = new Point(118, 23);
             Num3_Button.Margin = new Padding(8);
             Num3_Button.Name = "Num3_Button";
-            Num3_Button.Size = new Size(40, 41);
+            Num3_Button.Size = new Size(39, 42);
             Num3_Button.TabIndex = 2;
             Num3_Button.TabStop = false;
             Num3_Button.Text = "3";
@@ -294,10 +295,10 @@
             Num2_Button.Cursor = Cursors.Hand;
             Num2_Button.Dock = DockStyle.Fill;
             Num2_Button.Font = new Font("メイリオ", 10F);
-            Num2_Button.Location = new Point(63, 8);
+            Num2_Button.Location = new Point(63, 23);
             Num2_Button.Margin = new Padding(8);
             Num2_Button.Name = "Num2_Button";
-            Num2_Button.Size = new Size(39, 41);
+            Num2_Button.Size = new Size(39, 42);
             Num2_Button.TabIndex = 1;
             Num2_Button.TabStop = false;
             Num2_Button.Text = "2";
@@ -309,10 +310,10 @@
             Num1_Button.Cursor = Cursors.Hand;
             Num1_Button.Dock = DockStyle.Fill;
             Num1_Button.Font = new Font("メイリオ", 10F);
-            Num1_Button.Location = new Point(8, 8);
+            Num1_Button.Location = new Point(8, 23);
             Num1_Button.Margin = new Padding(8);
             Num1_Button.Name = "Num1_Button";
-            Num1_Button.Size = new Size(39, 41);
+            Num1_Button.Size = new Size(39, 42);
             Num1_Button.TabIndex = 0;
             Num1_Button.TabStop = false;
             Num1_Button.Text = "1";
@@ -328,14 +329,14 @@
             tableLayoutPanel3.Controls.Add(Enter_Button, 0, 3);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(219, 3);
+            tableLayoutPanel3.Location = new Point(188, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 101F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 51.9379845F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 16.27907F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 31.0077515F));
-            tableLayoutPanel3.Size = new Size(211, 230);
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 157F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 39.6039619F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 21.7821789F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 38.61386F));
+            tableLayoutPanel3.Size = new Size(242, 258);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // Chip_Count
@@ -343,9 +344,9 @@
             Chip_Count.AutoSize = true;
             Chip_Count.Dock = DockStyle.Bottom;
             Chip_Count.Font = new Font("HG明朝B", 32F);
-            Chip_Count.Location = new Point(3, 125);
+            Chip_Count.Location = new Point(3, 157);
             Chip_Count.Name = "Chip_Count";
-            Chip_Count.Size = new Size(205, 43);
+            Chip_Count.Size = new Size(236, 40);
             Chip_Count.TabIndex = 1;
             Chip_Count.Text = "0";
             Chip_Count.TextAlign = ContentAlignment.BottomCenter;
@@ -355,9 +356,9 @@
             // 
             Chip_Text.AutoSize = true;
             Chip_Text.Dock = DockStyle.Bottom;
-            Chip_Text.Location = new Point(3, 171);
+            Chip_Text.Location = new Point(3, 201);
             Chip_Text.Name = "Chip_Text";
-            Chip_Text.Size = new Size(205, 18);
+            Chip_Text.Size = new Size(236, 18);
             Chip_Text.TabIndex = 2;
             Chip_Text.Text = "チップ";
             Chip_Text.TextAlign = ContentAlignment.BottomCenter;
@@ -367,100 +368,105 @@
             tableLayoutPanel6.ColumnCount = 1;
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel6.Controls.Add(tableLayoutPanel8, 0, 0);
+            tableLayoutPanel6.Controls.Add(Chip_After, 0, 2);
+            tableLayoutPanel6.Controls.Add(label5, 0, 3);
             tableLayoutPanel6.Controls.Add(tableLayoutPanel7, 0, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.Location = new Point(3, 3);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 2;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle());
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.Size = new Size(200, 95);
+            tableLayoutPanel6.RowCount = 4;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 60F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 22F));
+            tableLayoutPanel6.Size = new Size(236, 151);
             tableLayoutPanel6.TabIndex = 2;
             // 
             // tableLayoutPanel8
             // 
-            tableLayoutPanel8.ColumnCount = 2;
+            tableLayoutPanel8.ColumnCount = 1;
             tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 145F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel8.Controls.Add(Chip_before, 0, 0);
-            tableLayoutPanel8.Controls.Add(label4, 1, 0);
+            tableLayoutPanel8.Controls.Add(label4, 0, 1);
             tableLayoutPanel8.Dock = DockStyle.Fill;
             tableLayoutPanel8.Location = new Point(3, 3);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 1;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 45F));
-            tableLayoutPanel8.Size = new Size(194, 41);
+            tableLayoutPanel8.RowCount = 2;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel8.Size = new Size(230, 54);
             tableLayoutPanel8.TabIndex = 4;
             // 
             // Chip_before
             // 
-            Chip_before.Dock = DockStyle.Fill;
+            Chip_before.AutoSize = true;
+            Chip_before.Dock = DockStyle.Left;
             Chip_before.Font = new Font("HG明朝B", 30F);
             Chip_before.Location = new Point(0, 0);
             Chip_before.Margin = new Padding(0);
             Chip_before.Name = "Chip_before";
-            Chip_before.Size = new Size(145, 45);
+            Chip_before.Size = new Size(217, 35);
             Chip_before.TabIndex = 2;
-            Chip_before.Text = "999";
+            Chip_before.Text = "1234567890";
             Chip_before.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            label4.Dock = DockStyle.Bottom;
-            label4.Location = new Point(148, 27);
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Left;
+            label4.Location = new Point(3, 35);
             label4.Name = "label4";
-            label4.Size = new Size(77, 18);
+            label4.Size = new Size(44, 20);
             label4.TabIndex = 4;
             label4.Text = "チップ";
             label4.TextAlign = ContentAlignment.BottomLeft;
             // 
             // tableLayoutPanel7
             // 
-            tableLayoutPanel7.ColumnCount = 3;
+            tableLayoutPanel7.ColumnCount = 1;
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 110F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel7.Controls.Add(label2, 0, 0);
-            tableLayoutPanel7.Controls.Add(Chip_After, 1, 0);
-            tableLayoutPanel7.Controls.Add(label5, 2, 0);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(3, 50);
+            tableLayoutPanel7.Location = new Point(3, 63);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel7.Size = new Size(194, 42);
+            tableLayoutPanel7.Size = new Size(194, 25);
             tableLayoutPanel7.TabIndex = 4;
             // 
             // label2
             // 
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("メイリオ", 24F);
-            label2.Location = new Point(10, 0);
-            label2.Margin = new Padding(10, 0, 0, 0);
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("メイリオ", 16F);
+            label2.Location = new Point(0, 0);
+            label2.Margin = new Padding(0);
             label2.Name = "label2";
-            label2.Size = new Size(25, 42);
+            label2.Size = new Size(194, 30);
             label2.TabIndex = 5;
-            label2.Text = "↳";
-            label2.TextAlign = ContentAlignment.MiddleLeft;
+            label2.Text = "↓";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Chip_After
             // 
-            Chip_After.Dock = DockStyle.Fill;
+            Chip_After.AutoSize = true;
+            Chip_After.Dock = DockStyle.Left;
             Chip_After.Font = new Font("HG明朝B", 30F);
-            Chip_After.Location = new Point(35, 0);
+            Chip_After.Location = new Point(0, 91);
             Chip_After.Margin = new Padding(0);
             Chip_After.Name = "Chip_After";
-            Chip_After.Size = new Size(110, 42);
+            Chip_After.Size = new Size(217, 44);
             Chip_After.TabIndex = 3;
-            Chip_After.Text = "999";
+            Chip_After.Text = "9876543210";
             Chip_After.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
-            label5.Dock = DockStyle.Bottom;
-            label5.Location = new Point(145, 18);
+            label5.Dock = DockStyle.Left;
+            label5.Location = new Point(0, 135);
             label5.Margin = new Padding(0);
             label5.Name = "label5";
-            label5.Size = new Size(49, 24);
+            label5.Size = new Size(49, 22);
             label5.TabIndex = 5;
             label5.Text = "チップ";
             label5.TextAlign = ContentAlignment.MiddleRight;
@@ -482,7 +488,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(447, 279);
+            ClientSize = new Size(447, 307);
             Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;
             MinimizeBox = false;
@@ -499,7 +505,9 @@
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
             tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
             tableLayoutPanel8.ResumeLayout(false);
+            tableLayoutPanel8.PerformLayout();
             tableLayoutPanel7.ResumeLayout(false);
             ResumeLayout(false);
         }
