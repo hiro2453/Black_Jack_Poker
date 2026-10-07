@@ -40,7 +40,7 @@
             string Check = Properties.Settings.Default.Rule;
 
             // groupBox1 の中にあるコントロールを順番に確認
-            foreach (Control control in groupBox1.Controls)
+            foreach (Control control in Rule_Group.Controls)
             {
                 // コントロールが RadioButton かつ Checked が true の場合
                 if (control is RadioButton radio && radio.Checked)

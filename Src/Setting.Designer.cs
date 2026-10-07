@@ -32,11 +32,14 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             BestFive_radio = new RadioButton();
             LookFive_radio = new RadioButton();
-            groupBox1 = new GroupBox();
+            Rule_Group = new GroupBox();
             label1 = new Label();
             FiveTarget_radio = new RadioButton();
             Setting_Enter = new Button();
+            checkBox1 = new CheckBox();
+            groupBox1 = new GroupBox();
             statusStrip1.SuspendLayout();
+            Rule_Group.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +63,8 @@
             BestFive_radio.AutoSize = true;
             BestFive_radio.Location = new Point(6, 24);
             BestFive_radio.Name = "BestFive_radio";
-            BestFive_radio.Size = new Size(110, 22);
+            BestFive_radio.Padding = new Padding(0, 0, 0, 5);
+            BestFive_radio.Size = new Size(110, 27);
             BestFive_radio.TabIndex = 1;
             BestFive_radio.Text = "ベストファイブ";
             BestFive_radio.UseVisualStyleBackColor = true;
@@ -72,43 +76,45 @@
             LookFive_radio.AutoSize = true;
             LookFive_radio.Location = new Point(6, 52);
             LookFive_radio.Name = "LookFive_radio";
-            LookFive_radio.Size = new Size(110, 22);
+            LookFive_radio.Padding = new Padding(0, 0, 0, 5);
+            LookFive_radio.Size = new Size(110, 27);
             LookFive_radio.TabIndex = 2;
             LookFive_radio.Text = "ロックファイブ";
             LookFive_radio.UseVisualStyleBackColor = true;
             LookFive_radio.MouseEnter += LookFive_Description;
             LookFive_radio.MouseLeave += Default_Description;
             // 
-            // groupBox1
+            // Rule_Group
             // 
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(FiveTarget_radio);
-            groupBox1.Controls.Add(BestFive_radio);
-            groupBox1.Controls.Add(LookFive_radio);
-            groupBox1.Location = new Point(612, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(160, 150);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "ルール設定";
+            Rule_Group.Controls.Add(label1);
+            Rule_Group.Controls.Add(FiveTarget_radio);
+            Rule_Group.Controls.Add(BestFive_radio);
+            Rule_Group.Controls.Add(LookFive_radio);
+            Rule_Group.Location = new Point(12, 12);
+            Rule_Group.Name = "Rule_Group";
+            Rule_Group.Size = new Size(160, 150);
+            Rule_Group.TabIndex = 3;
+            Rule_Group.TabStop = false;
+            Rule_Group.Text = "全体ルール設定";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point, 128);
             label1.ForeColor = Color.Red;
-            label1.Location = new Point(6, 105);
+            label1.Location = new Point(0, 105);
             label1.Name = "label1";
             label1.Size = new Size(158, 36);
             label1.TabIndex = 4;
-            label1.Text = "※変更した場合、\r\n持ち金30%を徴収します。";
+            label1.Text = "※変更した場合、\r\n所持金30%を徴収します。";
             // 
             // FiveTarget_radio
             // 
             FiveTarget_radio.AutoSize = true;
             FiveTarget_radio.Location = new Point(6, 80);
             FiveTarget_radio.Name = "FiveTarget_radio";
-            FiveTarget_radio.Size = new Size(134, 22);
+            FiveTarget_radio.Padding = new Padding(0, 0, 0, 5);
+            FiveTarget_radio.Size = new Size(134, 27);
             FiveTarget_radio.TabIndex = 3;
             FiveTarget_radio.Text = "ファイブターゲット";
             FiveTarget_radio.UseVisualStyleBackColor = true;
@@ -127,14 +133,35 @@
             Setting_Enter.UseVisualStyleBackColor = true;
             Setting_Enter.Click += Setting_OK;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(6, 24);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(89, 22);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "checkBox1";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkBox1);
+            groupBox1.Location = new Point(12, 192);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(200, 100);
+            groupBox1.TabIndex = 6;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "ローカルルール";
+            // 
             // Setting
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(784, 461);
-            Controls.Add(Setting_Enter);
             Controls.Add(groupBox1);
+            Controls.Add(Setting_Enter);
+            Controls.Add(Rule_Group);
             Controls.Add(statusStrip1);
             MaximizeBox = false;
             MaximumSize = new Size(800, 500);
@@ -145,6 +172,8 @@
             Text = "Setting";
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            Rule_Group.ResumeLayout(false);
+            Rule_Group.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -157,9 +186,11 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private RadioButton BestFive_radio;
         private RadioButton LookFive_radio;
-        private GroupBox groupBox1;
+        private GroupBox Rule_Group;
         private Label label1;
         private RadioButton FiveTarget_radio;
         private Button Setting_Enter;
+        private CheckBox checkBox1;
+        private GroupBox groupBox1;
     }
 }
