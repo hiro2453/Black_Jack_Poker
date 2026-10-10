@@ -36,21 +36,30 @@ namespace BJ.Src
             name.Controls.Clear();
             int Width = 20;
             int Width_1 = 0;
+            int Widht_conma = 0;
             int height = 0;
+            int height_conma = 0;
             int top = 0;
-            int a = 0;
+            int top_conma = 35;
             double[] tests = { 1.05, 1.1, 1.15, 1.2, 1.5, 2, 5, 50, 300 };
             string chip_text = (Math.Ceiling(chip * tests[num]) - chip).ToString();
+            chip_text = new string(chip_text.Reverse().ToArray());
+            Console.WriteLine(chip_text);
 
-            for (int i = 1; i < chip_text.Length; i++)
+            if (chip_text.Length > 3)
             {
-                if (i % 3 == 0)
+                for (int i = chip_text.Length; i > 0; i--)
                 {
-                    a++;
-                    Console.WriteLine($"{name.Name}のコンマの数は{a}");
-                    chip_text = chip_text.Insert(i, ",");
+                
+                    if (i % 3 == 0)
+                    {
+                        chip_text = chip_text.Insert(i, ",");
+                    }
                 }
+
             }
+            chip_text = new string(chip_text.Reverse().ToArray());
+            Console.WriteLine($">>{chip_text}");
 
             foreach (char item in chip_text)
             {
@@ -60,12 +69,16 @@ namespace BJ.Src
                 if (num < 6)
                 {
                     pic.Size = new Size(Width, 50);
+                    height_conma = 9;
                 }
                 else
                 {
                     height = 20;
                     Width_1 = 30;
+                    Widht_conma = 5;
+                    height_conma = -5;
                     top = 15;
+                    top_conma = 45;
                     pic.Size = new Size(Width + 10, 50);
                     pic.Margin = new Padding(1, 25, 1, 0);
                 }
@@ -105,6 +118,8 @@ namespace BJ.Src
                         pic.Image = Properties.Resources._9;
                         break;
                     case ',':
+                        pic.Size = new Size(11 + Widht_conma, height_conma + height);
+                        pic.Margin = new Padding(1, top + top_conma, 1, 0);
                         pic.Image = Properties.Resources.Comma;
                         break;
                     case '円':
