@@ -77,10 +77,10 @@ namespace BJ
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            int test = int.Parse(Chip_Count.Text);
+            int battle_chip = int.Parse(Chip_Count.Text);
             Properties.Settings.Default.Save();
             // 遷移先の Game フォームを生成
-            Game GameForm = new Game(test);
+            Game GameForm = new Game(battle_chip);
 
             // Game フォームを表示
             GameForm.Show();
