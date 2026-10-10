@@ -59,6 +59,7 @@ namespace BJ.Src
 
             }
             chip_text = new string(chip_text.Reverse().ToArray());
+            chip_text = chip_text.Insert(chip_text.Length, "円");
             Console.WriteLine($">>{chip_text}");
 
             foreach (char item in chip_text)
@@ -74,7 +75,7 @@ namespace BJ.Src
                 else
                 {
                     height = 20;
-                    Width_1 = 30;
+                    Width_1 = 10;
                     Widht_conma = 5;
                     height_conma = -5;
                     top = 15;
@@ -123,6 +124,8 @@ namespace BJ.Src
                         pic.Image = Properties.Resources.Comma;
                         break;
                     case '円':
+                        pic.Size = new Size(Width + 10, height+40);
+                        pic.Margin = new Padding(1, top + 5, 1, 0);
                         pic.Image = Properties.Resources.en;
                         break;
 
