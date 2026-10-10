@@ -37,7 +37,7 @@ namespace BJ
                     Console.WriteLine("提示した選択肢内に含まれていない為、タイトルから開始します。");
                     Application.Run(new Title()); break;
             }*/
-            Application.Run(new PayChip());
+            Application.Run(new PayChip(5600));
         }
     }
 }
