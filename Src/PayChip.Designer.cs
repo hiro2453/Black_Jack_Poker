@@ -47,7 +47,6 @@
             pictureBox6 = new PictureBox();
             No_label = new Label();
             flowLayoutPanel0 = new FlowLayoutPanel();
-            pictureBox11 = new PictureBox();
             tableLayoutPanel5 = new TableLayoutPanel();
             flowLayoutPanel8 = new FlowLayoutPanel();
             flowLayoutPanel7 = new FlowLayoutPanel();
@@ -56,7 +55,6 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             tableLayoutPanel4 = new TableLayoutPanel();
-            pictureBox12 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -67,14 +65,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             tableLayoutPanel5.SuspendLayout();
-            flowLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -312,17 +307,6 @@
             flowLayoutPanel0.Size = new Size(172, 51);
             flowLayoutPanel0.TabIndex = 8;
             // 
-            // pictureBox11
-            // 
-            pictureBox11.Image = Properties.Resources.Comma;
-            pictureBox11.Location = new Point(334, 55);
-            pictureBox11.Margin = new Padding(1, 55, 1, 0);
-            pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(20, 20);
-            pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox11.TabIndex = 0;
-            pictureBox11.TabStop = false;
-            // 
             // tableLayoutPanel5
             // 
             tableLayoutPanel5.ColumnCount = 1;
@@ -367,8 +351,6 @@
             // 
             // flowLayoutPanel6
             // 
-            flowLayoutPanel6.Controls.Add(pictureBox12);
-            flowLayoutPanel6.Controls.Add(pictureBox11);
             flowLayoutPanel6.Dock = DockStyle.Fill;
             flowLayoutPanel6.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel6.Location = new Point(3, 34);
@@ -411,6 +393,7 @@
             // 
             // tableLayoutPanel4
             // 
+            tableLayoutPanel4.BackColor = Color.Black;
             tableLayoutPanel4.ColumnCount = 1;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.Controls.Add(tableLayoutPanel1, 0, 0);
@@ -425,28 +408,21 @@
             tableLayoutPanel4.Size = new Size(792, 449);
             tableLayoutPanel4.TabIndex = 2;
             // 
-            // pictureBox12
-            // 
-            pictureBox12.Image = Properties.Resources._5;
-            pictureBox12.Location = new Point(356, 25);
-            pictureBox12.Margin = new Padding(1, 25, 1, 0);
-            pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(30, 50);
-            pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox12.TabIndex = 1;
-            pictureBox12.TabStop = false;
-            // 
             // PayChip
             // 
-            AutoScaleDimensions = new SizeF(7F, 18F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            AutoSize = true;
+            BackColor = Color.Black;
             ClientSize = new Size(792, 449);
             Controls.Add(tableLayoutPanel4);
             MaximizeBox = false;
+            MaximumSize = new Size(800, 480);
             MdiChildrenMinimizedAnchorBottom = false;
             MinimumSize = new Size(800, 480);
             Name = "PayChip";
             ShowIcon = false;
+            SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PayChip";
             TopMost = true;
@@ -462,14 +438,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             tableLayoutPanel5.ResumeLayout(false);
-            flowLayoutPanel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ResumeLayout(false);
         }
 
@@ -501,7 +474,5 @@
         private FlowLayoutPanel flowLayoutPanel8;
         private FlowLayoutPanel flowLayoutPanel7;
         private FlowLayoutPanel flowLayoutPanel6;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
     }
 }

@@ -9,6 +9,7 @@ namespace BJ.Src
         public PayChip(int chip)
         {
             InitializeComponent();
+            Console.WriteLine($"{chip}チップを受け取りました。");
             panels = new FlowLayoutPanel[]
             {
                 flowLayoutPanel0,
@@ -44,23 +45,27 @@ namespace BJ.Src
             double[] tests = { 1.05, 1.1, 1.15, 1.2, 1.5, 2, 5, 50, 300 };
             string chip_text = (Math.Ceiling(chip * tests[num]) - chip).ToString();
             chip_text = new string(chip_text.Reverse().ToArray());
-            Console.WriteLine(chip_text);
 
             if (chip_text.Length > 3)
             {
                 for (int i = chip_text.Length; i > 0; i--)
                 {
-                
                     if (i % 3 == 0)
                     {
                         chip_text = chip_text.Insert(i, ",");
                     }
                 }
-
             }
+
             chip_text = new string(chip_text.Reverse().ToArray());
-            chip_text = chip_text.Insert(chip_text.Length, "円");
+            if (chip_text.Length % 4 == 0)
+            {
+                //0番目の文字（コンマ）を削除
+                chip_text = chip_text.Remove(0, 1);
+            }
             Console.WriteLine($">>{chip_text}");
+            chip_text = chip_text.Insert(chip_text.Length, "円");
+            
 
             foreach (char item in chip_text)
             {
@@ -69,11 +74,13 @@ namespace BJ.Src
 
                 if (num < 6)
                 {
-                    pic.Size = new Size(Width, 50);
+                    //ワンペア～フルハウス
+                    pic.Size = new Size(18, 50);
                     height_conma = 9;
                 }
                 else
                 {
+                    //フォーカード～ロイヤルストレートフラッシュ
                     height = 20;
                     Width_1 = 10;
                     Widht_conma = 5;
@@ -90,8 +97,8 @@ namespace BJ.Src
                         pic.Image = Properties.Resources._0;
                         break;
                     case '1':
-                        pic.Size = new Size(Width + Width_1, height + 30);
-                        pic.Margin = new Padding(1, 10 + top, 1, 0);
+                        pic.Size = new Size(Width + Width_1, height + 26);
+                        pic.Margin = new Padding(1, 11 + top, 1, 0);
                         pic.Image = Properties.Resources._1;
                         break;
                     case '2':
