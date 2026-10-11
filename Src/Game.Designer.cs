@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             User_Card_Grid = new GroupBox();
             User_Card = new FlowLayoutPanel();
             Dealer_Card_Grid = new GroupBox();
@@ -330,6 +331,7 @@
             Controls.Add(Dealer_Card_Grid);
             Controls.Add(User_Card_Grid);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             ImeMode = ImeMode.Off;
             MaximizeBox = false;
             MaximumSize = new Size(800, 500);

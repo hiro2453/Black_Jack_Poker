@@ -10,11 +10,12 @@ namespace BJ
         Deck d = new Deck();
         bool Start_AA = false;
         bool Start_A = false;
-        int chip = 0;
+        int Paychip = 0;
         public Game(int chip)
         {
             InitializeComponent();
             Start(chip);
+            Paychip = chip;
         }
 
         public void Start(int vs_chip)
@@ -185,7 +186,8 @@ namespace BJ
 
         private void Battle_Chip_Count_Click(object sender, EventArgs e)
         {
-            PayChip paypay = new PayChip(chip);
+            PayChip paypay = new PayChip(int.Parse(battle_Chip_Count.Text));
+            paypay.Show();
         }
 
         private void Battale()
