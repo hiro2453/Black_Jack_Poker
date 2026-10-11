@@ -9,8 +9,13 @@
     <RepositoryUrl>https://github.com/hiro2453/Black_Jack_Poker</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <PackageIcon>アセット 15.png</PackageIcon>
+    <PackageIcon>アイコン.jpg</PackageIcon>
+    <ApplicationIcon>img\icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="img\icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="sound\" />
@@ -37,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="img\アセット 15.png">
+    <None Update="img\アイコン.jpg">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
