@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BJ.Src
 {
-    public partial class Rresult : Form
+    public partial class Result : Form
     {
-        public Rresult()
+        public Result()
         {
             InitializeComponent();
         }
