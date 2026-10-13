@@ -14,26 +14,6 @@
 
         }
 
-        private void BestFive_Description(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "何枚になっても最終的に使えるのは手札の中の5枚のみ";
-        }
-
-        private void LookFive_Description(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "手札を5枚までしか持てません。まだ引く場合は手札から1枚捨てて引かないといけません。";
-        }
-
-        private void FiveTarget_Description(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "バーストせずに手札に5枚集めれたら勝ちです";
-        }
-
-        private void Default_Description(object sender, EventArgs e)
-        {
-            toolStripStatusLabel1.Text = "選択項目にマウスをかざすとここに説明が表示されます";
-        }
-
         private void Setting_OK(object sender, EventArgs e)
         {
             RadioButton selectedRadio = null;
@@ -58,7 +38,7 @@
             else
             {
                 double sanmaruOFF = Properties.Settings.Default.Chip * 0.6;
-                DialogResult result = MessageBox.Show($"ルールが変更されました。\n都合よくルールを変更して所持金を増やす行為を\n防ぐため所持金から60%引かせていただきます。よろしいですか？\n\n現在の所持金:{Properties.Settings.Default.Chip}\n支払い後:{(int)sanmaruOFF}","不正防止のための確認",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show($"ルールが変更されました。\n都合よくルールを変更して所持金を増やす行為を\n防ぐため所持金から60%引かせていただきます。よろしいですか？\n\n現在の所持金:{Properties.Settings.Default.Chip}\n支払い後:{(int)sanmaruOFF}", "不正防止のための確認", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     if (sanmaruOFF < 0)
@@ -78,7 +58,7 @@
                         }
 
                         Properties.Settings.Default.Save();
-                        MessageBox.Show($"設定を保存しました！\n\n現在の所持金：{Properties.Settings.Default.Chip}","支払い完了",MessageBoxButtons.OK,MessageBoxIcon.Question);
+                        MessageBox.Show($"設定を保存しました！\n\n現在の所持金：{Properties.Settings.Default.Chip}", "支払い完了", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                         Title title = new Title();
 
@@ -88,6 +68,31 @@
                     }
                 }
             }
+        }
+
+        private void BestFive_Desc(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "何枚になっても最終的に使えるのは手札の中の5枚のみ";
+        }
+
+        private void LookFive_Desc(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "手札を5枚までしか持てません。まだ引く場合は手札から1枚捨てて引かないといけません。";
+        }
+
+        private void FiveTarget_Desc(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "バーストせずに手札に5枚集めれたら勝ちです";
+        }
+
+        private void Joker_desc(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "バーストせずに手札に5枚集めれたら勝ちです";
+        }
+
+        private void Window_Hover(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = "項目にマウスをかざすとここに説明が表示されます。";
         }
     }
 }

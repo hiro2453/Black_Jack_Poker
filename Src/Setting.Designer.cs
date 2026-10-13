@@ -38,6 +38,7 @@
             Setting_Enter = new Button();
             checkBox1 = new CheckBox();
             groupBox1 = new GroupBox();
+            checkBox2 = new CheckBox();
             statusStrip1.SuspendLayout();
             Rule_Group.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -46,9 +47,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 438);
+            statusStrip1.Location = new Point(0, 446);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(784, 23);
+            statusStrip1.Size = new Size(792, 23);
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -68,8 +69,7 @@
             BestFive_radio.TabIndex = 1;
             BestFive_radio.Text = "ベストファイブ";
             BestFive_radio.UseVisualStyleBackColor = true;
-            BestFive_radio.MouseEnter += BestFive_Description;
-            BestFive_radio.MouseLeave += Default_Description;
+            BestFive_radio.MouseEnter += BestFive_Desc;
             // 
             // LookFive_radio
             // 
@@ -81,8 +81,7 @@
             LookFive_radio.TabIndex = 2;
             LookFive_radio.Text = "ロックファイブ";
             LookFive_radio.UseVisualStyleBackColor = true;
-            LookFive_radio.MouseEnter += LookFive_Description;
-            LookFive_radio.MouseLeave += Default_Description;
+            LookFive_radio.MouseEnter += LookFive_Desc;
             // 
             // Rule_Group
             // 
@@ -118,8 +117,7 @@
             FiveTarget_radio.TabIndex = 3;
             FiveTarget_radio.Text = "ファイブターゲット";
             FiveTarget_radio.UseVisualStyleBackColor = true;
-            FiveTarget_radio.MouseEnter += FiveTarget_Description;
-            FiveTarget_radio.MouseLeave += Default_Description;
+            FiveTarget_radio.MouseEnter += FiveTarget_Desc;
             // 
             // Setting_Enter
             // 
@@ -138,13 +136,15 @@
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(6, 24);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(89, 22);
+            checkBox1.Size = new Size(87, 22);
             checkBox1.TabIndex = 5;
-            checkBox1.Text = "checkBox1";
+            checkBox1.Text = "ジョーカー";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.MouseEnter += Joker_desc;
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Location = new Point(12, 192);
             groupBox1.Name = "groupBox1";
@@ -153,12 +153,22 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "ローカルルール";
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(6, 52);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(87, 22);
+            checkBox2.TabIndex = 6;
+            checkBox2.Text = "ジョーカー";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Setting
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
             Controls.Add(groupBox1);
             Controls.Add(Setting_Enter);
             Controls.Add(Rule_Group);
@@ -170,6 +180,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Setting";
+            MouseHover += Window_Hover;
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
             Rule_Group.ResumeLayout(false);
@@ -192,5 +203,6 @@
         private Button Setting_Enter;
         private CheckBox checkBox1;
         private GroupBox groupBox1;
+        private CheckBox checkBox2;
     }
 }
