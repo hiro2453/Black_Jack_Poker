@@ -69,39 +69,39 @@ namespace BJ
                 else
                 {
                     Label L = new Label();
-                L.Text = d.Please_Card();
-                L.AutoSize = true;
-                Dealer_Card.Controls.Add(L);
+                    L.Text = d.Please_Card();
+                    L.AutoSize = true;
+                    Dealer_Card.Controls.Add(L);
 
-                //合計値計算
-                string check = d.Mark_remove(L.Text);
-                int Count = 0;
-                if (check == "A" || check == "J" || check == "Q" || check == "K")
-                {
-                    Count = d.Start_BlackJackValue(check);
+                    //合計値計算
+                    string check = d.Mark_remove(L.Text);
+                    int Count = 0;
+                    if (check == "A" || check == "J" || check == "Q" || check == "K")
+                    {
+                        Count = d.Start_BlackJackValue(check);
+                    }
+                    else
+                    {
+                        Count = int.Parse(check);
+                    }
+                    int Total = int.Parse(Dealer_Total_Count.Text);
+                    Total = Total + Count;
+                    Dealer_Total_Count.Text = Total.ToString();
                 }
-                else
-                {
-                    Count = int.Parse(check);
-                }
-                int Total = int.Parse(Dealer_Total_Count.Text);
-                Total = Total + Count;
-                Dealer_Total_Count.Text = Total.ToString();
-                }
-                
+
             }
 
             string item_0 = d.Mark_remove(User_Card.Controls[0].Text);
             string item_1 = d.Mark_remove(User_Card.Controls[1].Text);
-            if (item_0 == "A" && item_1 == "A")
-            {
-                Start_AA = true;
-                Console.WriteLine("どちらもAです");
-            }
             if (item_0 == "A" || item_1 == "A")
             {
                 Start_A = true;
                 Console.WriteLine("片方Aです");
+            }
+            if (item_0 == "A" && item_1 == "A")
+            {
+                Start_AA = true;
+                Console.WriteLine("どちらもAです");
             }
         }
 
@@ -184,7 +184,7 @@ namespace BJ
             }
 
             Card_pull();
-            
+
         }
 
         private void Battle_Chip_Count_Click(object sender, EventArgs e)
@@ -206,7 +206,7 @@ namespace BJ
         private async Task Action_anime(char id)
         {
             bool DD_Check = doubleDown_Button.Enabled;
-            hit_Button.Enabled= false;
+            hit_Button.Enabled = false;
             stand_Button.Enabled = false;
             doubleDown_Button.Enabled = false;
             PictureBox pic = new PictureBox();
@@ -220,7 +220,7 @@ namespace BJ
                     break;
 
                 case 's':
-                    pic.Image= Properties.Resources.Stand_text;
+                    pic.Image = Properties.Resources.Stand_text;
                     break;
 
                 case 'd':
@@ -254,28 +254,16 @@ namespace BJ
             doubleDown_Button.Enabled = DD_Check;
         }
 
-        private async Task Burst_anime()
+        private async Task Display_Count()
         {
-            hit_Button.Visible = false;
-            stand_Button.Visible = false;
-            doubleDown_Button.Visible = false;
             Num_Panel.Controls.Clear();
-
-            PictureBox pic = new PictureBox
-            {
-                Size = new Size(180, 50),
-                Location = new Point(190, -60),
-                SizeMode = PictureBoxSizeMode.Zoom,
-                Image = Properties.Resources.Burst_text
-            };
-
             foreach (char c in User_Total_Count.Text)
             {
                 PictureBox picnum = new PictureBox
                 {
                     SizeMode = PictureBoxSizeMode.AutoSize,
                     Dock = DockStyle.Left,
-                    Padding = Padding.Empty
+                    Margin = new Padding(3, 0, 0, 0)
                 };
 
                 switch (c)
@@ -316,8 +304,26 @@ namespace BJ
             }
 
             Table.Visible = true;
+        }
+
+        private async Task Burst_anime()
+        {
+            hit_Button.Visible = false;
+            stand_Button.Visible = false;
+            doubleDown_Button.Visible = false;
+
+            PictureBox pic = new PictureBox
+            {
+                Size = new Size(180, 50),
+                Location = new Point(190, -60),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Image = Properties.Resources.Burst_text
+            };
+
             this.Controls.Add(pic);
             pic.BringToFront();
+
+            await Display_Count();
 
             /* アニメーション */
             int x = 305;
@@ -339,14 +345,89 @@ namespace BJ
             }
 
             /* アニメーション終わり */
-
             pic.Hide();
+            Table.Hide();
 
+            await test();
+
+            Result Re = new Result();
+            Re.Show();
+            this.Hide();
+        }
+
+        private async Task test()
+        {
+            Table2.Visible = true;
+            await chip_display(battle_Chip_Count.Text);
+            int kake_chip = int.Parse(battle_Chip_Count.Text);
+            Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
+
+            await Task.Delay(1000);
+
+            for (int i = 9; i > -1; i--)
+            {
+                kake_chip = (int)(kake_chip * (i * 0.1));
+                await chip_display(kake_chip.ToString());
+                await Task.Delay(100);
+            }
+
+            battle_Chip_Count.Text = "0";
+        }
+
+        private async Task chip_display(string chip)
+        {
+            Chip_count_panel.Controls.Clear();
+
+            foreach (char c in chip)
+            {
+                PictureBox picnum = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.AutoSize,
+                    Dock = DockStyle.Left,
+                    Margin = new Padding(3, 0, 0, 0)
+                };
+
+                switch (c)
+                {
+                    case '0':
+                        picnum.Image = Properties.Resources._00;
+                        break;
+                    case '1':
+                        picnum.Image = Properties.Resources._01;
+                        break;
+                    case '2':
+                        picnum.Image = Properties.Resources._02;
+                        break;
+                    case '3':
+                        picnum.Image = Properties.Resources._03;
+                        break;
+                    case '4':
+                        picnum.Image = Properties.Resources._04;
+                        break;
+                    case '5':
+                        picnum.Image = Properties.Resources._05;
+                        break;
+                    case '6':
+                        picnum.Image = Properties.Resources._06;
+                        break;
+                    case '7':
+                        picnum.Image = Properties.Resources._07;
+                        break;
+                    case '8':
+                        picnum.Image = Properties.Resources._08;
+                        break;
+                    case '9':
+                        picnum.Image = Properties.Resources._09;
+                        break;
+                }
+
+                Chip_count_panel.Controls.Add(picnum);
+            }
         }
 
         private async void test_Click(object sender, EventArgs e)
         {
-            await Burst_anime();
+            test();
         }
     }
 }

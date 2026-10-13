@@ -55,6 +55,10 @@
             Num_10 = new PictureBox();
             Num_01 = new PictureBox();
             Table = new TableLayoutPanel();
+            Table2 = new TableLayoutPanel();
+            pictureBox3 = new PictureBox();
+            Chip_count_panel = new FlowLayoutPanel();
+            pictureBox8 = new PictureBox();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -67,6 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)Num_10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Num_01).BeginInit();
             Table.SuspendLayout();
+            Table2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            Chip_count_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -329,7 +337,7 @@
             // 
             pictureBox2.Dock = DockStyle.Bottom;
             pictureBox2.Image = Properties.Resources.Total_value;
-            pictureBox2.Location = new Point(0, 40);
+            pictureBox2.Location = new Point(0, 36);
             pictureBox2.Margin = new Padding(0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(110, 28);
@@ -345,14 +353,15 @@
             Num_Panel.Location = new Point(110, 0);
             Num_Panel.Margin = new Padding(0);
             Num_Panel.Name = "Num_Panel";
-            Num_Panel.Size = new Size(115, 65);
+            Num_Panel.Size = new Size(115, 64);
             Num_Panel.TabIndex = 17;
             // 
             // Num_10
             // 
             Num_10.Dock = DockStyle.Left;
             Num_10.Image = Properties.Resources._02;
-            Num_10.Location = new Point(3, 3);
+            Num_10.Location = new Point(0, 0);
+            Num_10.Margin = new Padding(0);
             Num_10.Name = "Num_10";
             Num_10.Size = new Size(45, 63);
             Num_10.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -364,7 +373,8 @@
             Num_01.BackColor = SystemColors.ControlLight;
             Num_01.Dock = DockStyle.Left;
             Num_01.Image = Properties.Resources._08;
-            Num_01.Location = new Point(54, 3);
+            Num_01.Location = new Point(48, 0);
+            Num_01.Margin = new Padding(3, 0, 0, 0);
             Num_01.Name = "Num_01";
             Num_01.Size = new Size(44, 63);
             Num_01.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -379,14 +389,65 @@
             Table.ColumnStyles.Add(new ColumnStyle());
             Table.Controls.Add(pictureBox2, 0, 0);
             Table.Controls.Add(Num_Panel, 1, 0);
-            Table.Location = new Point(289, 198);
+            Table.Location = new Point(290, 200);
             Table.Margin = new Padding(0);
             Table.Name = "Table";
             Table.RowCount = 1;
             Table.RowStyles.Add(new RowStyle());
-            Table.Size = new Size(225, 68);
+            Table.Size = new Size(225, 64);
             Table.TabIndex = 18;
             Table.Visible = false;
+            // 
+            // Table2
+            // 
+            Table2.AutoSize = true;
+            Table2.ColumnCount = 1;
+            Table2.ColumnStyles.Add(new ColumnStyle());
+            Table2.Controls.Add(pictureBox3, 0, 0);
+            Table2.Controls.Add(Chip_count_panel, 0, 1);
+            Table2.Location = new Point(200, 170);
+            Table2.Margin = new Padding(0);
+            Table2.Name = "Table2";
+            Table2.RowCount = 2;
+            Table2.RowStyles.Add(new RowStyle());
+            Table2.RowStyles.Add(new RowStyle());
+            Table2.Size = new Size(397, 96);
+            Table2.TabIndex = 19;
+            Table2.Visible = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Dock = DockStyle.Fill;
+            pictureBox3.Image = Properties.Resources.battle_Chip_text;
+            pictureBox3.Location = new Point(3, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(391, 28);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 16;
+            pictureBox3.TabStop = false;
+            // 
+            // Chip_count_panel
+            // 
+            Chip_count_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Chip_count_panel.AutoSize = true;
+            Chip_count_panel.Controls.Add(pictureBox8);
+            Chip_count_panel.Location = new Point(176, 34);
+            Chip_count_panel.Margin = new Padding(0);
+            Chip_count_panel.Name = "Chip_count_panel";
+            Chip_count_panel.Size = new Size(45, 62);
+            Chip_count_panel.TabIndex = 17;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Dock = DockStyle.Left;
+            pictureBox8.Image = Properties.Resources._02;
+            pictureBox8.Location = new Point(0, 0);
+            pictureBox8.Margin = new Padding(0);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(45, 62);
+            pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox8.TabIndex = 22;
+            pictureBox8.TabStop = false;
             // 
             // Game
             // 
@@ -394,7 +455,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
+            Controls.Add(Table2);
             Controls.Add(Table);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
@@ -430,6 +492,12 @@
             ((System.ComponentModel.ISupportInitialize)Num_10).EndInit();
             ((System.ComponentModel.ISupportInitialize)Num_01).EndInit();
             Table.ResumeLayout(false);
+            Table2.ResumeLayout(false);
+            Table2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            Chip_count_panel.ResumeLayout(false);
+            Chip_count_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -462,5 +530,9 @@
         private PictureBox Num_10;
         private PictureBox Num_01;
         private TableLayoutPanel Table;
+        private TableLayoutPanel Table2;
+        private PictureBox pictureBox3;
+        private FlowLayoutPanel Chip_count_panel;
+        private PictureBox pictureBox8;
     }
 }
