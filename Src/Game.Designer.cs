@@ -50,6 +50,11 @@
             tableLayoutPanel5 = new TableLayoutPanel();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            Num_Panel = new FlowLayoutPanel();
+            Num_10 = new PictureBox();
+            Num_01 = new PictureBox();
+            Table = new TableLayoutPanel();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -57,6 +62,11 @@
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            Num_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Num_10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Num_01).BeginInit();
+            Table.SuspendLayout();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -315,13 +325,77 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Dock = DockStyle.Bottom;
+            pictureBox2.Image = Properties.Resources.Total_value;
+            pictureBox2.Location = new Point(0, 40);
+            pictureBox2.Margin = new Padding(0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(110, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 16;
+            pictureBox2.TabStop = false;
+            // 
+            // Num_Panel
+            // 
+            Num_Panel.Controls.Add(Num_10);
+            Num_Panel.Controls.Add(Num_01);
+            Num_Panel.Dock = DockStyle.Top;
+            Num_Panel.Location = new Point(110, 0);
+            Num_Panel.Margin = new Padding(0);
+            Num_Panel.Name = "Num_Panel";
+            Num_Panel.Size = new Size(115, 65);
+            Num_Panel.TabIndex = 17;
+            // 
+            // Num_10
+            // 
+            Num_10.Dock = DockStyle.Left;
+            Num_10.Image = Properties.Resources._02;
+            Num_10.Location = new Point(3, 3);
+            Num_10.Name = "Num_10";
+            Num_10.Size = new Size(45, 63);
+            Num_10.SizeMode = PictureBoxSizeMode.AutoSize;
+            Num_10.TabIndex = 17;
+            Num_10.TabStop = false;
+            // 
+            // Num_01
+            // 
+            Num_01.BackColor = SystemColors.ControlLight;
+            Num_01.Dock = DockStyle.Left;
+            Num_01.Image = Properties.Resources._08;
+            Num_01.Location = new Point(54, 3);
+            Num_01.Name = "Num_01";
+            Num_01.Size = new Size(44, 63);
+            Num_01.SizeMode = PictureBoxSizeMode.AutoSize;
+            Num_01.TabIndex = 18;
+            Num_01.TabStop = false;
+            // 
+            // Table
+            // 
+            Table.AutoSize = true;
+            Table.ColumnCount = 2;
+            Table.ColumnStyles.Add(new ColumnStyle());
+            Table.ColumnStyles.Add(new ColumnStyle());
+            Table.Controls.Add(pictureBox2, 0, 0);
+            Table.Controls.Add(Num_Panel, 1, 0);
+            Table.Location = new Point(289, 198);
+            Table.Margin = new Padding(0);
+            Table.Name = "Table";
+            Table.RowCount = 1;
+            Table.RowStyles.Add(new RowStyle());
+            Table.Size = new Size(225, 68);
+            Table.TabIndex = 18;
+            Table.Visible = false;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
+            Controls.Add(Table);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel5);
@@ -338,7 +412,7 @@
             MinimumSize = new Size(800, 500);
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ゲーム開始　1回目";
+            Text = "ゲーム開始";
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();
             Dealer_Card_Grid.ResumeLayout(false);
@@ -350,6 +424,12 @@
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            Num_Panel.ResumeLayout(false);
+            Num_Panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Num_10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Num_01).EndInit();
+            Table.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -377,5 +457,10 @@
         private TableLayoutPanel tableLayoutPanel5;
         private Button button1;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private FlowLayoutPanel Num_Panel;
+        private PictureBox Num_10;
+        private PictureBox Num_01;
+        private TableLayoutPanel Table;
     }
 }

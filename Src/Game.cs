@@ -1,6 +1,7 @@
 ﻿using BJ.Src;
 using System.Numerics;
 using System.Resources;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace BJ
@@ -8,15 +9,17 @@ namespace BJ
     public partial class Game : Form
     {
         Deck d = new Deck();
+        private Image[] ImageCache;
         bool Start_AA = false;
         bool Start_A = false;
-        int Paychip = 0;
+        readonly int Paychip = 0;
         public Game(int chip)
         {
             InitializeComponent();
             Start(chip);
             Paychip = chip;
         }
+
 
         public void Start(int vs_chip)
         {
@@ -256,22 +259,70 @@ namespace BJ
             hit_Button.Visible = false;
             stand_Button.Visible = false;
             doubleDown_Button.Visible = false;
-            PictureBox pic = new PictureBox();
-            PictureBox back = new PictureBox();
-            back.Image = Properties.Resources.BackGround_LOSE;
-            back.Dock = DockStyle.Fill;
-            this.Controls.Add(back);
-            back.BringToFront();
-            pic.Size = new Size(180, 50);
-            pic.Location = new Point(190, -60);
-            pic.SizeMode = PictureBoxSizeMode.Zoom;
-            pic.Image = Properties.Resources.Burst_text;
+            Num_Panel.Controls.Clear();
+
+            PictureBox pic = new PictureBox
+            {
+                Size = new Size(180, 50),
+                Location = new Point(190, -60),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Image = Properties.Resources.Burst_text
+            };
+
+            foreach (char c in User_Total_Count.Text)
+            {
+                PictureBox picnum = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.AutoSize,
+                    Dock = DockStyle.Left,
+                    Padding = Padding.Empty
+                };
+
+                switch (c)
+                {
+                    case '0':
+                        picnum.Image = Properties.Resources._00;
+                        break;
+                    case '1':
+                        picnum.Image = Properties.Resources._01;
+                        break;
+                    case '2':
+                        picnum.Image = Properties.Resources._02;
+                        break;
+                    case '3':
+                        picnum.Image = Properties.Resources._03;
+                        break;
+                    case '4':
+                        picnum.Image = Properties.Resources._04;
+                        break;
+                    case '5':
+                        picnum.Image = Properties.Resources._05;
+                        break;
+                    case '6':
+                        picnum.Image = Properties.Resources._06;
+                        break;
+                    case '7':
+                        picnum.Image = Properties.Resources._07;
+                        break;
+                    case '8':
+                        picnum.Image = Properties.Resources._08;
+                        break;
+                    case '9':
+                        picnum.Image = Properties.Resources._09;
+                        break;
+                }
+
+                Num_Panel.Controls.Add(picnum);
+            }
+
+            Table.Visible = true;
             this.Controls.Add(pic);
             pic.BringToFront();
 
+            /* アニメーション */
             int x = 305;
             int y = -60;
-            while (y < 200)
+            while (y < 150)
             {
                 pic.Location = new Point(x, y);
                 y += 20;
@@ -287,8 +338,10 @@ namespace BJ
                 await Task.Delay(10);
             }
 
+            /* アニメーション終わり */
+
             pic.Hide();
-            back.Hide();
+
         }
 
         private async void test_Click(object sender, EventArgs e)
