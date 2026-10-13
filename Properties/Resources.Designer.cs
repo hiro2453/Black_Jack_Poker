@@ -273,6 +273,16 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap battle_Chip_text {
+            get {
+                object obj = ResourceManager.GetObject("battle_Chip_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Burst_text {
             get {
                 object obj = ResourceManager.GetObject("Burst_text", resourceCulture);
