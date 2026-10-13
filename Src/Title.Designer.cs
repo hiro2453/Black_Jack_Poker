@@ -43,10 +43,10 @@
             Title_Logo.Cursor = Cursors.Hand;
             Title_Logo.Image = (Image)resources.GetObject("Title_Logo.Image");
             Title_Logo.ImageLocation = "";
-            Title_Logo.Location = new Point(9, 9);
+            Title_Logo.Location = new Point(9, 63);
             Title_Logo.Margin = new Padding(0);
             Title_Logo.Name = "Title_Logo";
-            Title_Logo.Size = new Size(774, 323);
+            Title_Logo.Size = new Size(774, 233);
             Title_Logo.SizeMode = PictureBoxSizeMode.Zoom;
             Title_Logo.TabIndex = 0;
             Title_Logo.TabStop = false;
@@ -108,7 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Title_Logo);
             ImeMode = ImeMode.Off;
