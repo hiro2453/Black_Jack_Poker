@@ -283,6 +283,16 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap BJ {
+            get {
+                object obj = ResourceManager.GetObject("BJ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Burst_text {
             get {
                 object obj = ResourceManager.GetObject("Burst_text", resourceCulture);
@@ -343,9 +353,29 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_Flash1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_Flash1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_FourCard {
             get {
                 object obj = ResourceManager.GetObject("Hand_FourCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hand_FourCard1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_FourCard1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +393,29 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_FullHouse1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_FullHouse1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_No {
             get {
                 object obj = ResourceManager.GetObject("Hand_No", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hand_No1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_No1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +433,29 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_OnePair1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_OnePair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_RoyalStraightFlush {
             get {
                 object obj = ResourceManager.GetObject("Hand_RoyalStraightFlush", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hand_RoyalStraightFlush1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_RoyalStraightFlush1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +473,29 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_Straight1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_Straight1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_StraightFlash {
             get {
                 object obj = ResourceManager.GetObject("Hand_StraightFlash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap Hand_StraightFlash1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_StraightFlash1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,6 +513,16 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_ThreePair1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_ThreePair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hand_TwoPair {
             get {
                 object obj = ResourceManager.GetObject("Hand_TwoPair", resourceCulture);
@@ -433,9 +533,38 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap Hand_TwoPair1 {
+            get {
+                object obj = ResourceManager.GetObject("Hand_TwoPair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap Hit_text {
             get {
                 object obj = ResourceManager.GetObject("Hit_text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.IO.MemoryStream に類似した型 System.IO.UnmanagedMemoryStream のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream kekka {
+            get {
+                return ResourceManager.GetStream("kekka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap kekka_text {
+            get {
+                object obj = ResourceManager.GetObject("kekka_text", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +585,26 @@ namespace BJ.Properties {
         internal static System.Drawing.Bitmap Logo_ikasama {
             get {
                 object obj = ResourceManager.GetObject("Logo_ikasama", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap PK {
+            get {
+                object obj = ResourceManager.GetObject("PK", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap shoji {
+            get {
+                object obj = ResourceManager.GetObject("shoji", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
