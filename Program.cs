@@ -17,7 +17,7 @@ namespace BJ
             Console.WriteLine("Copyright (c) Hiroto Nagamizo. All rights reserved.");
             Console.WriteLine("当ソフトウェアの著作権は制作者に帰属します。");
             Console.WriteLine("事前の許諾なく、プログラムの複製、解析、改変、再配布を行うことを固く禁じます。");
-            Console.WriteLine("Ver.0.6.0");
+            Console.WriteLine("Ver.0.6.1");
             Console.WriteLine("git 最終更新日＞　2026-10-14 0:35");
             /*
             Console.WriteLine("==================");
@@ -38,7 +38,7 @@ namespace BJ
                     Console.WriteLine("提示した選択肢内に含まれていない為、タイトルから開始します。");
                     Application.Run(new Title()); break;
             }*/
-            Application.Run(new Game(54943));
+            Application.Run(new Result());
         }
     }
 }
