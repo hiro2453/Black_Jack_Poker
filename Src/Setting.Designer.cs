@@ -46,10 +46,11 @@
             // 
             // statusStrip1
             // 
+            statusStrip1.BackColor = SystemColors.ControlLight;
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 446);
+            statusStrip1.Location = new Point(0, 438);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(792, 23);
+            statusStrip1.Size = new Size(784, 23);
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -158,9 +159,9 @@
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(6, 52);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(87, 22);
+            checkBox2.Size = new Size(51, 22);
             checkBox2.TabIndex = 6;
-            checkBox2.Text = "ジョーカー";
+            checkBox2.Text = "借金";
             checkBox2.UseVisualStyleBackColor = true;
             // 
             // Setting
@@ -168,7 +169,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(groupBox1);
             Controls.Add(Setting_Enter);
             Controls.Add(Rule_Group);
