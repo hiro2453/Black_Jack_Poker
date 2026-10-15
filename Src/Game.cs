@@ -429,7 +429,7 @@ namespace BJ
 
         private async void test_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(GetChipImage('4'));
+            
         }
     }
 }
