@@ -350,6 +350,8 @@ namespace BJ
 
             await test();
 
+            await Task.Delay(1000);
+
             Result Re = new Result();
             Re.Show();
             this.Hide();
@@ -368,7 +370,7 @@ namespace BJ
             {
                 kake_chip = (int)(kake_chip * (i * 0.1));
                 await chip_display(kake_chip.ToString());
-                await Task.Delay(100);
+                await Task.Delay(50);
             }
 
             battle_Chip_Count.Text = "0";
@@ -427,7 +429,7 @@ namespace BJ
 
         private async void test_Click(object sender, EventArgs e)
         {
-            test();
+            Console.WriteLine(GetChipImage('4'));
         }
     }
 }
