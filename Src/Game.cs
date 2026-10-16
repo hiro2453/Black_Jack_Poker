@@ -8,7 +8,8 @@ namespace BJ
 {
     public partial class Game : Form
     {
-        Deck d = new Deck();
+        display display = new();
+        Deck d = new();
         private Image[] ImageCache;
         bool Start_AA = false;
         bool Start_A = false;
@@ -257,6 +258,7 @@ namespace BJ
         private async Task Display_Count()
         {
             Num_Panel.Controls.Clear();
+
             foreach (char c in User_Total_Count.Text)
             {
                 PictureBox picnum = new PictureBox
@@ -323,7 +325,8 @@ namespace BJ
             this.Controls.Add(pic);
             pic.BringToFront();
 
-            await Display_Count();
+            display.Num(Num_Panel, int.Parse(User_Total_Count.Text));
+            Table.Visible = true;
 
             /* アニメーション */
             int x = 305;
@@ -352,84 +355,52 @@ namespace BJ
 
             await Task.Delay(1000);
 
-            Result Re = new Result();
-            Re.Show();
-            this.Hide();
+            Result Re = new(int.Parse(User_Total_Count.Text),"役無し", int.Parse(Chip_Count.Text),123);
+
+
         }
 
         private async Task test()
         {
+            int startValue = int.Parse(battle_Chip_Count.Text);
+            int durationMs = 1000;
+            int steps = 30;
+            int delayPerStep = durationMs / steps;
             Table2.Visible = true;
-            await chip_display(battle_Chip_Count.Text);
+            Chip_count2.Text = battle_Chip_Count.Text;
             int kake_chip = int.Parse(battle_Chip_Count.Text);
             Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
 
             await Task.Delay(1000);
-
-            for (int i = 9; i > -1; i--)
+            for (int i = 0; i <= steps; i++)
             {
-                kake_chip = (int)(kake_chip * (i * 0.1));
-                await chip_display(kake_chip.ToString());
                 await Task.Delay(50);
+                kake_chip = (int)(startValue * (1.0 - (double)i / steps));
+                Chip_count2.Text = kake_chip.ToString();
             }
 
             battle_Chip_Count.Text = "0";
         }
-
-        private async Task chip_display(string chip)
-        {
-            Chip_count_panel.Controls.Clear();
-
-            foreach (char c in chip)
-            {
-                PictureBox picnum = new PictureBox
-                {
-                    SizeMode = PictureBoxSizeMode.AutoSize,
-                    Dock = DockStyle.Left,
-                    Margin = new Padding(3, 0, 0, 0)
-                };
-
-                switch (c)
-                {
-                    case '0':
-                        picnum.Image = Properties.Resources._00;
-                        break;
-                    case '1':
-                        picnum.Image = Properties.Resources._01;
-                        break;
-                    case '2':
-                        picnum.Image = Properties.Resources._02;
-                        break;
-                    case '3':
-                        picnum.Image = Properties.Resources._03;
-                        break;
-                    case '4':
-                        picnum.Image = Properties.Resources._04;
-                        break;
-                    case '5':
-                        picnum.Image = Properties.Resources._05;
-                        break;
-                    case '6':
-                        picnum.Image = Properties.Resources._06;
-                        break;
-                    case '7':
-                        picnum.Image = Properties.Resources._07;
-                        break;
-                    case '8':
-                        picnum.Image = Properties.Resources._08;
-                        break;
-                    case '9':
-                        picnum.Image = Properties.Resources._09;
-                        break;
-                }
-
-                Chip_count_panel.Controls.Add(picnum);
-            }
-        }
-
         private async void test_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void Exit_Check(object sender, FormClosingEventArgs e)
+        {
+            // 確認メッセージを表示
+            DialogResult result = MessageBox.Show(
+                "本当に終了しますか？\nこの試合は放棄扱いになり、賭けたチップは戻ってきません！",
+                "終了確認",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Warning
+            );
+
+            // 「OK」以外が押された場合は、閉じる処理をキャンセルする
+            if (result != DialogResult.OK)
+            {
+                e.Cancel = true; // これによりウィンドウが閉じるのを防ぐ
+            }
         }
     }
 }
