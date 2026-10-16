@@ -13,11 +13,14 @@ namespace BJ.Src
 {
     public partial class Result : Form
     {
-        public Result()
+        display display = new display();
+        public Result(int BJ, string PK, int Before_Chip,int After_Chip)
         {
             InitializeComponent();
+            display.Num(Num_panel, BJ);
+            display.Yaku(yaku_pic, PK);
+            display.Num(Before_panel, Before_Chip);
+            display.Num(After_panel, After_Chip);
         }
-       
-
     }
 }
