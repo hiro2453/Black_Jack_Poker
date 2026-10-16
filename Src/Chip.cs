@@ -43,7 +43,9 @@ namespace BJ
         
         private void Num_Button_Click(object sender, EventArgs e)
         {
-            if (Chip_Count.Text.Length <= 6)
+            Enter_Button.Enabled = true;
+
+            if (int.Parse(Chip_Count.Text) <= int.Parse(Chip_before.Text))
             {
                 Button btn = sender as Button;
                 if (Chip_Count.Text == "0")
@@ -61,7 +63,7 @@ namespace BJ
                 }
             }
 
-            if (Chip_Count.Text.Length > 6)
+            if (int.Parse(Chip_Count.Text) > int.Parse(Chip_before.Text))
             {
                 if (Properties.Settings.Default.Debt == true)
                 {
@@ -79,14 +81,14 @@ namespace BJ
         {
             int battle_chip = int.Parse(Chip_Count.Text);
             Properties.Settings.Default.Save();
-            // 遷移先の Game フォームを生成
-            Game GameForm = new Game(battle_chip);
 
-            // Game フォームを表示
-            GameForm.Show();
-
-            // Title フォームを非表示にする（または Close() で閉じる）
-            this.Hide();
+            using (var gameform = new Game(battle_chip))
+            {
+                this.Hide();
+                gameform.ShowDialog();
+                // ← ゲーム画面が閉じられる（Closeされる）まで、処理はここで待機
+                this.Close();
+            }
         }
 
         private void Chip_Change(object sender, EventArgs e)
