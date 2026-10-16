@@ -108,7 +108,7 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Title_Logo);
             ImeMode = ImeMode.Off;

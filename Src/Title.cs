@@ -38,25 +38,50 @@ namespace BJ
         private void New_button_click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "はじめから開始しますか？",
-                "確認",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+        "はじめから開始しますか？",
+        "確認",
+        MessageBoxButtons.YesNo,
+        MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                // 1. チップ画面を開く前に、先にタイトル画面を非表示にする
+                this.Hide();
+
+                // 2. チップ画面の表示
+                DialogResult chipResult;
                 using (Chip chipForm = new Chip())
                 {
-                    // 2. モーダル表示（サブ画面が閉じるまで、ここで実行が一時停止します）
-                    chipForm.ShowDialog(this);
+                    chipResult = chipForm.ShowDialog(this);
                 }
 
-                // Title フォームを非表示にする（または Close() で閉じる）
-                this.Hide();
+                // 3. チップ画面の結果判定
+                if (chipResult == DialogResult.OK)
+                {
+                    // チップ確定画面で「決定」などが押された場合
+                    // ここで「ゲーム画面」を開く処理を呼び出す
+                    // 例: OpenGameForm();
+                }
+                else
+                {
+                    // 「×」ボタンやキャンセルが押された場合は、タイトル画面を再表示して戻す
+                    this.Show();
+                }
             }
+            // No が押された場合は何もせずタイトル画面のまま
+        }
+
+        public void This_show()
+        {
+            this.Show();
         }
 
         private void Setting_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Check(object sender, FormClosingEventArgs e)
         {
 
         }
