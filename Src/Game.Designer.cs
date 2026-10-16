@@ -57,8 +57,7 @@
             Table = new TableLayoutPanel();
             Table2 = new TableLayoutPanel();
             pictureBox3 = new PictureBox();
-            Chip_count_panel = new FlowLayoutPanel();
-            pictureBox8 = new PictureBox();
+            Chip_count2 = new Label();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -73,8 +72,6 @@
             Table.SuspendLayout();
             Table2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            Chip_count_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -404,14 +401,14 @@
             Table2.ColumnCount = 1;
             Table2.ColumnStyles.Add(new ColumnStyle());
             Table2.Controls.Add(pictureBox3, 0, 0);
-            Table2.Controls.Add(Chip_count_panel, 0, 1);
+            Table2.Controls.Add(Chip_count2, 0, 1);
             Table2.Location = new Point(200, 170);
             Table2.Margin = new Padding(0);
             Table2.Name = "Table2";
             Table2.RowCount = 2;
             Table2.RowStyles.Add(new RowStyle());
-            Table2.RowStyles.Add(new RowStyle());
-            Table2.Size = new Size(397, 96);
+            Table2.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            Table2.Size = new Size(397, 94);
             Table2.TabIndex = 19;
             Table2.Visible = false;
             // 
@@ -426,28 +423,17 @@
             pictureBox3.TabIndex = 16;
             pictureBox3.TabStop = false;
             // 
-            // Chip_count_panel
+            // Chip_count2
             // 
-            Chip_count_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            Chip_count_panel.AutoSize = true;
-            Chip_count_panel.Controls.Add(pictureBox8);
-            Chip_count_panel.Location = new Point(176, 34);
-            Chip_count_panel.Margin = new Padding(0);
-            Chip_count_panel.Name = "Chip_count_panel";
-            Chip_count_panel.Size = new Size(45, 62);
-            Chip_count_panel.TabIndex = 17;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Dock = DockStyle.Left;
-            pictureBox8.Image = Properties.Resources._02;
-            pictureBox8.Location = new Point(0, 0);
-            pictureBox8.Margin = new Padding(0);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(45, 62);
-            pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox8.TabIndex = 22;
-            pictureBox8.TabStop = false;
+            Chip_count2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            Chip_count2.AutoSize = true;
+            Chip_count2.Font = new Font("游ゴシック", 40F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            Chip_count2.Location = new Point(137, 34);
+            Chip_count2.Name = "Chip_count2";
+            Chip_count2.Size = new Size(123, 60);
+            Chip_count2.TabIndex = 17;
+            Chip_count2.Text = "123";
+            Chip_count2.TextAlign = ContentAlignment.TopCenter;
             // 
             // Game
             // 
@@ -455,7 +441,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(Table2);
             Controls.Add(Table);
             Controls.Add(pictureBox1);
@@ -475,6 +461,7 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ゲーム開始";
+            FormClosing += Exit_Check;
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();
             Dealer_Card_Grid.ResumeLayout(false);
@@ -495,9 +482,6 @@
             Table2.ResumeLayout(false);
             Table2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            Chip_count_panel.ResumeLayout(false);
-            Chip_count_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -532,7 +516,6 @@
         private TableLayoutPanel Table;
         private TableLayoutPanel Table2;
         private PictureBox pictureBox3;
-        private FlowLayoutPanel Chip_count_panel;
-        private PictureBox pictureBox8;
+        private Label Chip_count2;
     }
 }
