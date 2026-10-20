@@ -40,7 +40,7 @@
             Dealer_Total_Count = new Label();
             Dealer_Total_Text = new Label();
             hit_Button = new Button();
-            tableLayoutPanel3 = new TableLayoutPanel();
+            Select_Action_Panel = new TableLayoutPanel();
             doubleDown_Button = new Button();
             stand_Button = new Button();
             battle_Chip_Count = new Label();
@@ -63,7 +63,7 @@
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            Select_Action_Panel.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -205,22 +205,22 @@
             hit_Button.UseVisualStyleBackColor = true;
             hit_Button.Click += Hit_Button_Click;
             // 
-            // tableLayoutPanel3
+            // Select_Action_Panel
             // 
-            tableLayoutPanel3.AutoSize = true;
-            tableLayoutPanel3.ColumnCount = 3;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel3.Controls.Add(doubleDown_Button, 2, 0);
-            tableLayoutPanel3.Controls.Add(stand_Button, 1, 0);
-            tableLayoutPanel3.Controls.Add(hit_Button, 0, 0);
-            tableLayoutPanel3.Location = new Point(227, 307);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle());
-            tableLayoutPanel3.Size = new Size(345, 46);
-            tableLayoutPanel3.TabIndex = 9;
+            Select_Action_Panel.AutoSize = true;
+            Select_Action_Panel.ColumnCount = 3;
+            Select_Action_Panel.ColumnStyles.Add(new ColumnStyle());
+            Select_Action_Panel.ColumnStyles.Add(new ColumnStyle());
+            Select_Action_Panel.ColumnStyles.Add(new ColumnStyle());
+            Select_Action_Panel.Controls.Add(doubleDown_Button, 2, 0);
+            Select_Action_Panel.Controls.Add(stand_Button, 1, 0);
+            Select_Action_Panel.Controls.Add(hit_Button, 0, 0);
+            Select_Action_Panel.Location = new Point(227, 307);
+            Select_Action_Panel.Name = "Select_Action_Panel";
+            Select_Action_Panel.RowCount = 1;
+            Select_Action_Panel.RowStyles.Add(new RowStyle());
+            Select_Action_Panel.Size = new Size(345, 46);
+            Select_Action_Panel.TabIndex = 9;
             // 
             // doubleDown_Button
             // 
@@ -248,12 +248,14 @@
             // 
             // battle_Chip_Count
             // 
+            battle_Chip_Count.BackColor = SystemColors.ActiveCaption;
             battle_Chip_Count.Cursor = Cursors.Hand;
             battle_Chip_Count.Dock = DockStyle.Fill;
             battle_Chip_Count.Font = new Font("HG明朝B", 28F);
-            battle_Chip_Count.Location = new Point(3, 85);
+            battle_Chip_Count.Location = new Point(0, 85);
+            battle_Chip_Count.Margin = new Padding(0);
             battle_Chip_Count.Name = "battle_Chip_Count";
-            battle_Chip_Count.Size = new Size(176, 44);
+            battle_Chip_Count.Size = new Size(182, 44);
             battle_Chip_Count.TabIndex = 5;
             battle_Chip_Count.Text = "999999";
             battle_Chip_Count.TextAlign = ContentAlignment.MiddleCenter;
@@ -438,15 +440,17 @@
             // 
             // VS_text
             // 
+            VS_text.Angle = -360F;
             VS_text.BackColor = Color.Transparent;
             VS_text.Font = new Font("游ゴシック", 24F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            VS_text.Location = new Point(200, 60);
+            VS_text.Location = new Point(636, 268);
             VS_text.Margin = new Padding(0);
             VS_text.Name = "VS_text";
-            VS_text.Scale = 300;
-            VS_text.Size = new Size(400, 305);
+            VS_text.Scale = 400;
+            VS_text.Size = new Size(400, 124);
             VS_text.TabIndex = 20;
-            VS_text.Text = "文字";
+            VS_text.TabStop = false;
+            VS_text.Text = "勝負!";
             VS_text.Visible = false;
             // 
             // Game
@@ -455,14 +459,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
             Controls.Add(VS_text);
             Controls.Add(Table2);
             Controls.Add(Table);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(tableLayoutPanel5);
-            Controls.Add(tableLayoutPanel3);
+            Controls.Add(Select_Action_Panel);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Dealer_Card_Grid);
@@ -485,7 +489,7 @@
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
+            Select_Action_Panel.ResumeLayout(false);
             tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -514,7 +518,7 @@
         private Label Dealer_Total_Count;
         private Label Dealer_Total_Text;
         private Button hit_Button;
-        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel Select_Action_Panel;
         private Button doubleDown_Button;
         private Button stand_Button;
         private Label battle_Chip_Count;

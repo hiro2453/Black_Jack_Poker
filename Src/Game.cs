@@ -10,7 +10,6 @@ namespace BJ
     {
         display display = new();
         Deck d = new();
-        private Image[] ImageCache;
         bool Start_AA = false;
         bool Start_A = false;
         readonly int Paychip = 0;
@@ -175,7 +174,7 @@ namespace BJ
         private async void stand_Button_Click(object sender, EventArgs e)
         {
             await Action_anime('s');
-            Battale();
+            await Battale();
         }
 
         private async void doubleDown_Button_Click(object sender, EventArgs e)
@@ -205,31 +204,47 @@ namespace BJ
 
         private async Task Battale()
         {
-            RotatableLabel RLabel = new RotatableLabel
-            {
-                Opacity = 0,
-                Scale = 300,
-                Size = new Size(400, 305),
-                Location = new Point(200, 60)
-            };
+            await Battale_anime();
+            await Task.Delay(500);
+
+            Dealer_Card.Controls.RemoveAt(1);
+
+
+        }
+
+        private async Task Battale_anime()
+        {
+            /*アニメーション初期設定*/
+            VS_text.Opacity = 0;
+            VS_text.Location = new Point(200, 70);
+            VS_text.Size = new Size(400, 305);
+            VS_text.Angle = -360;
+            VS_text.Scale = 400;
+            VS_text.Visible = true;
+            Select_Action_Panel.Visible = false;
+
+            /**/
 
             for (int count = 0; count < 24; count++)
             {
-                RLabel.Scale -= 8;
-
+                VS_text.Scale -= 8;
+                VS_text.Angle += 30;
+                VS_text.Opacity += 4;
+                VS_text.Size = new Size(400, 305-(count * 2));
+                await Task.Delay(10);
             }
+
             await Task.Delay(1000);
-            while (RLabel.Scale >=0)
+
+            while (VS_text.Scale > 30)
             {
-                
+                VS_text.Scale -= 8;
+                VS_text.Opacity -= 4;
+                VS_text.Angle += 30;
+                await Task.Delay(10);
             }
 
-            OutlinedLabel outline = new OutlinedLabel();
-            outline.Text = "勝負！";
-            outline.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
-            outline.StrokeWidth = 5;
-            outline.AutoSize = true;
-            this.Controls.Add(outline);
+            VS_text.Visible = false;
         }
 
         private async Task Action_anime(char id)
