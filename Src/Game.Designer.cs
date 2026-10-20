@@ -58,6 +58,7 @@
             Table2 = new TableLayoutPanel();
             pictureBox3 = new PictureBox();
             Chip_count2 = new Label();
+            VS_text = new BJ.Src.RotatableLabel();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -427,13 +428,26 @@
             // 
             Chip_count2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             Chip_count2.AutoSize = true;
-            Chip_count2.Font = new Font("游ゴシック", 40F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            Chip_count2.Location = new Point(137, 34);
+            Chip_count2.Font = new Font("HG明朝E", 40F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            Chip_count2.Location = new Point(146, 34);
             Chip_count2.Name = "Chip_count2";
-            Chip_count2.Size = new Size(123, 60);
+            Chip_count2.Size = new Size(104, 60);
             Chip_count2.TabIndex = 17;
             Chip_count2.Text = "123";
             Chip_count2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // VS_text
+            // 
+            VS_text.BackColor = Color.Transparent;
+            VS_text.Font = new Font("游ゴシック", 24F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            VS_text.Location = new Point(200, 60);
+            VS_text.Margin = new Padding(0);
+            VS_text.Name = "VS_text";
+            VS_text.Scale = 300;
+            VS_text.Size = new Size(400, 305);
+            VS_text.TabIndex = 20;
+            VS_text.Text = "文字";
+            VS_text.Visible = false;
             // 
             // Game
             // 
@@ -442,6 +456,7 @@
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(784, 461);
+            Controls.Add(VS_text);
             Controls.Add(Table2);
             Controls.Add(Table);
             Controls.Add(pictureBox1);
@@ -517,5 +532,6 @@
         private TableLayoutPanel Table2;
         private PictureBox pictureBox3;
         private Label Chip_count2;
+        private Src.RotatableLabel VS_text;
     }
 }

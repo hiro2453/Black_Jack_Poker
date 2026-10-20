@@ -36,7 +36,7 @@ namespace BJ
             //ユーザーの手札2枚配布
             for (int i = 0; i < 2; i++)
             {
-                Label L = new Label();
+                Label L = new();
                 L.Text = d.Please_Card();
                 L.AutoSize = true;
                 User_Card.Controls.Add(L);
@@ -62,16 +62,22 @@ namespace BJ
             {
                 if (i == 1)
                 {
-                    Label Secret = new Label();
-                    Secret.Text = "??";
-                    Secret.AutoSize = true;
+                    Label Secret = new Label
+                    {
+                        Text = "??",
+                        AutoSize = true
+                    };
+
                     Dealer_Card.Controls.Add(Secret);
                 }
                 else
                 {
-                    Label L = new Label();
-                    L.Text = d.Please_Card();
-                    L.AutoSize = true;
+                    Label L = new Label
+                    {
+                        Text = d.Please_Card(),
+                        AutoSize = true
+                    };
+
                     Dealer_Card.Controls.Add(L);
 
                     //合計値計算
@@ -108,9 +114,11 @@ namespace BJ
 
         private async void Card_pull()
         {
-            Label L = new Label();
-            L.Text = d.Please_Card();
-            L.AutoSize = true;
+            Label L = new Label
+            {
+                Text = d.Please_Card(),
+                AutoSize = true
+            };
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
 
@@ -167,6 +175,7 @@ namespace BJ
         private async void stand_Button_Click(object sender, EventArgs e)
         {
             await Action_anime('s');
+            Battale();
         }
 
         private async void doubleDown_Button_Click(object sender, EventArgs e)
@@ -194,8 +203,27 @@ namespace BJ
             paypay.Show();
         }
 
-        private void Battale()
+        private async Task Battale()
         {
+            RotatableLabel RLabel = new RotatableLabel
+            {
+                Opacity = 0,
+                Scale = 300,
+                Size = new Size(400, 305),
+                Location = new Point(200, 60)
+            };
+
+            for (int count = 0; count < 24; count++)
+            {
+                RLabel.Scale -= 8;
+
+            }
+            await Task.Delay(1000);
+            while (RLabel.Scale >=0)
+            {
+                
+            }
+
             OutlinedLabel outline = new OutlinedLabel();
             outline.Text = "勝負！";
             outline.Font = new Font("A P-SK 石井ゴシック StdN B", 32F, FontStyle.Bold);
@@ -255,59 +283,6 @@ namespace BJ
             doubleDown_Button.Enabled = DD_Check;
         }
 
-        private async Task Display_Count()
-        {
-            Num_Panel.Controls.Clear();
-
-            foreach (char c in User_Total_Count.Text)
-            {
-                PictureBox picnum = new PictureBox
-                {
-                    SizeMode = PictureBoxSizeMode.AutoSize,
-                    Dock = DockStyle.Left,
-                    Margin = new Padding(3, 0, 0, 0)
-                };
-
-                switch (c)
-                {
-                    case '0':
-                        picnum.Image = Properties.Resources._00;
-                        break;
-                    case '1':
-                        picnum.Image = Properties.Resources._01;
-                        break;
-                    case '2':
-                        picnum.Image = Properties.Resources._02;
-                        break;
-                    case '3':
-                        picnum.Image = Properties.Resources._03;
-                        break;
-                    case '4':
-                        picnum.Image = Properties.Resources._04;
-                        break;
-                    case '5':
-                        picnum.Image = Properties.Resources._05;
-                        break;
-                    case '6':
-                        picnum.Image = Properties.Resources._06;
-                        break;
-                    case '7':
-                        picnum.Image = Properties.Resources._07;
-                        break;
-                    case '8':
-                        picnum.Image = Properties.Resources._08;
-                        break;
-                    case '9':
-                        picnum.Image = Properties.Resources._09;
-                        break;
-                }
-
-                Num_Panel.Controls.Add(picnum);
-            }
-
-            Table.Visible = true;
-        }
-
         private async Task Burst_anime()
         {
             hit_Button.Visible = false;
@@ -351,16 +326,16 @@ namespace BJ
             pic.Hide();
             Table.Hide();
 
-            await test();
+            await Count_Down();
 
             await Task.Delay(1000);
 
-            Result Re = new(int.Parse(User_Total_Count.Text),"役無し", int.Parse(Chip_Count.Text),123);
+            Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
 
 
         }
 
-        private async Task test()
+        private async Task Count_Down()
         {
             int startValue = int.Parse(battle_Chip_Count.Text);
             int durationMs = 1000;
@@ -383,7 +358,7 @@ namespace BJ
         }
         private async void test_Click(object sender, EventArgs e)
         {
-            
+            await Battale();
         }
 
         private void Exit_Check(object sender, FormClosingEventArgs e)
