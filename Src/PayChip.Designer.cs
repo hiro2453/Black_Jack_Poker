@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PayChip));
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label2 = new Label();
@@ -55,6 +56,7 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             tableLayoutPanel4 = new TableLayoutPanel();
+            pictureBox11 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -70,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -128,7 +131,7 @@
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(786, 411);
+            tableLayoutPanel2.Size = new Size(778, 403);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -161,52 +164,52 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel3.Size = new Size(387, 405);
+            tableLayoutPanel3.Size = new Size(383, 405);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // flowLayoutPanel5
             // 
             flowLayoutPanel5.Dock = DockStyle.Fill;
             flowLayoutPanel5.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel5.Location = new Point(212, 345);
+            flowLayoutPanel5.Location = new Point(209, 345);
             flowLayoutPanel5.Name = "flowLayoutPanel5";
-            flowLayoutPanel5.Size = new Size(172, 57);
+            flowLayoutPanel5.Size = new Size(171, 57);
             flowLayoutPanel5.TabIndex = 13;
             // 
             // flowLayoutPanel4
             // 
             flowLayoutPanel4.Dock = DockStyle.Fill;
             flowLayoutPanel4.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel4.Location = new Point(212, 288);
+            flowLayoutPanel4.Location = new Point(209, 288);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(172, 51);
+            flowLayoutPanel4.Size = new Size(171, 51);
             flowLayoutPanel4.TabIndex = 12;
             // 
             // flowLayoutPanel3
             // 
             flowLayoutPanel3.Dock = DockStyle.Fill;
             flowLayoutPanel3.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel3.Location = new Point(212, 231);
+            flowLayoutPanel3.Location = new Point(209, 231);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
-            flowLayoutPanel3.Size = new Size(172, 51);
+            flowLayoutPanel3.Size = new Size(171, 51);
             flowLayoutPanel3.TabIndex = 11;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel2.Location = new Point(212, 174);
+            flowLayoutPanel2.Location = new Point(209, 174);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(172, 51);
+            flowLayoutPanel2.Size = new Size(171, 51);
             flowLayoutPanel2.TabIndex = 10;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel1.Location = new Point(212, 117);
+            flowLayoutPanel1.Location = new Point(209, 117);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(172, 51);
+            flowLayoutPanel1.Size = new Size(171, 51);
             flowLayoutPanel1.TabIndex = 9;
             // 
             // pictureBox7
@@ -292,7 +295,7 @@
             No_label.AutoSize = true;
             No_label.Font = new Font("HG明朝B", 16F);
             No_label.ForeColor = Color.White;
-            No_label.Location = new Point(308, 17);
+            No_label.Location = new Point(304, 17);
             No_label.Name = "No_label";
             No_label.Size = new Size(76, 22);
             No_label.TabIndex = 7;
@@ -302,9 +305,9 @@
             // 
             flowLayoutPanel0.Dock = DockStyle.Fill;
             flowLayoutPanel0.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel0.Location = new Point(212, 60);
+            flowLayoutPanel0.Location = new Point(209, 60);
             flowLayoutPanel0.Name = "flowLayoutPanel0";
-            flowLayoutPanel0.Size = new Size(172, 51);
+            flowLayoutPanel0.Size = new Size(171, 51);
             flowLayoutPanel0.TabIndex = 8;
             // 
             // tableLayoutPanel5
@@ -318,7 +321,7 @@
             tableLayoutPanel5.Controls.Add(pictureBox8, 0, 2);
             tableLayoutPanel5.Controls.Add(pictureBox9, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(393, 0);
+            tableLayoutPanel5.Location = new Point(389, 0);
             tableLayoutPanel5.Margin = new Padding(0);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 6;
@@ -328,7 +331,7 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 106F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle());
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 107F));
-            tableLayoutPanel5.Size = new Size(393, 411);
+            tableLayoutPanel5.Size = new Size(389, 411);
             tableLayoutPanel5.TabIndex = 3;
             // 
             // flowLayoutPanel8
@@ -337,7 +340,7 @@
             flowLayoutPanel8.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel8.Location = new Point(3, 307);
             flowLayoutPanel8.Name = "flowLayoutPanel8";
-            flowLayoutPanel8.Size = new Size(387, 101);
+            flowLayoutPanel8.Size = new Size(383, 101);
             flowLayoutPanel8.TabIndex = 12;
             // 
             // flowLayoutPanel7
@@ -346,7 +349,7 @@
             flowLayoutPanel7.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel7.Location = new Point(3, 172);
             flowLayoutPanel7.Name = "flowLayoutPanel7";
-            flowLayoutPanel7.Size = new Size(387, 100);
+            flowLayoutPanel7.Size = new Size(383, 100);
             flowLayoutPanel7.TabIndex = 11;
             // 
             // flowLayoutPanel6
@@ -355,7 +358,7 @@
             flowLayoutPanel6.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel6.Location = new Point(3, 34);
             flowLayoutPanel6.Name = "flowLayoutPanel6";
-            flowLayoutPanel6.Size = new Size(387, 96);
+            flowLayoutPanel6.Size = new Size(383, 96);
             flowLayoutPanel6.TabIndex = 10;
             // 
             // pictureBox10
@@ -373,7 +376,7 @@
             // 
             pictureBox8.Anchor = AnchorStyles.Top;
             pictureBox8.Image = Properties.Resources.Hand_StraightFlash;
-            pictureBox8.Location = new Point(5, 136);
+            pictureBox8.Location = new Point(3, 136);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(383, 30);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
@@ -384,7 +387,7 @@
             // 
             pictureBox9.Anchor = AnchorStyles.Top;
             pictureBox9.Image = Properties.Resources.Hand_FourCard;
-            pictureBox9.Location = new Point(5, 3);
+            pictureBox9.Location = new Point(3, 3);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(383, 25);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -405,8 +408,20 @@
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.Size = new Size(792, 449);
+            tableLayoutPanel4.Size = new Size(784, 441);
             tableLayoutPanel4.TabIndex = 2;
+            tableLayoutPanel4.Visible = false;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.Dock = DockStyle.Fill;
+            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Location = new Point(0, 0);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(784, 441);
+            pictureBox11.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox11.TabIndex = 3;
+            pictureBox11.TabStop = false;
             // 
             // PayChip
             // 
@@ -414,7 +429,8 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             AutoSize = true;
             BackColor = Color.Black;
-            ClientSize = new Size(792, 449);
+            ClientSize = new Size(784, 441);
+            Controls.Add(pictureBox11);
             Controls.Add(tableLayoutPanel4);
             MaximizeBox = false;
             MaximumSize = new Size(800, 480);
@@ -443,6 +459,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             tableLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
         }
 
@@ -474,5 +491,6 @@
         private FlowLayoutPanel flowLayoutPanel8;
         private FlowLayoutPanel flowLayoutPanel7;
         private FlowLayoutPanel flowLayoutPanel6;
+        private PictureBox pictureBox11;
     }
 }
