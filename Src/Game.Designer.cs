@@ -139,6 +139,7 @@
             User_Total_Count.TabIndex = 3;
             User_Total_Count.Text = "0";
             User_Total_Count.TextAlign = ContentAlignment.MiddleCenter;
+            User_Total_Count.TextChanged += Total_Change;
             // 
             // tableLayoutPanel1
             // 
@@ -248,8 +249,8 @@
             // 
             // battle_Chip_Count
             // 
-            battle_Chip_Count.BackColor = SystemColors.ActiveCaption;
-            battle_Chip_Count.Cursor = Cursors.Hand;
+            battle_Chip_Count.BackColor = SystemColors.ControlLight;
+            battle_Chip_Count.Cursor = Cursors.Help;
             battle_Chip_Count.Dock = DockStyle.Fill;
             battle_Chip_Count.Font = new Font("HG明朝B", 28F);
             battle_Chip_Count.Location = new Point(0, 85);
@@ -443,7 +444,7 @@
             VS_text.Angle = -360F;
             VS_text.BackColor = Color.Transparent;
             VS_text.Font = new Font("游ゴシック", 24F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            VS_text.Location = new Point(636, 268);
+            VS_text.Location = new Point(636, 271);
             VS_text.Margin = new Padding(0);
             VS_text.Name = "VS_text";
             VS_text.Scale = 400;
@@ -459,7 +460,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
             Controls.Add(VS_text);
             Controls.Add(Table2);
             Controls.Add(Table);

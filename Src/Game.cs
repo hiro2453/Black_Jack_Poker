@@ -1,8 +1,5 @@
 ﻿using BJ.Src;
-using System.Numerics;
-using System.Resources;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
+using NAudio.Wave;
 
 namespace BJ
 {
@@ -13,6 +10,7 @@ namespace BJ
         bool Start_AA = false;
         bool Start_A = false;
         readonly int Paychip = 0;
+
         public Game(int chip)
         {
             InitializeComponent();
@@ -37,6 +35,7 @@ namespace BJ
             {
                 Label L = new();
                 L.Text = d.Please_Card();
+                Console.WriteLine(d.How_many());
                 L.AutoSize = true;
                 User_Card.Controls.Add(L);
 
@@ -94,11 +93,11 @@ namespace BJ
                     Total = Total + Count;
                     Dealer_Total_Count.Text = Total.ToString();
                 }
-
             }
 
             string item_0 = d.Mark_remove(User_Card.Controls[0].Text);
             string item_1 = d.Mark_remove(User_Card.Controls[1].Text);
+
             if (item_0 == "A" || item_1 == "A")
             {
                 Start_A = true;
@@ -113,11 +112,9 @@ namespace BJ
 
         private async void Card_pull()
         {
-            Label L = new Label
-            {
-                Text = d.Please_Card(),
-                AutoSize = true
-            };
+            Label L = new Label();
+            L.Text = d.Please_Card();
+            L.AutoSize = true;
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
 
@@ -153,17 +150,6 @@ namespace BJ
 
             Total = Total + Count;
             User_Total_Count.Text = Total.ToString();
-            if (Total > 21)
-            {
-                await Burst_anime();
-                /*
-                Title title = new Title();
-
-                title.Show();
-
-                this.Hide();
-                */
-            }
         }
         private async void Hit_Button_Click(object sender, EventArgs e)
         {
@@ -207,8 +193,28 @@ namespace BJ
             await Battale_anime();
             await Task.Delay(500);
 
+            //ディーラの「??」を削除
             Dealer_Card.Controls.RemoveAt(1);
 
+            //カードを一枚引くて設置
+            Label L = new Label
+            {
+                Text = d.Please_Card(),
+                AutoSize = true
+            };
+
+            Dealer_Card.Controls.Add(L);
+
+            while (int.Parse(Dealer_Total_Count.Text)<16)
+            {
+                await Task.Delay(500);
+                Dealer_Card.Controls.Add(L);
+            }
+
+            if (true)
+            {
+                
+            }
 
         }
 
@@ -230,7 +236,7 @@ namespace BJ
                 VS_text.Scale -= 8;
                 VS_text.Angle += 30;
                 VS_text.Opacity += 4;
-                VS_text.Size = new Size(400, 305-(count * 2));
+                VS_text.Size = new Size(400, 305 - (count * 2));
                 await Task.Delay(10);
             }
 
@@ -346,15 +352,29 @@ namespace BJ
             await Task.Delay(1000);
 
             Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
-
-
         }
 
         private async Task Count_Down()
         {
+            char[] test = battle_Chip_Count.Text.Reverse().ToArray();
+            Console.WriteLine(battle_Chip_Count.Text);
+            Table2.Visible = true;
+            Chip_count2.Text = battle_Chip_Count.Text;
+            for (int i = battle_Chip_Count.Text.Length - 1; i >= 0; i--)
+            {
+                while (test[i]>0)
+                {
+                    //testをintに変換して計算結果をcharに変換する(出来ない)
+                    test[i] = (char)(int)(test[i] -'0' - 1);
+                    Console.WriteLine(test[i]);
+                    await Task.Delay(100);
+                }
+            }
+
+            /*
             int startValue = int.Parse(battle_Chip_Count.Text);
-            int durationMs = 1000;
-            int steps = 30;
+            int durationMs = 100;
+            int steps = 32;
             int delayPerStep = durationMs / steps;
             Table2.Visible = true;
             Chip_count2.Text = battle_Chip_Count.Text;
@@ -364,16 +384,16 @@ namespace BJ
             await Task.Delay(1000);
             for (int i = 0; i <= steps; i++)
             {
-                await Task.Delay(50);
+                await Task.Delay(24);
                 kake_chip = (int)(startValue * (1.0 - (double)i / steps));
                 Chip_count2.Text = kake_chip.ToString();
-            }
+            }*/
 
             battle_Chip_Count.Text = "0";
         }
         private async void test_Click(object sender, EventArgs e)
         {
-            await Battale();
+            await Count_Down();
         }
 
         private void Exit_Check(object sender, FormClosingEventArgs e)
@@ -390,6 +410,15 @@ namespace BJ
             if (result != DialogResult.OK)
             {
                 e.Cancel = true; // これによりウィンドウが閉じるのを防ぐ
+            }
+        }
+
+        private async void Total_Change(object sender, EventArgs e)
+        {
+            if (int.Parse(User_Total_Count.Text) > 21)
+            {
+                User_Total_Count.ForeColor = Color.Red;
+                await Burst_anime();
             }
         }
     }
