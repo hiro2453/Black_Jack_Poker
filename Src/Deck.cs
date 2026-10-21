@@ -15,6 +15,7 @@ namespace BJ.Src
                                                    "♣A", "♣2", "♣3", "♣4", "♣5", "♣6", "♣7", "♣8", "♣9", "♣10", "♣J", "♣Q", "♣K",};
 
         private static Random rng = new Random();
+        int hit = 0;
         public void Crad_Shuffle()
         {
 
@@ -35,6 +36,7 @@ namespace BJ.Src
         int n = 52;
         public string Please_Card()
         {
+            hit++;
 
             if (n > 1)
             {
@@ -79,6 +81,11 @@ namespace BJ.Src
                 case "A": return 1;
                 default: return 10;
             }
+        }
+
+        public int How_many()
+        {
+            return All_deck.Count - hit;
         }
     }
 }
