@@ -481,6 +481,7 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ゲーム開始";
+            TransparencyKey = Color.Transparent;
             FormClosing += Exit_Check;
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();

@@ -10,12 +10,27 @@ namespace BJ
         bool Start_AA = false;
         bool Start_A = false;
         readonly int Paychip = 0;
+        private Image overlayImage;
 
         public Game(int chip)
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            overlayImage = Image.FromFile(@"C:\Users\KBC2510\Desktop\github\Black_Jack_Poker\img\Action\WIN.png");
+            
             Start(chip);
             Paychip = chip;
+            this.Paint += Form1_Paint;
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            if (overlayImage != null)
+            {
+                // 指定した位置（X: 50, Y: 50）とサイズ（幅: 100, 高さ: 100）で描画
+                // 画像のアルファチャンネル（透明度）がそのまま考慮され、背面の全コントロール上に透過描画されます
+                e.Graphics.DrawImage(overlayImage, 50, 250, 100, 100);
+            }
         }
 
 
@@ -354,24 +369,58 @@ namespace BJ
             Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
         }
 
-        private async Task Count_Down()
+        private async Task Lose_anime()
         {
-            char[] test = battle_Chip_Count.Text.Reverse().ToArray();
-            Console.WriteLine(battle_Chip_Count.Text);
-            Table2.Visible = true;
-            Chip_count2.Text = battle_Chip_Count.Text;
-            for (int i = battle_Chip_Count.Text.Length - 1; i >= 0; i--)
+            hit_Button.Visible = false;
+            stand_Button.Visible = false;
+            doubleDown_Button.Visible = false;
+
+            PictureBox pic = new PictureBox
             {
-                while (test[i]>0)
-                {
-                    //testをintに変換して計算結果をcharに変換する(出来ない)
-                    test[i] = (char)(int)(test[i] -'0' - 1);
-                    Console.WriteLine(test[i]);
-                    await Task.Delay(100);
-                }
+                Size = new Size(180, 50),
+                Location = new Point(190, -60),
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Image = Properties.Resources.Burst_text
+            };
+
+            this.Controls.Add(pic);
+            pic.BringToFront();
+
+            display.Num(Num_Panel, int.Parse(User_Total_Count.Text));
+            Table.Visible = true;
+
+            /* アニメーション */
+            int x = 305;
+            int y = -60;
+            while (y < 150)
+            {
+                pic.Location = new Point(x, y);
+                y += 20;
+                await Task.Delay(10);
             }
 
-            /*
+            await Task.Delay(1000);
+
+            while (y < 450)
+            {
+                pic.Location = new Point(x, y);
+                y += 20;
+                await Task.Delay(10);
+            }
+
+            /* アニメーション終わり */
+            pic.Hide();
+            Table.Hide();
+
+            await Count_Down();
+
+            await Task.Delay(1000);
+
+            Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
+        }
+
+        private async Task Count_Down()
+        {
             int startValue = int.Parse(battle_Chip_Count.Text);
             int durationMs = 100;
             int steps = 32;
@@ -387,13 +436,14 @@ namespace BJ
                 await Task.Delay(24);
                 kake_chip = (int)(startValue * (1.0 - (double)i / steps));
                 Chip_count2.Text = kake_chip.ToString();
-            }*/
+                battle_Chip_Count.Text = kake_chip.ToString();
+            }
 
             battle_Chip_Count.Text = "0";
         }
         private async void test_Click(object sender, EventArgs e)
         {
-            await Count_Down();
+            await Lose_anime();
         }
 
         private void Exit_Check(object sender, FormClosingEventArgs e)
@@ -419,6 +469,7 @@ namespace BJ
             {
                 User_Total_Count.ForeColor = Color.Red;
                 await Burst_anime();
+                await Count_Down();
             }
         }
     }
