@@ -592,6 +592,16 @@ namespace BJ.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap LOSE {
+            get {
+                object obj = ResourceManager.GetObject("LOSE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap PK {
             get {
                 object obj = ResourceManager.GetObject("PK", resourceCulture);
@@ -625,6 +635,16 @@ namespace BJ.Properties {
         internal static System.Drawing.Bitmap Total_value {
             get {
                 object obj = ResourceManager.GetObject("Total_value", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap WIN {
+            get {
+                object obj = ResourceManager.GetObject("WIN", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
