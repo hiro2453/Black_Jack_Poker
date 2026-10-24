@@ -11,7 +11,15 @@
                 case "ロックファイブ": LookFive_radio.Checked = true; break;
                 case "ファイブターゲット": FiveTarget_radio.Checked = true; break;
             }
-
+            switch (Properties.Settings.Default.battle_count)
+            {
+                case 1: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+                case 3: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+                case 5: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+                case 10: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+                case 15: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+                case 20: battle_count.Text = Properties.Settings.Default.battle_count.ToString(); break;
+            }
         }
 
         private void Setting_OK(object sender, EventArgs e)
@@ -52,7 +60,7 @@
 
                         switch (selectedRadio.Text)
                         {
-                            case "ベストファイブ": Properties.Settings.Default.Rule = selectedRadio.Text; break;
+                            case "プラスマイナス": Properties.Settings.Default.Rule = selectedRadio.Text; break;
                             case "ロックファイブ": Properties.Settings.Default.Rule = selectedRadio.Text; break;
                             case "ファイブターゲット": Properties.Settings.Default.Rule = selectedRadio.Text; break;
                         }

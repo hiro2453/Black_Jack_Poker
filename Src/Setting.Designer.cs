@@ -38,19 +38,22 @@
             Setting_Enter = new Button();
             checkBox1 = new CheckBox();
             groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            battle_count = new ComboBox();
             checkBox2 = new CheckBox();
             statusStrip1.SuspendLayout();
             Rule_Group.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // statusStrip1
             // 
             statusStrip1.BackColor = SystemColors.ControlLight;
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 438);
+            statusStrip1.Location = new Point(0, 303);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(784, 23);
+            statusStrip1.Size = new Size(384, 23);
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -68,7 +71,7 @@
             BestFive_radio.Padding = new Padding(0, 0, 0, 5);
             BestFive_radio.Size = new Size(110, 27);
             BestFive_radio.TabIndex = 1;
-            BestFive_radio.Text = "ベストファイブ";
+            BestFive_radio.Text = "プラスマイナス";
             BestFive_radio.UseVisualStyleBackColor = true;
             BestFive_radio.MouseEnter += BestFive_Desc;
             // 
@@ -95,7 +98,7 @@
             Rule_Group.Size = new Size(160, 150);
             Rule_Group.TabIndex = 3;
             Rule_Group.TabStop = false;
-            Rule_Group.Text = "全体ルール設定";
+            Rule_Group.Text = "モード設定";
             // 
             // label1
             // 
@@ -124,7 +127,7 @@
             // 
             Setting_Enter.AutoSize = true;
             Setting_Enter.Font = new Font("メイリオ", 12F);
-            Setting_Enter.Location = new Point(688, 401);
+            Setting_Enter.Location = new Point(283, 197);
             Setting_Enter.Name = "Setting_Enter";
             Setting_Enter.Size = new Size(84, 34);
             Setting_Enter.TabIndex = 4;
@@ -145,19 +148,42 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(checkBox2);
             groupBox1.Controls.Add(checkBox1);
-            groupBox1.Location = new Point(12, 192);
+            groupBox1.Location = new Point(178, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(200, 100);
+            groupBox1.Size = new Size(189, 150);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Text = "ローカルルール";
+            groupBox1.Text = "ルール";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(battle_count);
+            groupBox2.Location = new Point(6, 52);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(177, 55);
+            groupBox2.TabIndex = 7;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "試合回数";
+            // 
+            // battle_count
+            // 
+            battle_count.FormatString = "N0";
+            battle_count.FormattingEnabled = true;
+            battle_count.Items.AddRange(new object[] { "1", "3", "5", "10", "15", "20" });
+            battle_count.Location = new Point(29, 23);
+            battle_count.Name = "battle_count";
+            battle_count.Size = new Size(121, 26);
+            battle_count.TabIndex = 8;
+            battle_count.TabStop = false;
+            battle_count.Text = "5";
             // 
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(6, 52);
+            checkBox2.Location = new Point(105, 24);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(51, 22);
             checkBox2.TabIndex = 6;
@@ -169,14 +195,12 @@
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(384, 326);
             Controls.Add(groupBox1);
             Controls.Add(Setting_Enter);
             Controls.Add(Rule_Group);
             Controls.Add(statusStrip1);
             MaximizeBox = false;
-            MaximumSize = new Size(800, 500);
-            MinimumSize = new Size(800, 500);
             Name = "Setting";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -188,6 +212,7 @@
             Rule_Group.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -205,5 +230,7 @@
         private CheckBox checkBox1;
         private GroupBox groupBox1;
         private CheckBox checkBox2;
+        private GroupBox groupBox2;
+        private ComboBox battle_count;
     }
 }
