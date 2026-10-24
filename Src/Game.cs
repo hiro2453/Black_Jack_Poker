@@ -5,35 +5,23 @@ namespace BJ
 {
     public partial class Game : Form
     {
-        display display = new();
+        Display display = new();
         Deck d = new();
         bool Start_AA = false;
         bool Start_A = false;
         readonly int Paychip = 0;
-        private Image overlayImage;
 
         public Game(int chip)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            overlayImage = Image.FromFile(@"C:\Users\KBC2510\Desktop\github\Black_Jack_Poker\img\Action\WIN.png");
-            
             Start(chip);
             Paychip = chip;
-            this.Paint += Form1_Paint;
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            if (overlayImage != null)
-            {
-                // 指定した位置（X: 50, Y: 50）とサイズ（幅: 100, 高さ: 100）で描画
-                // 画像のアルファチャンネル（透明度）がそのまま考慮され、背面の全コントロール上に透過描画されます
-                e.Graphics.DrawImage(overlayImage, 50, 250, 100, 100);
-            }
-        }
-
-
+        /// <summary>
+        /// カードのシャッフルとカード配布を行います。
+        /// </summary>
         public void Start(int vs_chip)
         {
             bool double_Down_Check = Properties.Settings.Default.double_Down;
@@ -125,6 +113,9 @@ namespace BJ
             }
         }
 
+        /// <summary>
+        /// カードを引きます。
+        /// </summary>
         private async void Card_pull()
         {
             Label L = new Label();
@@ -166,17 +157,28 @@ namespace BJ
             Total = Total + Count;
             User_Total_Count.Text = Total.ToString();
         }
+
+        /// <summary>
+        /// 「ヒット」を押したときのイベントです
+        /// </summary>
         private async void Hit_Button_Click(object sender, EventArgs e)
         {
             await Action_anime('h');
             Card_pull();
         }
 
+        /// <summary>
+        /// 「スタンド」を押したときのイベントです
+        /// </summary>
         private async void stand_Button_Click(object sender, EventArgs e)
         {
             await Action_anime('s');
             await Battale();
         }
+        
+        /// <summary>
+        /// 「ダブルダウン」を押したときのイベントです
+        /// </summary>
 
         private async void doubleDown_Button_Click(object sender, EventArgs e)
         {
@@ -197,12 +199,18 @@ namespace BJ
 
         }
 
+        /// <summary>
+        /// 賭け金の数字をクリックしたときのイベントです
+        /// </summary>
         private void Battle_Chip_Count_Click(object sender, EventArgs e)
         {
             PayChip paypay = new PayChip(int.Parse(battle_Chip_Count.Text));
             paypay.Show();
         }
 
+        /// <summary>
+        /// ディーラーとプレイヤーが勝負をします。
+        /// </summary>
         private async Task Battale()
         {
             await Battale_anime();
@@ -220,19 +228,28 @@ namespace BJ
 
             Dealer_Card.Controls.Add(L);
 
+            await Task.Delay(1000);
+
             while (int.Parse(Dealer_Total_Count.Text)<16)
             {
                 await Task.Delay(500);
                 Dealer_Card.Controls.Add(L);
             }
 
-            if (true)
+            if (int.Parse(Dealer_Total_Count.Text)>int.Parse(User_Total_Count.Text))
             {
-                
+                await BattleResult_anime('l');
+            }
+            else
+            {
+                await BattleResult_anime('w');
             }
 
         }
 
+        /// <summary>
+        /// 「勝負!」のアニメーションクラスです
+        /// </summary>
         private async Task Battale_anime()
         {
             /*アニメーション初期設定*/
@@ -243,8 +260,6 @@ namespace BJ
             VS_text.Scale = 400;
             VS_text.Visible = true;
             Select_Action_Panel.Visible = false;
-
-            /**/
 
             for (int count = 0; count < 24; count++)
             {
@@ -268,6 +283,9 @@ namespace BJ
             VS_text.Visible = false;
         }
 
+        /// <summary>
+        /// アクションした際のテキストアニメーションクラスです。
+        /// </summary>
         private async Task Action_anime(char id)
         {
             bool DD_Check = doubleDown_Button.Enabled;
@@ -319,6 +337,9 @@ namespace BJ
             doubleDown_Button.Enabled = DD_Check;
         }
 
+        /// <summary>
+        /// バーストした際のクラスです
+        /// </summary>
         private async Task Burst_anime()
         {
             hit_Button.Visible = false;
@@ -369,7 +390,7 @@ namespace BJ
             Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
         }
 
-        private async Task Lose_anime()
+        private async Task BattleResult_anime(char Result)
         {
             hit_Button.Visible = false;
             stand_Button.Visible = false;
@@ -377,46 +398,61 @@ namespace BJ
 
             PictureBox pic = new PictureBox
             {
-                Size = new Size(180, 50),
-                Location = new Point(190, -60),
-                SizeMode = PictureBoxSizeMode.Zoom,
-                Image = Properties.Resources.Burst_text
+                Size = new Size(165, 0),
+                Location = new Point(310, 170),
+                SizeMode = PictureBoxSizeMode.StretchImage,
             };
+
+            switch (Result)
+            {
+                case 'l':
+                    pic.Image = Properties.Resources.LOSE;
+                    break;
+                case 'w':
+                    pic.Image = Properties.Resources.WIN;
+                    break;
+            }
 
             this.Controls.Add(pic);
             pic.BringToFront();
 
-            display.Num(Num_Panel, int.Parse(User_Total_Count.Text));
-            Table.Visible = true;
-
             /* アニメーション */
-            int x = 305;
-            int y = -60;
-            while (y < 150)
+            int y = 170;
+            int xy = 0;
+
+            while (pic.Size.Height < 90)
             {
-                pic.Location = new Point(x, y);
-                y += 20;
-                await Task.Delay(10);
+                Console.WriteLine(xy);
+                pic.Size = new Size(165, xy);
+                xy += 3;
+                await Task.Delay(5);
             }
 
             await Task.Delay(1000);
 
-            while (y < 450)
+            while (pic.Size.Height > 0)
             {
-                pic.Location = new Point(x, y);
-                y += 20;
-                await Task.Delay(10);
+                Console.WriteLine(xy);
+                pic.Location = new Point(310, y);
+                y += 1;
+                pic.Size = new Size(165, xy);
+                xy -= 3;
+                await Task.Delay(5);
             }
 
             /* アニメーション終わり */
             pic.Hide();
             Table.Hide();
-
-            await Count_Down();
+            if (Result == 'l')
+            {
+                await Count_Down();
+            }
+            else
+            {
+                await Count_Up();
+            }
 
             await Task.Delay(1000);
-
-            Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
         }
 
         private async Task Count_Down()
@@ -431,6 +467,7 @@ namespace BJ
             Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
 
             await Task.Delay(1000);
+
             for (int i = 0; i <= steps; i++)
             {
                 await Task.Delay(24);
@@ -441,9 +478,33 @@ namespace BJ
 
             battle_Chip_Count.Text = "0";
         }
+
+        private async Task Count_Up()
+        {
+            int startValue = int.Parse(battle_Chip_Count.Text);
+            int durationMs = 100;
+            int steps = 32;
+            int delayPerStep = durationMs / steps;
+            Table2.Visible = true;
+            Chip_count2.Text = battle_Chip_Count.Text;
+            int kake_chip = int.Parse(battle_Chip_Count.Text);
+            Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
+
+            await Task.Delay(1000);
+
+            for (int i = 0; i <= steps; i++)
+            {
+                await Task.Delay(24);
+                kake_chip = (int)(startValue * (1.0 + (double)i / steps));
+                Chip_count2.Text = kake_chip.ToString();
+                battle_Chip_Count.Text = kake_chip.ToString();
+            }
+
+            battle_Chip_Count.Text = kake_chip.ToString();
+        }
         private async void test_Click(object sender, EventArgs e)
         {
-            await Lose_anime();
+            await BattleResult_anime('w');
         }
 
         private void Exit_Check(object sender, FormClosingEventArgs e)

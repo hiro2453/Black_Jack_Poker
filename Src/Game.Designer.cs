@@ -59,6 +59,11 @@
             pictureBox3 = new PictureBox();
             Chip_count2 = new Label();
             VS_text = new BJ.Src.RotatableLabel();
+            Play_Count = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            label4 = new Label();
+            Play_Count_Max = new Label();
+            label6 = new Label();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -73,6 +78,7 @@
             Table.SuspendLayout();
             Table2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // User_Card_Grid
@@ -454,6 +460,68 @@
             VS_text.Text = "勝負!";
             VS_text.Visible = false;
             // 
+            // Play_Count
+            // 
+            Play_Count.AutoSize = true;
+            Play_Count.Dock = DockStyle.Fill;
+            Play_Count.Location = new Point(3, 0);
+            Play_Count.Name = "Play_Count";
+            Play_Count.Size = new Size(15, 18);
+            Play_Count.TabIndex = 21;
+            Play_Count.Text = "1";
+            Play_Count.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.AutoSize = true;
+            tableLayoutPanel3.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutPanel3.ColumnCount = 4;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel3.Controls.Add(label6, 3, 0);
+            tableLayoutPanel3.Controls.Add(Play_Count_Max, 2, 0);
+            tableLayoutPanel3.Controls.Add(label4, 1, 0);
+            tableLayoutPanel3.Controls.Add(Play_Count, 0, 0);
+            tableLayoutPanel3.Location = new Point(15, 12);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle());
+            tableLayoutPanel3.Size = new Size(111, 18);
+            tableLayoutPanel3.TabIndex = 22;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Location = new Point(24, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(13, 18);
+            label4.TabIndex = 22;
+            label4.Text = "/";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Play_Count_Max
+            // 
+            Play_Count_Max.AutoSize = true;
+            Play_Count_Max.Dock = DockStyle.Fill;
+            Play_Count_Max.Location = new Point(43, 0);
+            Play_Count_Max.Name = "Play_Count_Max";
+            Play_Count_Max.Size = new Size(15, 18);
+            Play_Count_Max.TabIndex = 23;
+            Play_Count_Max.Text = "5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Dock = DockStyle.Fill;
+            label6.Location = new Point(64, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(44, 18);
+            label6.TabIndex = 24;
+            label6.Text = "かいめ";
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
@@ -461,6 +529,7 @@
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(784, 461);
+            Controls.Add(tableLayoutPanel3);
             Controls.Add(VS_text);
             Controls.Add(Table2);
             Controls.Add(Table);
@@ -503,6 +572,8 @@
             Table2.ResumeLayout(false);
             Table2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -539,5 +610,10 @@
         private PictureBox pictureBox3;
         private Label Chip_count2;
         private Src.RotatableLabel VS_text;
+        private Label Play_Count;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label4;
+        private Label label6;
+        private Label Play_Count_Max;
     }
 }
