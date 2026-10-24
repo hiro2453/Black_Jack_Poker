@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BJ.Src
 {
-    internal class display
+    internal class Display
     {
         public void Num(Control name, int num)
         {

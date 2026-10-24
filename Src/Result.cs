@@ -4,7 +4,7 @@ namespace BJ.Src
 {
     public partial class Result : Form
     {
-        display display = new display();
+        Display display = new Display();
         private WaveOut waveOut;
         private AudioFileReader audioFile;
         public Result(int BJ, string PK, int Before_Chip,int After_Chip)
