@@ -1,18 +1,6 @@
 ﻿using System.ComponentModel;
-using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Windows.Forms;
-using System.Collections.Specialized;
-using System.Drawing;
-using System.Drawing.Design;
-using System.Runtime.InteropServices;
-using System.Windows.Forms.Automation;
-using System.Windows.Forms.Internal;
-using System.Windows.Forms.Layout;
-using Windows.Win32.System.SystemServices;
-using Windows.Win32.System.Variant;
-using Windows.Win32.UI.Accessibility;
 
 namespace BJ.Src
 {
@@ -158,7 +146,7 @@ namespace BJ.Src
         [Category("表示")]
         [Description("文字の拡大縮小率をパーセント整数で指定します（100 = 通常、150 = 1.5倍、200 = 2倍）。")]
         [DefaultValue(100)]
-        public int Scale
+        public new int Scale
         {
             get => scale;
             set
