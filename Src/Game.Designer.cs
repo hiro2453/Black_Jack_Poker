@@ -61,9 +61,9 @@
             VS_text = new BJ.Src.RotatableLabel();
             Play_Count = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
-            label4 = new Label();
-            Play_Count_Max = new Label();
             label6 = new Label();
+            Play_Count_Max = new Label();
+            label4 = new Label();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -488,8 +488,28 @@
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle());
-            tableLayoutPanel3.Size = new Size(111, 18);
+            tableLayoutPanel3.Size = new Size(125, 18);
             tableLayoutPanel3.TabIndex = 22;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Dock = DockStyle.Fill;
+            label6.Location = new Point(78, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(44, 18);
+            label6.TabIndex = 24;
+            label6.Text = "かいめ";
+            // 
+            // Play_Count_Max
+            // 
+            Play_Count_Max.AutoSize = true;
+            Play_Count_Max.Dock = DockStyle.Fill;
+            Play_Count_Max.Location = new Point(43, 0);
+            Play_Count_Max.Name = "Play_Count_Max";
+            Play_Count_Max.Size = new Size(29, 18);
+            Play_Count_Max.TabIndex = 23;
+            Play_Count_Max.Text = "999";
             // 
             // label4
             // 
@@ -501,26 +521,6 @@
             label4.TabIndex = 22;
             label4.Text = "/";
             label4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Play_Count_Max
-            // 
-            Play_Count_Max.AutoSize = true;
-            Play_Count_Max.Dock = DockStyle.Fill;
-            Play_Count_Max.Location = new Point(43, 0);
-            Play_Count_Max.Name = "Play_Count_Max";
-            Play_Count_Max.Size = new Size(15, 18);
-            Play_Count_Max.TabIndex = 23;
-            Play_Count_Max.Text = "5";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Dock = DockStyle.Fill;
-            label6.Location = new Point(64, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(44, 18);
-            label6.TabIndex = 24;
-            label6.Text = "かいめ";
             // 
             // Game
             // 
@@ -541,7 +541,6 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(Dealer_Card_Grid);
             Controls.Add(User_Card_Grid);
-            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             ImeMode = ImeMode.Off;
             MaximizeBox = false;
@@ -550,7 +549,6 @@
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ゲーム開始";
-            TransparencyKey = Color.Transparent;
             FormClosing += Exit_Check;
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();

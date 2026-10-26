@@ -1,5 +1,6 @@
 ﻿using BJ.Src;
 using NAudio.Wave;
+using System.Xml.Linq;
 
 namespace BJ
 {
@@ -9,14 +10,18 @@ namespace BJ
         Deck d = new();
         bool Start_AA = false;
         bool Start_A = false;
-        readonly int Paychip = 0;
+        int play_chip = 0;
+        int Start_chip = 0;
+        int End_chip = 0;
 
         public Game(int chip)
         {
             InitializeComponent();
-            this.DoubleBuffered = true;
+            Play_Count_Max.Text = Properties.Settings.Default.battle_count.ToString();
+            Play_Count.Text = Properties.Settings.Default.Now_battle.ToString();
             Start(chip);
-            Paychip = chip;
+            play_chip = chip;
+            Start_chip = Properties.Settings.Default.Now_battle + chip;
         }
 
         /// <summary>
@@ -24,7 +29,12 @@ namespace BJ
         /// </summary>
         public void Start(int vs_chip)
         {
+            //設定読み込み
             bool double_Down_Check = Properties.Settings.Default.double_Down;
+
+            //初期化
+            Dealer_Card.Controls.Clear();
+            User_Card.Controls.Clear();
 
             int Chip_check = vs_chip;
             battle_Chip_Count.Text = Chip_check.ToString();
@@ -239,12 +249,33 @@ namespace BJ
             if (int.Parse(Dealer_Total_Count.Text)>int.Parse(User_Total_Count.Text))
             {
                 await BattleResult_anime('l');
+                await Count_Down();
+                End_chip = Start_chip - int.Parse(Chip_Count.Text);
             }
             else
             {
                 await BattleResult_anime('w');
+                await Count_Up();
+                End_chip = Start_chip + int.Parse(Chip_Count.Text);
             }
 
+            DialogResult Result_window;
+            using (Result result = new Result(Properties.Settings.Default.battle_count, int.Parse(User_Total_Count.Text), Start_chip, End_chip))
+            {
+                Result_window = result.ShowDialog(this);
+            }
+
+            if (Result_window == DialogResult.OK)
+            {
+                // チップ確定画面で「決定」などが押された場合
+                // ここで「ゲーム画面」を開く処理を呼び出す
+                // 例: OpenGameForm();
+            }
+            else
+            {
+                // 「×」ボタンやキャンセルが押された場合は、タイトル画面を再表示して戻す
+                this.Show();
+            }
         }
 
         /// <summary>
@@ -387,7 +418,8 @@ namespace BJ
 
             await Task.Delay(1000);
 
-            Result Re = new(int.Parse(User_Total_Count.Text), "役無し", int.Parse(Chip_Count.Text), 123);
+            Result Re = new(Properties.Settings.Default.Now_battle, int.Parse(User_Total_Count.Text), int.Parse(Chip_Count.Text), 123);
+
         }
 
         private async Task BattleResult_anime(char Result)
@@ -477,6 +509,7 @@ namespace BJ
             }
 
             battle_Chip_Count.Text = "0";
+            await Task.Delay(1000);
         }
 
         private async Task Count_Up()
@@ -501,6 +534,7 @@ namespace BJ
             }
 
             battle_Chip_Count.Text = kake_chip.ToString();
+            await Task.Delay(1000);
         }
         private async void test_Click(object sender, EventArgs e)
         {
