@@ -28,8 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Kekka_Text = new PictureBox();
+            components = new System.ComponentModel.Container();
             MainGroupPanel = new TableLayoutPanel();
+            BJ_panel = new TableLayoutPanel();
+            goukei_Text = new PictureBox();
+            Num_panel = new FlowLayoutPanel();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            BJ_text = new PictureBox();
+            Shoji_text = new PictureBox();
             Shoji_panel = new TableLayoutPanel();
             After_panel = new FlowLayoutPanel();
             pictureBox15 = new PictureBox();
@@ -46,19 +53,18 @@
             pictureBox14 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            Shoji_text = new PictureBox();
-            PK_panel = new TableLayoutPanel();
-            yaku_pic = new PictureBox();
-            PK_Text = new PictureBox();
-            BJ_panel = new TableLayoutPanel();
-            goukei_Text = new PictureBox();
-            Num_panel = new FlowLayoutPanel();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            BJ_text = new PictureBox();
             Layout_main = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)Kekka_Text).BeginInit();
+            Kekka_Text = new PictureBox();
+            Message_label = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             MainGroupPanel.SuspendLayout();
+            BJ_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)goukei_Text).BeginInit();
+            Num_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BJ_text).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Shoji_text).BeginInit();
             Shoji_panel.SuspendLayout();
             After_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
@@ -74,56 +80,114 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Shoji_text).BeginInit();
-            PK_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)yaku_pic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PK_Text).BeginInit();
-            BJ_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)goukei_Text).BeginInit();
-            Num_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)BJ_text).BeginInit();
             Layout_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Kekka_Text).BeginInit();
             SuspendLayout();
-            // 
-            // Kekka_Text
-            // 
-            Kekka_Text.Dock = DockStyle.Fill;
-            Kekka_Text.Image = Properties.Resources.kekka_text;
-            Kekka_Text.Location = new Point(3, 20);
-            Kekka_Text.Margin = new Padding(3, 20, 3, 10);
-            Kekka_Text.Name = "Kekka_Text";
-            Kekka_Text.Size = new Size(778, 57);
-            Kekka_Text.SizeMode = PictureBoxSizeMode.Zoom;
-            Kekka_Text.TabIndex = 1;
-            Kekka_Text.TabStop = false;
             // 
             // MainGroupPanel
             // 
+            MainGroupPanel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             MainGroupPanel.AutoSize = true;
             MainGroupPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             MainGroupPanel.ColumnCount = 1;
             MainGroupPanel.ColumnStyles.Add(new ColumnStyle());
-            MainGroupPanel.Controls.Add(Shoji_panel, 0, 5);
-            MainGroupPanel.Controls.Add(Shoji_text, 0, 4);
-            MainGroupPanel.Controls.Add(PK_panel, 0, 3);
-            MainGroupPanel.Controls.Add(PK_Text, 0, 2);
             MainGroupPanel.Controls.Add(BJ_panel, 0, 1);
             MainGroupPanel.Controls.Add(BJ_text, 0, 0);
-            MainGroupPanel.Dock = DockStyle.Fill;
-            MainGroupPanel.Location = new Point(3, 97);
+            MainGroupPanel.Controls.Add(Shoji_text, 0, 3);
+            MainGroupPanel.Controls.Add(Shoji_panel, 0, 4);
+            MainGroupPanel.Location = new Point(3, 151);
             MainGroupPanel.Margin = new Padding(3, 10, 3, 3);
             MainGroupPanel.Name = "MainGroupPanel";
-            MainGroupPanel.RowCount = 6;
+            MainGroupPanel.RowCount = 5;
             MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             MainGroupPanel.RowStyles.Add(new RowStyle());
+            MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
             MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             MainGroupPanel.RowStyles.Add(new RowStyle());
-            MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            MainGroupPanel.RowStyles.Add(new RowStyle());
-            MainGroupPanel.Size = new Size(778, 322);
+            MainGroupPanel.Size = new Size(778, 252);
             MainGroupPanel.TabIndex = 2;
+            // 
+            // BJ_panel
+            // 
+            BJ_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            BJ_panel.AutoSize = true;
+            BJ_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            BJ_panel.ColumnCount = 2;
+            BJ_panel.ColumnStyles.Add(new ColumnStyle());
+            BJ_panel.ColumnStyles.Add(new ColumnStyle());
+            BJ_panel.Controls.Add(goukei_Text, 0, 0);
+            BJ_panel.Controls.Add(Num_panel, 1, 0);
+            BJ_panel.Location = new Point(290, 33);
+            BJ_panel.Name = "BJ_panel";
+            BJ_panel.RowCount = 1;
+            BJ_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            BJ_panel.Size = new Size(198, 74);
+            BJ_panel.TabIndex = 3;
+            // 
+            // goukei_Text
+            // 
+            goukei_Text.Dock = DockStyle.Bottom;
+            goukei_Text.Image = Properties.Resources.Total_value;
+            goukei_Text.Location = new Point(3, 47);
+            goukei_Text.Name = "goukei_Text";
+            goukei_Text.Size = new Size(84, 24);
+            goukei_Text.SizeMode = PictureBoxSizeMode.Zoom;
+            goukei_Text.TabIndex = 3;
+            goukei_Text.TabStop = false;
+            // 
+            // Num_panel
+            // 
+            Num_panel.AutoSize = true;
+            Num_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            Num_panel.Controls.Add(pictureBox4);
+            Num_panel.Controls.Add(pictureBox5);
+            Num_panel.Location = new Point(93, 3);
+            Num_panel.Name = "Num_panel";
+            Num_panel.Size = new Size(102, 68);
+            Num_panel.TabIndex = 4;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources._02;
+            pictureBox4.Location = new Point(3, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(45, 62);
+            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox4.TabIndex = 0;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources._02;
+            pictureBox5.Location = new Point(54, 3);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(45, 62);
+            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            // 
+            // BJ_text
+            // 
+            BJ_text.BackColor = SystemColors.ActiveCaption;
+            BJ_text.Dock = DockStyle.Fill;
+            BJ_text.Image = Properties.Resources.BJ;
+            BJ_text.Location = new Point(3, 3);
+            BJ_text.Name = "BJ_text";
+            BJ_text.Size = new Size(772, 24);
+            BJ_text.SizeMode = PictureBoxSizeMode.Zoom;
+            BJ_text.TabIndex = 2;
+            BJ_text.TabStop = false;
+            // 
+            // Shoji_text
+            // 
+            Shoji_text.BackColor = SystemColors.Info;
+            Shoji_text.Image = Properties.Resources.shoji;
+            Shoji_text.Location = new Point(3, 145);
+            Shoji_text.Name = "Shoji_text";
+            Shoji_text.Size = new Size(772, 24);
+            Shoji_text.SizeMode = PictureBoxSizeMode.Zoom;
+            Shoji_text.TabIndex = 6;
+            Shoji_text.TabStop = false;
             // 
             // Shoji_panel
             // 
@@ -137,7 +201,7 @@
             Shoji_panel.Controls.Add(After_panel, 2, 0);
             Shoji_panel.Controls.Add(Change_Text_label, 1, 0);
             Shoji_panel.Controls.Add(Before_panel, 0, 0);
-            Shoji_panel.Location = new Point(55, 245);
+            Shoji_panel.Location = new Point(55, 175);
             Shoji_panel.Name = "Shoji_panel";
             Shoji_panel.RowCount = 1;
             Shoji_panel.RowStyles.Add(new RowStyle());
@@ -306,130 +370,9 @@
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
-            // Shoji_text
-            // 
-            Shoji_text.BackColor = SystemColors.Info;
-            Shoji_text.Dock = DockStyle.Fill;
-            Shoji_text.Image = Properties.Resources.shoji;
-            Shoji_text.Location = new Point(3, 215);
-            Shoji_text.Name = "Shoji_text";
-            Shoji_text.Size = new Size(772, 24);
-            Shoji_text.SizeMode = PictureBoxSizeMode.Zoom;
-            Shoji_text.TabIndex = 6;
-            Shoji_text.TabStop = false;
-            // 
-            // PK_panel
-            // 
-            PK_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            PK_panel.AutoSize = true;
-            PK_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            PK_panel.ColumnCount = 1;
-            PK_panel.ColumnStyles.Add(new ColumnStyle());
-            PK_panel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            PK_panel.Controls.Add(yaku_pic, 0, 0);
-            PK_panel.Location = new Point(313, 143);
-            PK_panel.Name = "PK_panel";
-            PK_panel.RowCount = 1;
-            PK_panel.RowStyles.Add(new RowStyle());
-            PK_panel.Size = new Size(151, 66);
-            PK_panel.TabIndex = 5;
-            // 
-            // yaku_pic
-            // 
-            yaku_pic.Dock = DockStyle.Fill;
-            yaku_pic.Image = Properties.Resources.Hand_No1;
-            yaku_pic.Location = new Point(3, 3);
-            yaku_pic.Name = "yaku_pic";
-            yaku_pic.Size = new Size(145, 60);
-            yaku_pic.SizeMode = PictureBoxSizeMode.AutoSize;
-            yaku_pic.TabIndex = 5;
-            yaku_pic.TabStop = false;
-            // 
-            // PK_Text
-            // 
-            PK_Text.BackColor = SystemColors.InactiveCaption;
-            PK_Text.Dock = DockStyle.Fill;
-            PK_Text.Image = Properties.Resources.PK;
-            PK_Text.Location = new Point(3, 113);
-            PK_Text.Name = "PK_Text";
-            PK_Text.Size = new Size(772, 24);
-            PK_Text.SizeMode = PictureBoxSizeMode.Zoom;
-            PK_Text.TabIndex = 4;
-            PK_Text.TabStop = false;
-            // 
-            // BJ_panel
-            // 
-            BJ_panel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            BJ_panel.AutoSize = true;
-            BJ_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            BJ_panel.ColumnCount = 2;
-            BJ_panel.ColumnStyles.Add(new ColumnStyle());
-            BJ_panel.ColumnStyles.Add(new ColumnStyle());
-            BJ_panel.Controls.Add(goukei_Text, 0, 0);
-            BJ_panel.Controls.Add(Num_panel, 1, 0);
-            BJ_panel.Location = new Point(290, 33);
-            BJ_panel.Name = "BJ_panel";
-            BJ_panel.RowCount = 1;
-            BJ_panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            BJ_panel.Size = new Size(198, 74);
-            BJ_panel.TabIndex = 3;
-            // 
-            // goukei_Text
-            // 
-            goukei_Text.Dock = DockStyle.Bottom;
-            goukei_Text.Image = Properties.Resources.Total_value;
-            goukei_Text.Location = new Point(3, 47);
-            goukei_Text.Name = "goukei_Text";
-            goukei_Text.Size = new Size(84, 24);
-            goukei_Text.SizeMode = PictureBoxSizeMode.Zoom;
-            goukei_Text.TabIndex = 3;
-            goukei_Text.TabStop = false;
-            // 
-            // Num_panel
-            // 
-            Num_panel.AutoSize = true;
-            Num_panel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            Num_panel.Controls.Add(pictureBox4);
-            Num_panel.Controls.Add(pictureBox5);
-            Num_panel.Location = new Point(93, 3);
-            Num_panel.Name = "Num_panel";
-            Num_panel.Size = new Size(102, 68);
-            Num_panel.TabIndex = 4;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources._02;
-            pictureBox4.Location = new Point(3, 3);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(45, 62);
-            pictureBox4.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox4.TabIndex = 0;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources._02;
-            pictureBox5.Location = new Point(54, 3);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(45, 62);
-            pictureBox5.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox5.TabIndex = 1;
-            pictureBox5.TabStop = false;
-            // 
-            // BJ_text
-            // 
-            BJ_text.BackColor = SystemColors.ActiveCaption;
-            BJ_text.Dock = DockStyle.Fill;
-            BJ_text.Image = Properties.Resources.BJ;
-            BJ_text.Location = new Point(3, 3);
-            BJ_text.Name = "BJ_text";
-            BJ_text.Size = new Size(772, 24);
-            BJ_text.SizeMode = PictureBoxSizeMode.Zoom;
-            BJ_text.TabIndex = 2;
-            BJ_text.TabStop = false;
-            // 
             // Layout_main
             // 
+            Layout_main.AutoSize = true;
             Layout_main.ColumnCount = 1;
             Layout_main.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             Layout_main.Controls.Add(Kekka_Text, 0, 0);
@@ -437,12 +380,42 @@
             Layout_main.Dock = DockStyle.Fill;
             Layout_main.Location = new Point(0, 0);
             Layout_main.Name = "Layout_main";
-            Layout_main.RowCount = 3;
+            Layout_main.RowCount = 2;
             Layout_main.RowStyles.Add(new RowStyle());
             Layout_main.RowStyles.Add(new RowStyle());
-            Layout_main.RowStyles.Add(new RowStyle(SizeType.Absolute, 173F));
+            Layout_main.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             Layout_main.Size = new Size(784, 461);
             Layout_main.TabIndex = 3;
+            // 
+            // Kekka_Text
+            // 
+            Kekka_Text.Dock = DockStyle.Fill;
+            Kekka_Text.Image = Properties.Resources.kekka_text;
+            Kekka_Text.Location = new Point(3, 20);
+            Kekka_Text.Margin = new Padding(3, 20, 3, 10);
+            Kekka_Text.Name = "Kekka_Text";
+            Kekka_Text.Size = new Size(778, 57);
+            Kekka_Text.SizeMode = PictureBoxSizeMode.Zoom;
+            Kekka_Text.TabIndex = 1;
+            Kekka_Text.TabStop = false;
+            // 
+            // Message_label
+            // 
+            Message_label.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Message_label.AutoSize = true;
+            Message_label.Font = new Font("游ゴシック", 16F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            Message_label.ForeColor = Color.ForestGreen;
+            Message_label.Location = new Point(165, 100);
+            Message_label.Name = "Message_label";
+            Message_label.Size = new Size(452, 29);
+            Message_label.TabIndex = 4;
+            Message_label.Text = "ウィンドウを閉じると次の試合を開始します";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += Text_tenmetu;
             // 
             // Result
             // 
@@ -450,6 +423,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(784, 461);
+            Controls.Add(Message_label);
             Controls.Add(Layout_main);
             ImeMode = ImeMode.Off;
             MaximizeBox = false;
@@ -460,9 +434,17 @@
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "浜田「結果発表～～～！！！！！」";
-            ((System.ComponentModel.ISupportInitialize)Kekka_Text).EndInit();
             MainGroupPanel.ResumeLayout(false);
             MainGroupPanel.PerformLayout();
+            BJ_panel.ResumeLayout(false);
+            BJ_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)goukei_Text).EndInit();
+            Num_panel.ResumeLayout(false);
+            Num_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BJ_text).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Shoji_text).EndInit();
             Shoji_panel.ResumeLayout(false);
             Shoji_panel.PerformLayout();
             After_panel.ResumeLayout(false);
@@ -481,27 +463,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Shoji_text).EndInit();
-            PK_panel.ResumeLayout(false);
-            PK_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)yaku_pic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PK_Text).EndInit();
-            BJ_panel.ResumeLayout(false);
-            BJ_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)goukei_Text).EndInit();
-            Num_panel.ResumeLayout(false);
-            Num_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)BJ_text).EndInit();
             Layout_main.ResumeLayout(false);
             Layout_main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Kekka_Text).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private PictureBox Kekka_Text;
         private TableLayoutPanel MainGroupPanel;
         private PictureBox BJ_text;
         private TableLayoutPanel BJ_panel;
@@ -509,8 +478,6 @@
         private FlowLayoutPanel Num_panel;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
-        private TableLayoutPanel PK_panel;
-        private PictureBox PK_Text;
         private TableLayoutPanel Layout_main;
         private TableLayoutPanel Shoji_panel;
         private Label Change_Text_label;
@@ -524,11 +491,13 @@
         private PictureBox pictureBox12;
         private PictureBox pictureBox13;
         private PictureBox pictureBox14;
-        private PictureBox yaku_pic;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
+        private PictureBox Kekka_Text;
+        private Label Message_label;
+        private System.Windows.Forms.Timer timer1;
     }
 }

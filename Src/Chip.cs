@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace BJ
+﻿namespace BJ
 {
     public partial class Chip : Form
     {
@@ -22,8 +12,6 @@ namespace BJ
         {
             Chip_before.Text = Properties.Settings.Default.Chip.ToString();
             Chip_After.Text = Properties.Settings.Default.Chip.ToString();
-            Debt_label.Text = Properties.Settings.Default.Debt ? "※借金可能" : "※借金できません";
-
         }
 
         private void Clear_Button_Click(object sender, EventArgs e)
@@ -47,6 +35,7 @@ namespace BJ
 
             if (int.Parse(Chip_Count.Text) <= int.Parse(Chip_before.Text))
             {
+                //押したボタンの情報をbtnに格納
                 Button btn = sender as Button;
                 if (Chip_Count.Text == "0")
                 {
@@ -87,10 +76,9 @@ namespace BJ
                 this.Hide();
                 gameform.ShowDialog();
                 // ← ゲーム画面が閉じられる（Closeされる）まで、処理はここで待機
-                this.Close();
+                
             }
         }
-
         private void Chip_Change(object sender, EventArgs e)
         {
             int num = Properties.Settings.Default.Chip - int.Parse(Chip_Count.Text);

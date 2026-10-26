@@ -501,6 +501,7 @@
             Debt_label.TabIndex = 1;
             Debt_label.Text = "※借金可能";
             Debt_label.TextAlign = ContentAlignment.MiddleLeft;
+            Debt_label.Visible = false;
             // 
             // label1
             // 
