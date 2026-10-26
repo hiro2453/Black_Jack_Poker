@@ -82,5 +82,17 @@ namespace BJ.Properties {
                 this["battle_count"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int Now_battle {
+            get {
+                return ((int)(this["Now_battle"]));
+            }
+            set {
+                this["Now_battle"] = value;
+            }
+        }
     }
 }

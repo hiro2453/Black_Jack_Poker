@@ -85,7 +85,8 @@
 
         private void LookFive_Desc(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = "手札を5枚までしか持てません。まだ引く場合は手札から1枚捨てて引かないといけません。";
+            toolStripStatusLabel1.Text = "手札を5枚までしか持てません。\n" +
+                "まだ引く場合は手札から1枚捨てて引かないといけません。";
         }
 
         private void FiveTarget_Desc(object sender, EventArgs e)

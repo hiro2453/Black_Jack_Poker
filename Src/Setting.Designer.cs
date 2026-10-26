@@ -62,6 +62,7 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(308, 18);
             toolStripStatusLabel1.Text = "選択項目にマウスをかざすとここに説明が表示されます";
+            toolStripStatusLabel1.TextAlign = ContentAlignment.BottomLeft;
             // 
             // BestFive_radio
             // 
@@ -127,7 +128,7 @@
             // 
             Setting_Enter.AutoSize = true;
             Setting_Enter.Font = new Font("メイリオ", 12F);
-            Setting_Enter.Location = new Point(283, 197);
+            Setting_Enter.Location = new Point(288, 266);
             Setting_Enter.Name = "Setting_Enter";
             Setting_Enter.Size = new Size(84, 34);
             Setting_Enter.TabIndex = 4;
