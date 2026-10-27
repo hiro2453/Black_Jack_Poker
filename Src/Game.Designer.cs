@@ -211,7 +211,7 @@
             hit_Button.TabIndex = 1;
             hit_Button.Text = "ヒット";
             hit_Button.UseVisualStyleBackColor = true;
-            hit_Button.Click += Hit_Button_Click;
+            hit_Button.Click += Button_Action;
             // 
             // Select_Action_Panel
             // 
@@ -240,7 +240,7 @@
             doubleDown_Button.TabIndex = 10;
             doubleDown_Button.Text = "ダブルダウン";
             doubleDown_Button.UseVisualStyleBackColor = true;
-            doubleDown_Button.Click += doubleDown_Button_Click;
+            doubleDown_Button.Click += Button_Action;
             // 
             // stand_Button
             // 
@@ -252,7 +252,7 @@
             stand_Button.TabIndex = 9;
             stand_Button.Text = "スタンド";
             stand_Button.UseVisualStyleBackColor = true;
-            stand_Button.Click += stand_Button_Click;
+            stand_Button.Click += Button_Action;
             // 
             // battle_Chip_Count
             // 
@@ -529,7 +529,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(784, 461);
+            ClientSize = new Size(792, 469);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(VS_text);
             Controls.Add(Table2);

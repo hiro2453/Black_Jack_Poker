@@ -191,44 +191,38 @@ namespace BJ
         }
 
         /// <summary>
-        /// 「ヒット」を押したときのイベントです
+        /// 行動を起こしたときのイベントです。
         /// </summary>
-        private async void Hit_Button_Click(object sender, EventArgs e)
+        private async void Button_Action(object sender, EventArgs e)
         {
-            await Action_anime('h');
-            Card_pull();
-        }
-
-        /// <summary>
-        /// 「スタンド」を押したときのイベントです
-        /// </summary>
-        private async void stand_Button_Click(object sender, EventArgs e)
-        {
-            await Action_anime('s');
-            await Battale();
-        }
-
-        /// <summary>
-        /// 「ダブルダウン」を押したときのイベントです
-        /// </summary>
-
-        private async void doubleDown_Button_Click(object sender, EventArgs e)
-        {
-            await Action_anime('d');
-
-            int My_Chip = int.Parse(battle_Chip_Count.Text);
-            int check = My_Chip * 2;
-
-            // 掛け金上昇のアニメーション
-            while (My_Chip != check)
+            Button B = (Button)sender;
+            switch (B.Text)
             {
-                My_Chip++;
-                battle_Chip_Count.Text = My_Chip.ToString();
-                await Task.Delay(1);
+                case "ヒット":
+                    await Action_anime('h');
+                    Card_pull();
+                    break;
+                case "スタンド":
+                    await Action_anime('s');
+                    await Battale();
+                    break;
+                case "ダブルダウン":
+                    await Action_anime('d');
+
+                    int My_Chip = int.Parse(battle_Chip_Count.Text);
+                    int check = My_Chip * 2;
+
+                    // 掛け金上昇のアニメーション
+                    while (My_Chip != check)
+                    {
+                        My_Chip++;
+                        battle_Chip_Count.Text = My_Chip.ToString();
+                        await Task.Delay(1);
+                    }
+
+                    Card_pull();
+                    break;
             }
-
-            Card_pull();
-
         }
 
         /// <summary>
@@ -306,8 +300,6 @@ namespace BJ
                 }
             }
 
-            
-            
             //設定した対戦回数になったか確認
             if (Properties.Settings.Default.Now_battle == Properties.Settings.Default.battle_count)
             {
@@ -327,7 +319,7 @@ namespace BJ
                 using (var dialog = new Result(
                 Properties.Settings.Default.Now_battle,
                 int.Parse(User_Total_Count.Text),
-                Start_chip,
+                int.Parse(Chip_Count.Text) + play_chip,
                 End_chip))
                 {
                     dialog.ShowDialog();
@@ -543,7 +535,6 @@ namespace BJ
 
             while (pic.Size.Height < 90)
             {
-                Console.WriteLine(xy);
                 pic.Size = new Size(165, xy);
                 xy += 3;
                 await Task.Delay(5);
@@ -553,7 +544,6 @@ namespace BJ
 
             while (pic.Size.Height > 0)
             {
-                Console.WriteLine(xy);
                 pic.Location = new Point(310, y);
                 y += 1;
                 pic.Size = new Size(165, xy);
@@ -566,11 +556,11 @@ namespace BJ
             Table.Hide();
             if (Result == 'l')
             {
-                await Count_Down();
+                await Count_anime(false);
             }
             else
             {
-                await Count_Up();
+                await Count_anime(true);
             }
 
             await Task.Delay(1000);
@@ -601,7 +591,7 @@ namespace BJ
             await Task.Delay(1000);
         }
 
-        private async Task Count_Up()
+        private async Task Count_anime(bool u)
         {
             int startValue = int.Parse(battle_Chip_Count.Text);
             int durationMs = 100;
@@ -614,15 +604,31 @@ namespace BJ
 
             await Task.Delay(1000);
 
-            for (int i = 0; i <= steps; i++)
+            if (u == true)
             {
-                await Task.Delay(24);
-                kake_chip = (int)(startValue * (1.0 + (double)i / steps));
-                Chip_count2.Text = kake_chip.ToString();
+                //trueならカウントアップ
+                for (int i = 0; i <= steps; i++)
+                {
+                    await Task.Delay(24);
+                    kake_chip = (int)(startValue * (1.0 + (double)i / steps));
+                    Chip_count2.Text = kake_chip.ToString();
+                    battle_Chip_Count.Text = kake_chip.ToString();
+                }
                 battle_Chip_Count.Text = kake_chip.ToString();
             }
+            else
+            {
+                //falseならカウントダウン
+                for (int i = 0; i <= steps; i++)
+                {
+                    await Task.Delay(24);
+                    kake_chip = (int)(startValue * (1.0 - (double)i / steps));
+                    Chip_count2.Text = kake_chip.ToString();
+                    battle_Chip_Count.Text = kake_chip.ToString();
+                }
+                battle_Chip_Count.Text = "0";
+            }
 
-            battle_Chip_Count.Text = kake_chip.ToString();
             await Task.Delay(1000);
         }
         private async void test_Click(object sender, EventArgs e)
@@ -651,7 +657,7 @@ namespace BJ
             {
                 Console.WriteLine(opacity);
                 pic.Opacity = opacity;
-                opacity += 0.01f;//フロート型の値だと宣言して加算
+                opacity += 0.02f;
                 await Task.Delay(5);
             }
 
@@ -661,7 +667,7 @@ namespace BJ
             {
                 Console.WriteLine(opacity);
                 pic.Opacity = opacity;
-                opacity -= 0.01f;
+                opacity -= 0.02f;
                 await Task.Delay(5);
             }
 
@@ -676,6 +682,8 @@ namespace BJ
             Table2.Visible = true;
             Chip_count2.Text = battle_Chip_Count.Text;
             int kake_chip = int.Parse(battle_Chip_Count.Text);
+            int my_chip = int.Parse(battle_Chip_Count.Text);
+            int kake_base = int.Parse(Chip_Count.Text);
             Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
 
             await Task.Delay(1000);
@@ -683,9 +691,9 @@ namespace BJ
             for (int i = 0; i <= steps; i++)
             {
                 await Task.Delay(24);
-                kake_chip = (int)(startValue * (1.0 - (double)i / steps));
-                Console.WriteLine($">>{startValue + kake_chip}");
-                Chip_Count.Text = (startValue + kake_chip).ToString();
+                kake_chip = (int)(startValue * (1.0-(double)i / steps));
+                my_chip = (int)(startValue * ((double)i / steps));
+                Chip_Count.Text = (kake_base+ my_chip).ToString();
                 Chip_count2.Text = kake_chip.ToString();
                 battle_Chip_Count.Text = kake_chip.ToString();
             }
@@ -718,7 +726,6 @@ namespace BJ
             {
                 User_Total_Count.ForeColor = Color.Red;
                 await Burst_anime();
-                await Count_Down();
             }
         }
 
