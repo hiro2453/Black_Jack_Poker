@@ -94,5 +94,17 @@ namespace BJ.Properties {
                 this["Now_battle"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int battle_chip {
+            get {
+                return ((int)(this["battle_chip"]));
+            }
+            set {
+                this["battle_chip"] = value;
+            }
+        }
     }
 }
