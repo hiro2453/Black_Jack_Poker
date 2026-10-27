@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography.X509Certificates;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace BJ
 {
@@ -37,51 +38,17 @@ namespace BJ
 
         private void New_button_click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-        "はじめから開始しますか？",
-        "確認",
-        MessageBoxButtons.YesNo,
-        MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
+            // 1. チップ画面を開く前に、先にタイトル画面を非表示にする
+            this.Hide();
+            
+            // 2. ゲームに移行
+            using (var gameform = new Game())
             {
-                // 1. チップ画面を開く前に、先にタイトル画面を非表示にする
-                this.Hide();
-
-                // 2. チップ画面の表示
-                DialogResult chipResult;
-                using (Chip chipForm = new Chip())
-                {
-                    chipResult = chipForm.ShowDialog(this);
-                }
-
-                // 3. チップ画面の結果判定
-                if (chipResult == DialogResult.OK)
-                {
-                    // チップ確定画面で「決定」などが押された場合
-                    // ここで「ゲーム画面」を開く処理を呼び出す
-                    // 例: OpenGameForm();
-                }
-                else
-                {
-                    // 「×」ボタンやキャンセルが押された場合は、タイトル画面を再表示して戻す
-                    this.Show();
-                }
+                gameform.ShowDialog();
             }
-            // No が押された場合は何もせずタイトル画面のまま
-        }
-
-        public void This_show()
-        {
-            this.Show();
         }
 
         private void Setting_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Exit_Check(object sender, FormClosingEventArgs e)
         {
 
         }
