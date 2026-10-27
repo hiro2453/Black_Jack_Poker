@@ -54,6 +54,7 @@
             statusStrip1.Location = new Point(0, 303);
             statusStrip1.Name = "statusStrip1";
             statusStrip1.Size = new Size(384, 23);
+            statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -201,6 +202,7 @@
             Controls.Add(Setting_Enter);
             Controls.Add(Rule_Group);
             Controls.Add(statusStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "Setting";
             ShowIcon = false;
