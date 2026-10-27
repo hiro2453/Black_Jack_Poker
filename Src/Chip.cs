@@ -68,16 +68,9 @@
 
         private void Enter_Button_Click(object sender, EventArgs e)
         {
-            int battle_chip = int.Parse(Chip_Count.Text);
+            Properties.Settings.Default.battle_chip = int.Parse(Chip_Count.Text);
             Properties.Settings.Default.Save();
-
-            using (var gameform = new Game(battle_chip))
-            {
-                this.Hide();
-                gameform.ShowDialog();
-                // ← ゲーム画面が閉じられる（Closeされる）まで、処理はここで待機
-                
-            }
+            this.Close();
         }
         private void Chip_Change(object sender, EventArgs e)
         {
