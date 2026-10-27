@@ -36,7 +36,8 @@
             if (int.Parse(Chip_Count.Text) <= int.Parse(Chip_before.Text))
             {
                 //押したボタンの情報をbtnに格納
-                Button btn = sender as Button;
+                Button btn = (Button)sender;
+
                 if (Chip_Count.Text == "0")
                 {
                     Chip_Count.Text = btn.Text;
