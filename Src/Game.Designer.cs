@@ -121,6 +121,7 @@
             Dealer_Card.Name = "Dealer_Card";
             Dealer_Card.Size = new Size(394, 76);
             Dealer_Card.TabIndex = 0;
+            Dealer_Card.ControlAdded += Dealer_Total_Calc;
             // 
             // User_Total_Text
             // 
