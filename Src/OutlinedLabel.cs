@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Drawing.Text;
 
 namespace BJ.Src
@@ -236,6 +237,91 @@ namespace BJ.Src
                     g.FillPath(brush, path);
                 }
             }
+        }
+    }
+
+    public class CustomPictureBox : PictureBox
+    {
+        private float opacity = 1.0f;
+
+        [Category("カスタム属性")]
+        [Description("画像の不透明度を設定します(0.0 〜 1.0)")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // ★ これを追加
+        public float Opacity
+        {
+            get => opacity;
+            set
+            {
+                opacity = Math.Max(0.0f, Math.Min(value, 1.0f));
+                Invalidate();
+            }
+        }
+
+        private float rotationAngle = 0.0f;
+
+        [Category("カスタム属性")]
+        [Description("画像の回転角度を設定します(0 〜 360)")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // ★ これを追加
+        public float RotationAngle
+        {
+            get => rotationAngle;
+            set
+            {
+                rotationAngle = value;
+                Invalidate();
+            }
+        }
+
+        private float scaleFactor = 1.0f;
+
+        [Category("カスタム属性")]
+        [Description("画像の拡大縮小率を設定します(1.0 = 等倍)")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)] // ★ これを追加
+        public float ScaleFactor
+        {
+            get => scaleFactor;
+            set
+            {
+                scaleFactor = value;
+                Invalidate();
+            }
+        }
+
+        // OnPaint の処理などはそのまま
+        protected override void OnPaint(PaintEventArgs pe)
+        {
+            if (Image == null)
+            {
+                base.OnPaint(pe);
+                return;
+            }
+
+            Graphics g = pe.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+
+            ColorMatrix matrix = new ColorMatrix
+            {
+                Matrix33 = opacity
+            };
+            ImageAttributes attributes = new ImageAttributes();
+            attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+            g.TranslateTransform(Width / 2.0f, Height / 2.0f);
+            g.RotateTransform(rotationAngle);
+            g.ScaleTransform(scaleFactor, scaleFactor);
+
+            int imgWidth = Image.Width;
+            int imgHeight = Image.Height;
+            Rectangle destRect = new Rectangle(-imgWidth / 2, -imgHeight / 2, imgWidth, imgHeight);
+
+            g.DrawImage(
+                Image,
+                destRect,
+                0, 0, imgWidth, imgHeight,
+                GraphicsUnit.Pixel,
+                attributes
+            );
         }
     }
 }
