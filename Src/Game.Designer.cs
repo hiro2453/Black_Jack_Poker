@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             User_Card_Grid = new GroupBox();
             User_Card = new FlowLayoutPanel();
@@ -64,6 +65,8 @@
             label6 = new Label();
             Play_Count_Max = new Label();
             label4 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            Information_label = new BJ.Src.OutlinedLabel();
             User_Card_Grid.SuspendLayout();
             Dealer_Card_Grid.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -523,13 +526,32 @@
             label4.Text = "/";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // timer1
+            // 
+            timer1.Interval = 500;
+            timer1.Tick += Label_tenmetu;
+            // 
+            // Information_label
+            // 
+            Information_label.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            Information_label.Font = new Font("游ゴシック", 16F, FontStyle.Bold, GraphicsUnit.Point, 128);
+            Information_label.ForeColor = Color.White;
+            Information_label.Location = new Point(157, 126);
+            Information_label.Name = "Information_label";
+            Information_label.Size = new Size(476, 28);
+            Information_label.StrokeWidth = 3F;
+            Information_label.TabIndex = 23;
+            Information_label.Text = "ひきわけのため、賭けたチップは返却されます";
+            Information_label.Visible = false;
+            // 
             // Game
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(792, 469);
+            ClientSize = new Size(784, 461);
+            Controls.Add(Information_label);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(VS_text);
             Controls.Add(Table2);
@@ -614,5 +636,7 @@
         private Label label4;
         private Label label6;
         private Label Play_Count_Max;
+        private System.Windows.Forms.Timer timer1;
+        private Src.OutlinedLabel Information_label;
     }
 }

@@ -10,7 +10,6 @@ namespace BJ
         Deck d = new();
         bool Start_AA = false;
         bool Start_A = false;
-        int play_chip = 0;
         int Start_chip = 0;
         int End_chip = 0;
         int battle_Start_chip = 0;
@@ -36,14 +35,20 @@ namespace BJ
         {
             using (var chip_window = new Chip())
             {
-                chip_window.ShowDialog();
+                // 戻り値が OK 以外の場合（×ボタンで閉じられた場合）
+                if (chip_window.ShowDialog() != DialogResult.OK)
+                {
+                    // ×ボタンで閉じられた時のみ実行したい処理
+                    this.Close();
+                }
+
             }
+            Deck deck = new();
 
             Dealer_Card.ControlAdded -= Dealer_Total_Calc;
             Play_Count.Text = Properties.Settings.Default.Now_battle.ToString();
-            play_chip = Properties.Settings.Default.battle_chip;
-            Start_chip = Properties.Settings.Default.Now_battle + Properties.Settings.Default.battle_chip;
-            
+            Start_chip = int.Parse(Chip_Count.Text) + int.Parse(battle_Chip_Count.Text);
+
             //設定読み込み
             bool double_Down_Check = Properties.Settings.Default.double_Down;
 
@@ -56,30 +61,35 @@ namespace BJ
             User_Total_Count.ForeColor = Color.Black;
             Table2.Visible = false;
             Select_Action_Panel.Visible = true;
-            doubleDown_Button.Enabled = true;
+            hit_Button.Visible = true;
+            stand_Button.Visible = true;
+            doubleDown_Button.Visible = true;
+            hit_Button.Enabled = true;
+            stand_Button.Enabled = true;
+            doubleDown_Button.Enabled = double_Down_Check;
 
             int Chip_check = Properties.Settings.Default.battle_chip;
             battle_Chip_Count.Text = Chip_check.ToString();
             int chip = Properties.Settings.Default.Chip - Properties.Settings.Default.battle_chip;
             Chip_Count.Text = chip.ToString();
 
-            d.Crad_Shuffle();
+            deck.Crad_Shuffle();
 
             //ユーザーの手札2枚配布
             for (int i = 0; i < 2; i++)
             {
                 Label L = new();
-                L.Text = d.Please_Card();
+                L.Text = deck.Please_Card();
                 Console.WriteLine(d.How_many());
                 L.AutoSize = true;
                 User_Card.Controls.Add(L);
 
                 //合計値計算
-                string check = d.Mark_remove(L.Text);
+                string check = deck.Mark_remove(L.Text);
                 int Count = 0;
                 if (check == "A" || check == "J" || check == "Q" || check == "K")
                 {
-                    Count = d.Start_BlackJackValue(check);
+                    Count = deck.Start_BlackJackValue(check);
                 }
                 else
                 {
@@ -131,7 +141,9 @@ namespace BJ
             }
             Dealer_Card.ControlAdded += Dealer_Total_Calc;
             string item_0 = d.Mark_remove(User_Card.Controls[0].Text);
+            Console.WriteLine($">>{item_0}");
             string item_1 = d.Mark_remove(User_Card.Controls[1].Text);
+            Console.WriteLine($">>{item_1}");
 
             if (item_0 == "A" || item_1 == "A")
             {
@@ -170,7 +182,7 @@ namespace BJ
             }
 
             //最初にAを持っていたとしても、21を超えるまではAを11とカウントする
-            if (Start_A == true && Total > 21)
+            if (Start_A == true)
             {
                 Total -= 10;
                 Dealer_Total_Count.Text = Total.ToString();
@@ -268,11 +280,12 @@ namespace BJ
             }
 
             //ディーラーと自分の合計値が21以下かつ一緒か確認
-            if (int.Parse(Dealer_Total_Count.Text)<=21 && 
-                int.Parse(User_Total_Count.Text)<=21 &&
+            if (int.Parse(Dealer_Total_Count.Text) <= 21 &&
+                int.Parse(User_Total_Count.Text) <= 21 &&
                 int.Parse(Dealer_Total_Count.Text) == int.Parse(User_Total_Count.Text))
             {
                 //ひきわけの処理をここに入力
+                await Tonton_anime();
             }
             else
             {
@@ -295,41 +308,38 @@ namespace BJ
                     {
                         //false 自分が大きい
                         await BattleResult_anime('w');
+                        int startValue = int.Parse(battle_Chip_Count.Text);
+                        int durationMs = 100;
+                        int steps = 32;
+                        int delayPerStep = durationMs / steps;
+                        Table2.Visible = true;
+                        Chip_count2.Text = battle_Chip_Count.Text;
+                        int kake_chip = int.Parse(battle_Chip_Count.Text);
+                        int my_chip = int.Parse(battle_Chip_Count.Text);
+                        int kake_base = int.Parse(Chip_Count.Text);
+                        Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
+
+                        await Task.Delay(500);
+
+                        for (int i = 0; i <= steps; i++)
+                        {
+                            await Task.Delay(24);
+                            kake_chip = (int)(startValue * (1.0 - (double)i / steps));
+                            my_chip = (int)(startValue * ((double)i / steps));
+                            Chip_Count.Text = (kake_base + my_chip).ToString();
+                            Chip_count2.Text = kake_chip.ToString();
+                            battle_Chip_Count.Text = kake_chip.ToString();
+                        }
+
+                        battle_Chip_Count.Text = "0";
                         End_chip = Start_chip + int.Parse(battle_Chip_Count.Text);
                     }
                 }
             }
 
-            //設定した対戦回数になったか確認
-            if (Properties.Settings.Default.Now_battle == Properties.Settings.Default.battle_count)
-            {
-                //true 終わりへ行く
-                using (var dialog = new Result(
-                    Properties.Settings.Default.Now_battle,
-                    int.Parse(User_Total_Count.Text),
-                    battle_Start_chip,
-                    End_chip))
-                {
-                    dialog.ShowDialog();
-                }
-            }
-            else
-            {
-                //false 勝負結果を見せて続行
-                using (var dialog = new Result(
-                Properties.Settings.Default.Now_battle,
-                int.Parse(User_Total_Count.Text),
-                int.Parse(Chip_Count.Text) + play_chip,
-                End_chip))
-                {
-                    dialog.ShowDialog();
-                }
-            }
+            await Task.Delay(500);
+            await Result();
 
-            Properties.Settings.Default.Now_battle++;
-            Properties.Settings.Default.Chip = End_chip;
-            Properties.Settings.Default.Save();
-            Start();
         }
 
         /// <summary>
@@ -472,7 +482,17 @@ namespace BJ
 
             await Task.Delay(1000);
 
+            await Result();
+
+        }
+        private async Task Result()
+        {
             End_chip = int.Parse(Chip_Count.Text);
+
+            if (Chip_Count.Text.Length <6)
+            {
+                
+            }
 
             if (Properties.Settings.Default.Now_battle == Properties.Settings.Default.battle_count)
             {
@@ -480,8 +500,8 @@ namespace BJ
                 using (var dialog = new Result(
                     Properties.Settings.Default.Now_battle,
                     int.Parse(User_Total_Count.Text),
-                    int.Parse(Chip_Count.Text),
-                    End_chip))
+                    Start_chip,
+                    Chip_Count.Text))
                 {
                     dialog.ShowDialog();
                 }
@@ -490,20 +510,19 @@ namespace BJ
             {
                 //false 勝負結果を見せて続行
                 using (var dialog = new Result(
-                Properties.Settings.Default.Now_battle,
-                int.Parse(User_Total_Count.Text),
-                int.Parse(Chip_Count.Text) + play_chip,
-                End_chip))
+                    Properties.Settings.Default.Now_battle,
+                    int.Parse(User_Total_Count.Text),
+                    Start_chip,
+                    Chip_Count.Text))
                 {
                     dialog.ShowDialog();
                 }
+
+                Properties.Settings.Default.Now_battle++;
+                Properties.Settings.Default.Chip = End_chip;
+                Properties.Settings.Default.Save();
+                Start();
             }
-
-            Properties.Settings.Default.Now_battle++;
-            Properties.Settings.Default.Chip = End_chip;
-            Properties.Settings.Default.Save();
-            Start();
-
         }
 
         private async Task BattleResult_anime(char Result)
@@ -675,6 +694,8 @@ namespace BJ
             pic.Hide();
             Table.Hide();
 
+            Information_label.Visible = true;
+            timer1.Enabled = true;
             int startValue = int.Parse(battle_Chip_Count.Text);
             int durationMs = 100;
             int steps = 32;
@@ -691,9 +712,9 @@ namespace BJ
             for (int i = 0; i <= steps; i++)
             {
                 await Task.Delay(24);
-                kake_chip = (int)(startValue * (1.0-(double)i / steps));
+                kake_chip = (int)(startValue * (1.0 - (double)i / steps));
                 my_chip = (int)(startValue * ((double)i / steps));
-                Chip_Count.Text = (kake_base+ my_chip).ToString();
+                Chip_Count.Text = (kake_base + my_chip).ToString();
                 Chip_count2.Text = kake_chip.ToString();
                 battle_Chip_Count.Text = kake_chip.ToString();
             }
@@ -701,6 +722,39 @@ namespace BJ
             battle_Chip_Count.Text = "0";
 
             await Task.Delay(1000);
+            timer1.Enabled = false;
+            Information_label.Visible = false;
+
+            if (Properties.Settings.Default.Now_battle == Properties.Settings.Default.battle_count)
+            {
+                //true 終わりへ行く
+                using (var dialog = new Result(
+                    Properties.Settings.Default.Now_battle,
+                    int.Parse(User_Total_Count.Text),
+                    int.Parse(Chip_Count.Text),
+                    "変更なし"))
+                {
+                    dialog.ShowDialog();
+                }
+            }
+            else
+            {
+                //false 勝負結果を見せて続行
+                using (var dialog = new Result(
+                    Properties.Settings.Default.Now_battle,
+                    int.Parse(User_Total_Count.Text),
+                    int.Parse(Chip_Count.Text),
+                    "変更なし"))
+                {
+                    dialog.ShowDialog();
+                }
+
+                Properties.Settings.Default.Now_battle++;
+                Properties.Settings.Default.battle_chip = 0;
+                Properties.Settings.Default.Chip = int.Parse(Chip_Count.Text);
+                Properties.Settings.Default.Save();
+                Start();
+            }
         }
 
         private void Exit_Check(object sender, FormClosingEventArgs e)
@@ -751,6 +805,11 @@ namespace BJ
             }
 
             Dealer_Total_Count.Text = Total.ToString();
+        }
+
+        private void Label_tenmetu(object sender, EventArgs e)
+        {
+            Information_label.Visible = Information_label.Visible ? false : true;
         }
     }
 }
