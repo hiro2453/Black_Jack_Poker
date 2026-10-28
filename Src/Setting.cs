@@ -76,6 +76,14 @@
                     }
                 }
             }
+
+            //nullが来たら5に設定する。null以外ならそのまま反映
+            string select_item = battle_count.SelectedItem?.ToString() ?? "5";
+            Properties.Settings.Default.battle_count = int.Parse(select_item);
+            Properties.Settings.Default.Debt = Debt_checkbox.Checked;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("保存しました。", "保存成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
         private void BestFive_Desc(object sender, EventArgs e)

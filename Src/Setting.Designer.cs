@@ -40,7 +40,7 @@
             groupBox1 = new GroupBox();
             groupBox2 = new GroupBox();
             battle_count = new ComboBox();
-            checkBox2 = new CheckBox();
+            Debt_checkbox = new CheckBox();
             statusStrip1.SuspendLayout();
             Rule_Group.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -53,7 +53,7 @@
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 303);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(384, 23);
+            statusStrip1.Size = new Size(397, 23);
             statusStrip1.SizingGrip = false;
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
@@ -129,7 +129,7 @@
             // 
             Setting_Enter.AutoSize = true;
             Setting_Enter.Font = new Font("メイリオ", 12F);
-            Setting_Enter.Location = new Point(288, 266);
+            Setting_Enter.Location = new Point(283, 266);
             Setting_Enter.Name = "Setting_Enter";
             Setting_Enter.Size = new Size(84, 34);
             Setting_Enter.TabIndex = 4;
@@ -151,7 +151,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(groupBox2);
-            groupBox1.Controls.Add(checkBox2);
+            groupBox1.Controls.Add(Debt_checkbox);
             groupBox1.Controls.Add(checkBox1);
             groupBox1.Location = new Point(178, 12);
             groupBox1.Name = "groupBox1";
@@ -182,22 +182,22 @@
             battle_count.TabStop = false;
             battle_count.Text = "5";
             // 
-            // checkBox2
+            // Debt_checkbox
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(105, 24);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(51, 22);
-            checkBox2.TabIndex = 6;
-            checkBox2.Text = "借金";
-            checkBox2.UseVisualStyleBackColor = true;
+            Debt_checkbox.AutoSize = true;
+            Debt_checkbox.Location = new Point(105, 24);
+            Debt_checkbox.Name = "Debt_checkbox";
+            Debt_checkbox.Size = new Size(51, 22);
+            Debt_checkbox.TabIndex = 6;
+            Debt_checkbox.Text = "借金";
+            Debt_checkbox.UseVisualStyleBackColor = true;
             // 
             // Setting
             // 
             AutoScaleDimensions = new SizeF(7F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
-            ClientSize = new Size(384, 326);
+            ClientSize = new Size(397, 326);
             Controls.Add(groupBox1);
             Controls.Add(Setting_Enter);
             Controls.Add(Rule_Group);
@@ -232,7 +232,7 @@
         private Button Setting_Enter;
         private CheckBox checkBox1;
         private GroupBox groupBox1;
-        private CheckBox checkBox2;
+        private CheckBox Debt_checkbox;
         private GroupBox groupBox2;
         private ComboBox battle_count;
     }
