@@ -5,7 +5,7 @@ namespace BJ.Src
     public partial class Result : Form
     {
         Display display = new Display();
-        public Result(int battle_count, int BJ, int Before_Chip, int After_Chip)
+        public Result(int battle_count, int BJ, int Before_Chip, string After_Check_Chip)
         {
             InitializeComponent();
 
@@ -23,9 +23,16 @@ namespace BJ.Src
 
             display.Num(Num_panel, BJ);
             display.Num(Before_panel, Before_Chip);
-            display.Num(After_panel, After_Chip);
-        }
+            if (int.TryParse(After_Check_Chip, out int After_Chip))
+            {
+                display.Num(After_panel, After_Chip);
+            }
+            else
+            {
+                display.Nothing(After_panel, After_Check_Chip);
+            }
 
+        }
         private async void Text_tenmetu(object sender, EventArgs e)
         {
             Message_label.Visible = Message_label.Visible ? false : true;

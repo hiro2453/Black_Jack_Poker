@@ -95,7 +95,7 @@
             MainGroupPanel.Controls.Add(BJ_text, 0, 0);
             MainGroupPanel.Controls.Add(Shoji_text, 0, 3);
             MainGroupPanel.Controls.Add(Shoji_panel, 0, 4);
-            MainGroupPanel.Location = new Point(3, 151);
+            MainGroupPanel.Location = new Point(3, 146);
             MainGroupPanel.Margin = new Padding(3, 10, 3, 3);
             MainGroupPanel.Name = "MainGroupPanel";
             MainGroupPanel.RowCount = 5;
@@ -104,7 +104,7 @@
             MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
             MainGroupPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
             MainGroupPanel.RowStyles.Add(new RowStyle());
-            MainGroupPanel.Size = new Size(778, 252);
+            MainGroupPanel.Size = new Size(778, 262);
             MainGroupPanel.TabIndex = 2;
             // 
             // BJ_panel
@@ -201,11 +201,11 @@
             Shoji_panel.Controls.Add(After_panel, 2, 0);
             Shoji_panel.Controls.Add(Change_Text_label, 1, 0);
             Shoji_panel.Controls.Add(Before_panel, 0, 0);
-            Shoji_panel.Location = new Point(55, 175);
+            Shoji_panel.Location = new Point(37, 175);
             Shoji_panel.Name = "Shoji_panel";
             Shoji_panel.RowCount = 1;
             Shoji_panel.RowStyles.Add(new RowStyle());
-            Shoji_panel.Size = new Size(667, 74);
+            Shoji_panel.Size = new Size(704, 84);
             Shoji_panel.TabIndex = 7;
             // 
             // After_panel
@@ -220,45 +220,48 @@
             After_panel.Controls.Add(pictureBox8);
             After_panel.Location = new Point(358, 3);
             After_panel.Name = "After_panel";
-            After_panel.Size = new Size(306, 68);
+            After_panel.Size = new Size(343, 78);
             After_panel.TabIndex = 6;
             // 
             // pictureBox15
             // 
-            pictureBox15.Image = Properties.Resources._02;
+            pictureBox15.Image = Properties.Resources.hen;
             pictureBox15.Location = new Point(3, 3);
             pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(45, 62);
+            pictureBox15.Size = new Size(58, 72);
             pictureBox15.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox15.TabIndex = 1;
             pictureBox15.TabStop = false;
             // 
             // pictureBox16
             // 
-            pictureBox16.Image = Properties.Resources._02;
-            pictureBox16.Location = new Point(54, 3);
+            pictureBox16.Image = Properties.Resources.kou;
+            pictureBox16.Location = new Point(67, 5);
+            pictureBox16.Margin = new Padding(3, 5, 3, 3);
             pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(45, 62);
+            pictureBox16.Size = new Size(58, 69);
             pictureBox16.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox16.TabIndex = 2;
             pictureBox16.TabStop = false;
             // 
             // pictureBox18
             // 
-            pictureBox18.Image = Properties.Resources._02;
-            pictureBox18.Location = new Point(105, 3);
+            pictureBox18.Image = Properties.Resources.na;
+            pictureBox18.Location = new Point(131, 7);
+            pictureBox18.Margin = new Padding(3, 7, 3, 3);
             pictureBox18.Name = "pictureBox18";
-            pictureBox18.Size = new Size(45, 62);
+            pictureBox18.Size = new Size(55, 66);
             pictureBox18.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox18.TabIndex = 4;
             pictureBox18.TabStop = false;
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = Properties.Resources._02;
-            pictureBox6.Location = new Point(156, 3);
+            pictureBox6.Image = Properties.Resources.shi;
+            pictureBox6.Location = new Point(192, 7);
+            pictureBox6.Margin = new Padding(3, 7, 3, 3);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(45, 62);
+            pictureBox6.Size = new Size(46, 65);
             pictureBox6.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox6.TabIndex = 5;
             pictureBox6.TabStop = false;
@@ -266,7 +269,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources._02;
-            pictureBox7.Location = new Point(207, 3);
+            pictureBox7.Location = new Point(244, 3);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(45, 62);
             pictureBox7.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -276,7 +279,7 @@
             // pictureBox8
             // 
             pictureBox8.Image = Properties.Resources._02;
-            pictureBox8.Location = new Point(258, 3);
+            pictureBox8.Location = new Point(295, 3);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(45, 62);
             pictureBox8.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -290,7 +293,7 @@
             Change_Text_label.Font = new Font("メイリオ", 16F, FontStyle.Regular, GraphicsUnit.Point, 128);
             Change_Text_label.Location = new Point(315, 0);
             Change_Text_label.Name = "Change_Text_label";
-            Change_Text_label.Size = new Size(37, 74);
+            Change_Text_label.Size = new Size(37, 84);
             Change_Text_label.TabIndex = 4;
             Change_Text_label.Text = "→";
             Change_Text_label.TextAlign = ContentAlignment.MiddleCenter;
