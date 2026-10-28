@@ -57,7 +57,10 @@
             {
                 if (Properties.Settings.Default.Debt == true)
                 {
-                    Chip_Count.Text = "999999";
+                    if (int.Parse(Chip_before.Text) - int.Parse(Chip_Count.Text) < -1)
+                    {
+                        Chip_Count.Text = Chip_before.Text;
+                    }
                 }
                 else
                 {
@@ -71,7 +74,7 @@
         {
             Properties.Settings.Default.battle_chip = int.Parse(Chip_Count.Text);
             Properties.Settings.Default.Save();
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
         private void Chip_Change(object sender, EventArgs e)
         {
