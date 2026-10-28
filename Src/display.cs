@@ -58,6 +58,92 @@ namespace BJ.Src
                 name.Controls.Add(picnum);
             }
         }
+
+        public void Num_small(Control name, int num)
+        {
+            name.Controls.Clear();
+
+            foreach (char c in num.ToString())
+            {
+                PictureBox picnum = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.AutoSize,
+                    Dock = DockStyle.Left,
+                    Margin = new Padding(3, 0, 0, 0)
+                };
+
+                switch (c)
+                {
+                    case '0':
+                        picnum.Image = Properties.Resources._000;
+                        break;
+                    case '1':
+                        picnum.Image = Properties.Resources._001;
+                        break;
+                    case '2':
+                        picnum.Image = Properties.Resources._002;
+                        break;
+                    case '3':
+                        picnum.Image = Properties.Resources._003;
+                        break;
+                    case '4':
+                        picnum.Image = Properties.Resources._004;
+                        break;
+                    case '5':
+                        picnum.Image = Properties.Resources._005;
+                        break;
+                    case '6':
+                        picnum.Image = Properties.Resources._006;
+                        break;
+                    case '7':
+                        picnum.Image = Properties.Resources._007;
+                        break;
+                    case '8':
+                        picnum.Image = Properties.Resources._008;
+                        break;
+                    case '9':
+                        picnum.Image = Properties.Resources._009;
+                        break;
+                }
+
+                name.Controls.Add(picnum);
+            }
+        }
+        public void Nothing(Control name, string character)
+        {
+            name.Controls.Clear();
+
+            foreach (char c in character)
+            {
+                PictureBox picnum = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.AutoSize,
+                    Dock = DockStyle.Left
+                };
+
+                switch (c)
+                {
+                    case '変':
+                        picnum.Image = Properties.Resources.hen;
+                        picnum.Margin = new Padding(3, 0, 0, 0);
+                        break;
+                    case '更':
+                        picnum.Image = Properties.Resources.kou;
+                        picnum.Margin = new Padding(3, 3, 0, 0);
+                        break;
+                    case 'な':
+                        picnum.Image = Properties.Resources.na;
+                        picnum.Margin = new Padding(3, 5, 0, 0);
+                        break;
+                    case 'し':
+                        picnum.Image = Properties.Resources.shi;
+                        picnum.Margin = new Padding(3, 5, 0, 0);
+                        break;
+                }
+
+                name.Controls.Add(picnum);
+            }
+        }
         public void Yaku(PictureBox name,string Yaku)
         {
             switch (Yaku)
