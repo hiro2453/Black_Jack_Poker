@@ -1,3 +1,4 @@
+using BJ.Src;
 using System.Reflection;
 using System.Resources;
 using System.Security.Cryptography.X509Certificates;
@@ -46,11 +47,21 @@ namespace BJ
             {
                 gameform.ShowDialog();
             }
+
+            this.Show();
         }
 
         private void Setting_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            // 2. ゲームに移行
+            using (var setting = new Setting())
+            {
+                setting.ShowDialog();
+            }
+
+            this.Show();
         }
     }
 }
