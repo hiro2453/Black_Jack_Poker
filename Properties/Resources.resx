@@ -271,32 +271,62 @@
   <data name="00" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_00.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="03" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="04" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="06" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_06.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="07" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_07.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="08" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_08.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="09" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Number\_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="009" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Number\_09.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="battle_Chip_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Action\battle_Chip_text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -324,5 +354,17 @@
   </data>
   <data name="TONTON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Action\ひきわけ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\変.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\し.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="na" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\な.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kou" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\更.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
