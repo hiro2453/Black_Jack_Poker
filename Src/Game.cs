@@ -10,6 +10,7 @@ namespace BJ
         Deck d = new();
         bool Start_AA = false;
         bool Start_A = false;
+        bool BlackJack = false;
         int Start_chip = 0;
         int End_chip = 0;
         int battle_Start_chip = 0;
@@ -155,6 +156,11 @@ namespace BJ
                 Start_AA = true;
                 Console.WriteLine("どちらもAです");
             }
+            if (User_Total_Count.Text == "21")
+            {
+                BlackJack = true;
+                Console.WriteLine("ブラックジャック！！！");
+            }
         }
 
         /// <summary>
@@ -167,6 +173,13 @@ namespace BJ
             L.AutoSize = true;
             User_Card.Controls.Add(L);
             doubleDown_Button.Enabled = false;
+
+            //ブラックジャックなのにカードを引いた
+            if (BlackJack == true)
+            {
+                BlackJack = false;
+                Console.WriteLine("ブラックジャックなのに引いたので無効になりました");
+            }
 
             //合計値計算
             string check = d.Mark_remove(L.Text);
@@ -221,15 +234,20 @@ namespace BJ
                 case "ダブルダウン":
                     await Action_anime('d');
 
-                    int My_Chip = int.Parse(battle_Chip_Count.Text);
-                    int check = My_Chip * 2;
+                    int startValue = int.Parse(battle_Chip_Count.Text);
+                    int durationMs = 100;
+                    int steps = 32;
+                    int delayPerStep = durationMs / steps;
+                    int kake_chip = int.Parse(battle_Chip_Count.Text);
+                    int my_chip = int.Parse(battle_Chip_Count.Text);
+                    int kake_base = int.Parse(Chip_Count.Text);
 
-                    // 掛け金上昇のアニメーション
-                    while (My_Chip != check)
+                    for (int i = 0; i <= steps; i++)
                     {
-                        My_Chip++;
-                        battle_Chip_Count.Text = My_Chip.ToString();
-                        await Task.Delay(1);
+                        await Task.Delay(24);
+                        kake_chip = (int)(startValue * (1.0 + (double)i / steps));
+                        my_chip = (int)(startValue * ((double)i / steps));
+                        battle_Chip_Count.Text = kake_chip.ToString();
                     }
 
                     Card_pull();
@@ -300,35 +318,94 @@ namespace BJ
                     //ディーラーと自分の合計値を比較する
                     if (int.Parse(Dealer_Total_Count.Text) > int.Parse(User_Total_Count.Text))
                     {
-                        //true ディーラーが大きい
+                        //true あなたの負け
                         await BattleResult_anime('l');
-                        End_chip = int.Parse(Chip_Count.Text);
+                        End_chip = int.Parse(Chip_Count.Text) + Properties.Settings.Default.battle_chip;
                     }
                     else
                     {
-                        //false 自分が大きい
+                        //false あなたの勝ち
                         await BattleResult_anime('w');
-                        int startValue = int.Parse(battle_Chip_Count.Text);
-                        int durationMs = 100;
-                        int steps = 32;
-                        int delayPerStep = durationMs / steps;
-                        Table2.Visible = true;
-                        Chip_count2.Text = battle_Chip_Count.Text;
-                        int kake_chip = int.Parse(battle_Chip_Count.Text);
-                        int my_chip = int.Parse(battle_Chip_Count.Text);
-                        int kake_base = int.Parse(Chip_Count.Text);
-                        Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
 
-                        await Task.Delay(500);
-
-                        for (int i = 0; i <= steps; i++)
+                        //ブラックジャックのまま勝った
+                        if (BlackJack == true)
                         {
-                            await Task.Delay(24);
-                            kake_chip = (int)(startValue * (1.0 - (double)i / steps));
-                            my_chip = (int)(startValue * ((double)i / steps));
-                            Chip_Count.Text = (kake_base + my_chip).ToString();
-                            Chip_count2.Text = kake_chip.ToString();
-                            battle_Chip_Count.Text = kake_chip.ToString();
+                            Information_label.Text = "ブラックジャック！賭け金が2.5倍になります";
+                            Information_label.Visible = true;
+                            timer1.Enabled = true;
+                            int startV = int.Parse(battle_Chip_Count.Text);
+                            int step = 32;
+                            Table2.Visible = true;
+                            Chip_count2.Text = battle_Chip_Count.Text;
+                            int kakechip = int.Parse(battle_Chip_Count.Text);
+                            int mychip = int.Parse(battle_Chip_Count.Text);
+                            int kakebase = int.Parse(Chip_Count.Text);
+                            Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
+
+                            await Task.Delay(1000);
+
+                            for (int i = 0; i <= step; i++)
+                            {
+                                await Task.Delay(24);
+                                kakechip = (int)(startV * (1.5 + (double)i / step));
+                                mychip = (int)(startV * ((double)i / step));
+                                Chip_count2.Text = kakechip.ToString();
+                                battle_Chip_Count.Text = kakechip.ToString();
+                            }
+
+                            Console.WriteLine($"kakechip >>{kakechip}");
+                            Console.WriteLine($"mychip >>{mychip}");
+                            Console.WriteLine($"kakebase >>{kakebase}");
+                            startV = int.Parse(battle_Chip_Count.Text);
+                            kakechip = int.Parse(battle_Chip_Count.Text);
+                            mychip = int.Parse(battle_Chip_Count.Text);
+                            kakebase = int.Parse(Chip_Count.Text);
+                            await Task.Delay(1000);
+
+
+                            for (int i = 0; i <= step; i++)
+                            {
+                                await Task.Delay(24);
+                                kakechip = (int)(startV * (1.0 - (double)i / step));
+                                Console.WriteLine($"kakechip > {kakechip}");
+                                mychip = (int)(startV * ((double)i / step));
+                                Console.WriteLine($"mychip > {mychip}");
+                                Chip_Count.Text = (kakebase + mychip).ToString();
+                                Chip_count2.Text = kakechip.ToString();
+                                battle_Chip_Count.Text = kakechip.ToString();
+                            }
+
+                            await Task.Delay(1000);
+
+                            Information_label.Visible = false;
+                            timer1.Enabled = false;
+
+                            battle_Chip_Count.Text = "0";
+                            End_chip = Start_chip + int.Parse(battle_Chip_Count.Text);
+                        }
+                        //普通に勝った
+                        else
+                        {
+                            int startValue = int.Parse(battle_Chip_Count.Text);
+                            int durationMs = 100;
+                            int steps = 32;
+                            int delayPerStep = durationMs / steps;
+                            Table2.Visible = true;
+                            Chip_count2.Text = battle_Chip_Count.Text;
+                            int kake_chip = int.Parse(battle_Chip_Count.Text);
+                            int my_chip = int.Parse(battle_Chip_Count.Text);
+                            int kake_base = int.Parse(Chip_Count.Text);
+                            Table2.AutoSizeMode = AutoSizeMode.GrowOnly;
+
+                            for (int i = 0; i <= steps; i++)
+                            {
+                                await Task.Delay(24);
+                                kake_chip = (int)(startValue * (1.0 - (double)i / steps));
+                                my_chip = (int)(startValue * ((double)i / steps));
+                                Chip_Count.Text = (kake_base + my_chip).ToString();
+                                Chip_count2.Text = kake_chip.ToString();
+                                battle_Chip_Count.Text = kake_chip.ToString();
+                            }
                         }
 
                         battle_Chip_Count.Text = "0";
@@ -489,11 +566,6 @@ namespace BJ
         {
             End_chip = int.Parse(Chip_Count.Text);
 
-            if (Chip_Count.Text.Length <6)
-            {
-                
-            }
-
             if (Properties.Settings.Default.Now_battle == Properties.Settings.Default.battle_count)
             {
                 //true 終わりへ行く
@@ -505,6 +577,10 @@ namespace BJ
                 {
                     dialog.ShowDialog();
                 }
+
+                Properties.Settings.Default.Chip = End_chip;
+                Properties.Settings.Default.Save();
+
             }
             else
             {
@@ -652,7 +728,7 @@ namespace BJ
         }
         private async void test_Click(object sender, EventArgs e)
         {
-            await Tonton_anime();
+            
         }
 
         private async Task Tonton_anime()
@@ -694,6 +770,7 @@ namespace BJ
             pic.Hide();
             Table.Hide();
 
+            Information_label.Text = "ひきわけのため、賭けたチップは返却されます";
             Information_label.Visible = true;
             timer1.Enabled = true;
             int startValue = int.Parse(battle_Chip_Count.Text);
@@ -809,7 +886,16 @@ namespace BJ
 
         private void Label_tenmetu(object sender, EventArgs e)
         {
-            Information_label.Visible = Information_label.Visible ? false : true;
+            if (Information_label.ForeColor == Color.White)
+            {
+                Information_label.StrokeColor = Color.White;
+                Information_label.ForeColor = Color.Black;
+            }
+            else
+            {
+                Information_label.StrokeColor = Color.Black;
+                Information_label.ForeColor = Color.White;
+            }
         }
     }
 }
