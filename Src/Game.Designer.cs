@@ -286,7 +286,7 @@
             // Chip_Count
             // 
             Chip_Count.Dock = DockStyle.Fill;
-            Chip_Count.Font = new Font("HG明朝B", 28F);
+            Chip_Count.Font = new Font("HG明朝B", 24F);
             Chip_Count.Location = new Point(3, 21);
             Chip_Count.Name = "Chip_Count";
             Chip_Count.Size = new Size(176, 43);
@@ -454,7 +454,7 @@
             VS_text.Angle = -360F;
             VS_text.BackColor = Color.Transparent;
             VS_text.Font = new Font("游ゴシック", 24F, FontStyle.Bold, GraphicsUnit.Point, 128);
-            VS_text.Location = new Point(636, 271);
+            VS_text.Location = new Point(597, 264);
             VS_text.Margin = new Padding(0);
             VS_text.Name = "VS_text";
             VS_text.Scale = 400;
@@ -541,7 +541,8 @@
             Information_label.Size = new Size(476, 28);
             Information_label.StrokeWidth = 3F;
             Information_label.TabIndex = 23;
-            Information_label.Text = "ひきわけのため、賭けたチップは返却されます";
+            Information_label.Text = "ブラックジャック！賭け金が2.5倍になります";
+            Information_label.TextAlign = ContentAlignment.TopCenter;
             Information_label.Visible = false;
             // 
             // Game
@@ -571,7 +572,7 @@
             MinimumSize = new Size(800, 500);
             Name = "Game";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ゲーム開始";
+            Text = "ブラックジャック";
             FormClosing += Exit_Check;
             User_Card_Grid.ResumeLayout(false);
             User_Card_Grid.PerformLayout();
